@@ -144,13 +144,26 @@ namespace Zayac
             for (int j = 0; j < Program.r; j++)
                 for (int i = 0; i < Program.N; i++)
                 {
-                    //Находим сколько элементов принадлежат интервалу r по X
-                    if (masX[i] >= inter_X[j].getF() && masX[i] < inter_X[j].getS())
-                        inter_X[j].addN();
+                    if (j == 6)
+                    {
+                        if (masX[i] >= inter_X[j].getF() && masX[i] <= inter_X[j].getS())
+                            inter_X[j].addN();
 
-                    //Находим сколько элементов принадлежат интервалу r по Y
-                    if (masY[i] >= inter_Y[j].getF() && masY[i] < inter_Y[j].getS())
-                        inter_Y[j].addN();
+                        //Находим сколько элементов принадлежат интервалу r по Y
+                        if (masY[i] >= inter_Y[j].getF() && masY[i] <= inter_Y[j].getS())
+                            inter_Y[j].addN();
+                    }
+                    else
+                    {
+                        //Находим сколько элементов принадлежат интервалу r по X
+                        if (masX[i] >= inter_X[j].getF() && masX[i] < inter_X[j].getS())
+                            inter_X[j].addN();
+
+                        //Находим сколько элементов принадлежат интервалу r по Y
+                        if (masY[i] >= inter_Y[j].getF() && masY[i] < inter_Y[j].getS())
+                            inter_Y[j].addN();
+                    }
+                  
                 }
             #endregion
 

@@ -60,7 +60,7 @@ namespace Zayac
 
         public void setA()
         {
-            average = (first + second) / n;
+            average = (first + second) / 2;
         }
 
         public double getA()
@@ -70,7 +70,7 @@ namespace Zayac
 
         public void setHP()
         {
-            heightPoligon = n / Program.N;
+            heightPoligon = (double)n / (double)Program.N;
         }
 
         public double getHP()
@@ -90,19 +90,8 @@ namespace Zayac
 
         public void setFunc(int i, Intervals[] pred)
         {
-            if (i == 0)
-                func = 0;
-            else
-                if (i == 6)
-                func = 1;
-            else
-            {
-                for (int j = 0; j < i; j++)
-                {
-                    func += pred[j].func;
-                }
-                func += n / Program.N;
-            }
+                for (int j = 0; j < i + 1; j++)
+                    func += pred[j].heightPoligon;
         }
 
         public double getFunc()
