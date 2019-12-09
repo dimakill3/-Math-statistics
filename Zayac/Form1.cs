@@ -49,8 +49,11 @@ namespace Zayac
 
                 for (int i = 0; i < Program.r; i++)
                 {
-                    raspredX.Rows.Add();
-                    raspredY.Rows.Add();
+                    if (i != 6)
+                    {
+                        raspredX.Rows.Add();
+                        raspredY.Rows.Add();
+                    }
 
                     raspredX.Rows[i].Cells[0].Value = i + 1;
                     raspredY.Rows[i].Cells[0].Value = i + 1;

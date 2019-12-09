@@ -87,14 +87,14 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
@@ -152,8 +152,9 @@
             this.raspredX.RowHeadersVisible = false;
             this.raspredX.RowTemplate.ReadOnly = true;
             this.raspredX.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredX.Size = new System.Drawing.Size(633, 247);
-            this.raspredX.TabIndex = 0;
+            this.raspredX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.raspredX.Size = new System.Drawing.Size(633, 181);
+            this.raspredX.TabIndex = 1;
             // 
             // NumberX
             // 
@@ -270,7 +271,8 @@
             this.raspredY.RowHeadersVisible = false;
             this.raspredY.RowTemplate.ReadOnly = true;
             this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.Size = new System.Drawing.Size(633, 247);
+            this.raspredY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.raspredY.Size = new System.Drawing.Size(633, 181);
             this.raspredY.TabIndex = 1;
             // 
             // NumberY
