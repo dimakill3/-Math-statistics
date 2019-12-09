@@ -59,7 +59,6 @@ namespace Zayac
                     {
                         raspredX.Rows[i].Cells[1].Value = "[" + calc.inter_X[i].getF() + ";" + calc.inter_X[i].getS() + "]";
                         raspredY.Rows[i].Cells[1].Value = "[" + calc.inter_Y[i].getF() + ";" + calc.inter_Y[i].getS() + "]";
-
                     }
                     else
                     {
@@ -67,6 +66,21 @@ namespace Zayac
                         raspredY.Rows[i].Cells[1].Value = "[" + calc.inter_Y[i].getF() + ";" + calc.inter_Y[i].getS() + ")";
 
                     }
+
+                    raspredX.Rows[i].Cells[2].Value = calc.inter_X[i].getN();
+                    raspredY.Rows[i].Cells[2].Value = calc.inter_Y[i].getN();
+
+                    raspredX.Rows[i].Cells[3].Value = calc.inter_X[i].getA();
+                    raspredY.Rows[i].Cells[3].Value = calc.inter_Y[i].getA();
+
+                    raspredX.Rows[i].Cells[4].Value = calc.inter_X[i].getHP();
+                    raspredY.Rows[i].Cells[4].Value = calc.inter_Y[i].getHP();
+
+                    raspredX.Rows[i].Cells[5].Value = calc.inter_X[i].getHG();
+                    raspredY.Rows[i].Cells[5].Value = calc.inter_Y[i].getHG();
+
+                    raspredX.Rows[i].Cells[6].Value = calc.inter_X[i].getFunc();
+                    raspredY.Rows[i].Cells[6].Value = calc.inter_Y[i].getFunc();
 
                 }
 
