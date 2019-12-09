@@ -43,13 +43,6 @@
             this.raspredY = new System.Windows.Forms.DataGridView();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
-            this.NumberY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RangeY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AverageY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +50,13 @@
             this.HeightPoligonX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RangeY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AverageY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.X.SuspendLayout();
@@ -223,60 +223,6 @@
             // 
             this.openFile.FileName = "openFileDialog1";
             // 
-            // NumberY
-            // 
-            this.NumberY.FillWeight = 31.37694F;
-            this.NumberY.HeaderText = "i";
-            this.NumberY.MaxInputLength = 2;
-            this.NumberY.Name = "NumberY";
-            this.NumberY.ReadOnly = true;
-            this.NumberY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // RangeY
-            // 
-            this.RangeY.FillWeight = 115.1833F;
-            this.RangeY.HeaderText = "[aᵢ₋₁ ; aᵢ)";
-            this.RangeY.Name = "RangeY";
-            this.RangeY.ReadOnly = true;
-            this.RangeY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // CountY
-            // 
-            this.CountY.FillWeight = 55.60566F;
-            this.CountY.HeaderText = "nᵢ";
-            this.CountY.Name = "CountY";
-            this.CountY.ReadOnly = true;
-            this.CountY.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // AverageY
-            // 
-            this.AverageY.FillWeight = 115.1833F;
-            this.AverageY.HeaderText = "Y˟ᵢ";
-            this.AverageY.Name = "AverageY";
-            this.AverageY.ReadOnly = true;
-            this.AverageY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // HeightPoligonY
-            // 
-            this.HeightPoligonY.HeaderText = "nᵢ / n";
-            this.HeightPoligonY.Name = "HeightPoligonY";
-            this.HeightPoligonY.ReadOnly = true;
-            // 
-            // HeightGistY
-            // 
-            this.HeightGistY.FillWeight = 115.1833F;
-            this.HeightGistY.HeaderText = "nᵢ /(n∙h)";
-            this.HeightGistY.Name = "HeightGistY";
-            this.HeightGistY.ReadOnly = true;
-            this.HeightGistY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // FuncY
-            // 
-            this.FuncY.FillWeight = 115.1833F;
-            this.FuncY.HeaderText = "Fn(Y)";
-            this.FuncY.Name = "FuncY";
-            this.FuncY.ReadOnly = true;
-            // 
             // NumberX
             // 
             this.NumberX.FillWeight = 31.37694F;
@@ -330,6 +276,60 @@
             this.FuncX.HeaderText = "Fn(X)";
             this.FuncX.Name = "FuncX";
             this.FuncX.ReadOnly = true;
+            // 
+            // NumberY
+            // 
+            this.NumberY.FillWeight = 31.37694F;
+            this.NumberY.HeaderText = "i";
+            this.NumberY.MaxInputLength = 2;
+            this.NumberY.Name = "NumberY";
+            this.NumberY.ReadOnly = true;
+            this.NumberY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // RangeY
+            // 
+            this.RangeY.FillWeight = 115.1833F;
+            this.RangeY.HeaderText = "[bᵢ₋₁ ; bᵢ)";
+            this.RangeY.Name = "RangeY";
+            this.RangeY.ReadOnly = true;
+            this.RangeY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // CountY
+            // 
+            this.CountY.FillWeight = 55.60566F;
+            this.CountY.HeaderText = "mᵢ";
+            this.CountY.Name = "CountY";
+            this.CountY.ReadOnly = true;
+            this.CountY.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // AverageY
+            // 
+            this.AverageY.FillWeight = 115.1833F;
+            this.AverageY.HeaderText = "Y˟ᵢ";
+            this.AverageY.Name = "AverageY";
+            this.AverageY.ReadOnly = true;
+            this.AverageY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // HeightPoligonY
+            // 
+            this.HeightPoligonY.HeaderText = "mᵢ / n";
+            this.HeightPoligonY.Name = "HeightPoligonY";
+            this.HeightPoligonY.ReadOnly = true;
+            // 
+            // HeightGistY
+            // 
+            this.HeightGistY.FillWeight = 115.1833F;
+            this.HeightGistY.HeaderText = "mᵢ /(n∙h)";
+            this.HeightGistY.Name = "HeightGistY";
+            this.HeightGistY.ReadOnly = true;
+            this.HeightGistY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // FuncY
+            // 
+            this.FuncY.FillWeight = 115.1833F;
+            this.FuncY.HeaderText = "Fm(Y)";
+            this.FuncY.Name = "FuncY";
+            this.FuncY.ReadOnly = true;
             // 
             // Form1
             // 

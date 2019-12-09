@@ -161,6 +161,43 @@ namespace Zayac
                 height_X[j] = inter_X[j].getHG();
                 height_Y[j] = inter_Y[j].getHG();
             }
+
+            //X с чертой(математическое ожидание X)
+            double all_average_X = 0;
+            //Y с чертой(математическое ожидание Y)
+            double all_average_Y = 0;
+
+            for (int j = 0; j < r; j++)
+            {
+                all_average_X += inter_X[j].getA() * inter_X[j].getN();
+                all_average_Y += inter_Y[j].getA() * inter_Y[j].getN();
+            }
+
+            all_average_X /= N;
+            all_average_Y /= N;
+
+            //Математическое ожидание от X^2
+            double all_average_X_in_degree_two = 0;
+            //Математическое ожидание от Y^2
+            double all_average_Y_in_degree_two = 0;
+
+            for (int j = 0; j < r; j++)
+            {
+                all_average_X_in_degree_two += Math.Pow(inter_X[j].getA(), 2) * inter_X[j].getN();
+                all_average_Y_in_degree_two += Math.Pow(inter_Y[j].getA(), 2) * inter_Y[j].getN();
+            }
+
+            //Дисперсия для X
+            double dispers_X = ((all_average_X_in_degree_two - Math.Pow(all_average_X, 2)) * N)/(N - 1);
+            //Дисперсия для Y
+            double dispers_Y = ((all_average_Y_in_degree_two - Math.Pow(all_average_Y, 2)) * N) / (N - 1);
+
+            //Средне-квадратичное отклонение X
+            double sred_kvadr_X = Math.Sqrt(dispers_X);
+
+            //Средне-квадратичное отклонение Y
+            double sred_kvadr_Y = Math.Sqrt(dispers_Y);
+
         }
     }
 }
