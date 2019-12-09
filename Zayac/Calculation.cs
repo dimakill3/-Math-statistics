@@ -10,48 +10,49 @@ namespace Zayac
     class Calculation
     {
 
-        double[] masX = new double[Program.N];
-        double[] masY = new double[Program.N];
-        double max_X, min_X, max_Y, min_Y;
-        double razryv_X, razryv_Y;
-        double h_X, h_Y;
-        double rashirenie_X, rashirenie_Y;
-        Intervals[] inter_X = new Intervals[Program.r];
-        Intervals[] inter_Y = new Intervals[Program.r];
+        public double[] masX = new double[Program.N];
+        public double[] masY = new double[Program.N];
+        public double max_X, min_X, max_Y, min_Y;
+        public double razryv_X, razryv_Y;
+        public double h_X, h_Y;
+        public double rashirenie_X, rashirenie_Y;
+        public Intervals[] inter_X = new Intervals[Program.r];
+        public Intervals[] inter_Y = new Intervals[Program.r];
 
-        double begin_X, begin_Y;
-        double[] aver_X = new double[Program.r];
-        double[] nums_X = new double[Program.r];
 
-        double[] aver_Y = new double[Program.r];
-        double[] nums_Y = new double[Program.r];
+        public double begin_X, begin_Y;
+        public double[] aver_X = new double[Program.r];
+        public double[] nums_X = new double[Program.r];
 
-        double[] verh_X = new double[Program.r + 1];
-        double[] height_X = new double[Program.r];
+        public double[] aver_Y = new double[Program.r];
+        public double[] nums_Y = new double[Program.r];
 
-        double[] verh_Y = new double[Program.r + 1];
-        double[] height_Y = new double[Program.r];
+        public double[] verh_X = new double[Program.r + 1];
+        public double[] height_X = new double[Program.r];
+
+        public double[] verh_Y = new double[Program.r + 1];
+        public double[] height_Y = new double[Program.r];
 
         //X с чертой(математическое ожидание X)
-        double all_average_X;
+        public double all_average_X;
         //Y с чертой(математическое ожидание Y)
-        double all_average_Y;
+        public double all_average_Y;
 
         //Математическое ожидание от X^2
-        double all_average_X_in_degree_two;
+        public double all_average_X_in_degree_two;
         //Математическое ожидание от Y^2
-        double all_average_Y_in_degree_two;
+        public double all_average_Y_in_degree_two;
 
         //Дисперсия для X
-        double dispers_X;
+        public double dispers_X;
         //Дисперсия для Y
-        double dispers_Y;
+        public double dispers_Y;
 
         //Средне-квадратичное отклонение X
-        double sred_kvadr_X;
+        public double sred_kvadr_X;
 
         //Средне-квадратичное отклонение Y
-        double sred_kvadr_Y;
+        public double sred_kvadr_Y;
 
 
         public void Calculate(String[] fielRead)
@@ -101,8 +102,11 @@ namespace Zayac
 
             //Установление интервалов
             #region
+
             for (int j = 0; j < Program.r; j++)
             {
+                inter_X[j] = new Intervals();
+                inter_Y[j] = new Intervals();
                 //Установление интервала для X
                 inter_X[j].setF(begin_X);
                 inter_X[j].setS(begin_X + h_X);
@@ -218,6 +222,14 @@ namespace Zayac
 
             //Средне-квадратичное отклонение Y
             sred_kvadr_Y = Math.Sqrt(dispers_Y);
+
+
+
+            //----------------------------------//
+            
+
+
+
 
 
         }

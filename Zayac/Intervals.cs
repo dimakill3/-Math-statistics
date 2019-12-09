@@ -17,7 +17,7 @@ namespace Zayac
         private double heightGist;
         private double func;
 
-        Intervals()
+        public Intervals()
         {
             first = 0;
             second = 0;

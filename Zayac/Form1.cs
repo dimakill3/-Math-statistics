@@ -15,7 +15,6 @@ namespace Zayac
     {
 
         Calculation calc;
-
         public Form1()
         {
             InitializeComponent();
@@ -49,9 +48,32 @@ namespace Zayac
                 calc = new Calculation();
                 calc.Calculate(Content);
 
+                for (int i = 0; i < Program.r; i++)
+                {
+                    raspredX.Rows.Add();
+                    raspredY.Rows.Add();
+
+                    raspredX.Rows[i].Cells[0].Value = i + 1;
+                    raspredY.Rows[i].Cells[0].Value = i + 1;
+
+                    if (i == Program.r - 1)
+                    {
+                        raspredX.Rows[i].Cells[1].Value = "[" + calc.inter_X[i].getF() + ";" + calc.inter_X[i].getS() + "]";
+                        raspredY.Rows[i].Cells[1].Value = "[" + calc.inter_Y[i].getF() + ";" + calc.inter_Y[i].getS() + "]";
+
+                    }
+                    else
+                    {
+                        raspredX.Rows[i].Cells[1].Value = "[" + calc.inter_X[i].getF() + ";" + calc.inter_X[i].getS() + ")";
+                        raspredY.Rows[i].Cells[1].Value = "[" + calc.inter_Y[i].getF() + ";" + calc.inter_Y[i].getS() + ")";
+
+                    }
+
+                }
 
             }
         }
+
 
     }
 }
