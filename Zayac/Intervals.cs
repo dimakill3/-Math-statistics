@@ -78,7 +78,7 @@ namespace Zayac
             return heightPoligon;
         }
 
-        public void setHG(int h)
+        public void setHG(double h)
         {
             heightGist = heightPoligon / h;
         }

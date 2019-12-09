@@ -10,32 +10,49 @@ namespace Zayac
     class Calculation
     {
 
-        public const int N = 50;
-        public const int r = 7;
+        double[] masX = new double[Program.N];
+        double[] masY = new double[Program.N];
+        double max_X, min_X, max_Y, min_Y;
+        double razryv_X, razryv_Y;
+        double h_X, h_Y;
+        double rashirenie_X, rashirenie_Y;
+        Intervals[] inter_X = new Intervals[Program.r];
+        Intervals[] inter_Y = new Intervals[Program.r];
 
-        static double[] masX = new double[N];
-        static int[] masY = new int[N];
+        double begin_X, begin_Y;
+        double[] aver_X = new double[Program.r];
+        double[] nums_X = new double[Program.r];
+
+        double[] aver_Y = new double[Program.r];
+        double[] nums_Y = new double[Program.r];
+
+        double[] verh_X = new double[Program.r + 1];
+        double[] height_X = new double[Program.r];
+
+        double[] verh_Y = new double[Program.r + 1];
+        double[] height_Y = new double[Program.r];
 
 
-        public void Calculate()
+
+
+        public void Calculate(String[] fielRead)
         {
-            string[] lines = File.ReadAllLines("Array.txt");
             string[] s = new string[2];
 
-            //Чтение из файла
-            for (int i = 0; i < lines.Length; i++)
+            for (int i = 0; i < fielRead.Length; i++)
             {
-                s = lines[i].Split(' ');
+                s = fielRead[i].Split(' ');
 
                 //Массив для веса
                 masX[i] = Convert.ToDouble(s[0]);
 
                 //Массив для роста
-                masY[i] = Convert.ToInt32(s[1]);
+                masY[i] = Convert.ToDouble(s[1]);
+
             }
 
-            double max_X, min_X;
-            int max_Y, min_Y;
+
+
 
             //Сортировка массивов
             Array.Sort(masX);
@@ -48,26 +65,24 @@ namespace Zayac
             max_Y = masY[masY.Length - 1];
 
             //Разница между максимальным и минимальным
-            double razryv_X = max_X - min_X;
-            int razryv_Y = max_Y - min_Y;
+            razryv_X = max_X - min_X;
+            razryv_Y = max_Y - min_Y;
 
             //Шаг(длина интервала)
-            int h_X = (int)Math.Ceiling(razryv_X / r);
-            int h_Y = (int)Math.Ceiling((double)(razryv_Y / r));
+            h_X = Math.Ceiling(razryv_X / Program.r);
+            h_Y = Math.Ceiling(razryv_Y / Program.r);
 
             //На всякий случай расширение промежутка разбиения
-            double rashirenie_X = (h_X - (razryv_X / r)) * r;
-            double rashirenie_Y = (h_Y - (razryv_Y / r)) * r;
+            rashirenie_X = (h_X - (razryv_X / Program.r)) * Program.r;
+            rashirenie_Y = (h_Y - (razryv_Y / Program.r)) * Program.r;
 
-            Intervals[] inter_X = new Intervals[r];
-            Intervals[] inter_Y = new Intervals[r];
 
             //Изменённое начало первого интервала для X (Оно может быть не целым, поэтому округляем в меньшую сторону)
-            int begin_X = (int)Math.Floor(masX[0]);
+            begin_X = Math.Floor(masX[0]);
             //Всегда целое значение, менять не нужно
-            int begin_Y = masY[0];
+            begin_Y = masY[0];
 
-            for (int j = 0; j < r; j++)
+            for (int j = 0; j < Program.r; j++)
             {
                 //Установление интервала для X
                 inter_X[j].setF(begin_X);
@@ -90,8 +105,8 @@ namespace Zayac
                 begin_Y += h_Y;
             }
 
-            for (int j = 0; j < r; j++)
-                for (int i = 0; i < N; i++)
+            for (int j = 0; j < Program.r; j++)
+                for (int i = 0; i < Program.N; i++)
                 {
                     //Находим сколько элементов принадлежат интервалу r по X
                     if (masX[i] >= inter_X[j].getF() && masX[i] < inter_X[j].getS())
@@ -102,7 +117,7 @@ namespace Zayac
                         inter_Y[j].addN();
                 }
 
-            for (int j = 0; j < r; j++)
+            for (int j = 0; j < Program.r; j++)
             {
                 //Задаём высоты для полигона, гистограммы и функцию распределения для X
                 inter_X[j].setHP();
@@ -115,15 +130,7 @@ namespace Zayac
                 inter_Y[j].setFunc(j, inter_Y);
             }
 
-
-            //Подготовка массивов для полигона
-            double[] aver_X = new double[r];
-            double[] nums_X = new double[r];
-
-            double[] aver_Y = new double[r];
-            double[] nums_Y = new double[r];
-
-            for (int j = 0; j < r; j++)
+            for (int j = 0; j < Program.r; j++)
             {
                 aver_X[j] = inter_X[j].getA();
                 aver_Y[j] = inter_Y[j].getA();
@@ -133,16 +140,7 @@ namespace Zayac
             }
 
 
-            //Подготовка массивов для гистограммы
-            double[] verh_X = new double[r + 1];
-            double[] height_X = new double[r];
-
-            double[] verh_Y = new double[r + 1];
-            double[] height_Y = new double[r];
-
-
-
-            for (int j = 0; j < r; j++)
+            for (int j = 0; j < Program.r; j++)
             {
 
                 verh_X[j] = inter_X[j].getF();

@@ -38,11 +38,7 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XandY = new System.Windows.Forms.TabControl();
             this.X = new System.Windows.Forms.TabPage();
-            this.Y = new System.Windows.Forms.TabPage();
             this.raspredX = new System.Windows.Forms.DataGridView();
-            this.raspredY = new System.Windows.Forms.DataGridView();
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +46,8 @@
             this.HeightPoligonX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Y = new System.Windows.Forms.TabPage();
+            this.raspredY = new System.Windows.Forms.DataGridView();
             this.NumberY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,11 +55,13 @@
             this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.X.SuspendLayout();
-            this.Y.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).BeginInit();
+            this.Y.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,14 +87,14 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
@@ -121,20 +121,6 @@
             this.X.TabIndex = 0;
             this.X.Text = "    X";
             // 
-            // Y
-            // 
-            this.Y.BackColor = System.Drawing.Color.FloralWhite;
-            this.Y.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Y.Controls.Add(this.raspredY);
-            this.Y.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Y.Location = new System.Drawing.Point(4, 25);
-            this.Y.Name = "Y";
-            this.Y.Padding = new System.Windows.Forms.Padding(3);
-            this.Y.Size = new System.Drawing.Size(944, 508);
-            this.Y.TabIndex = 1;
-            this.Y.Text = "    Y";
-            // 
             // raspredX
             // 
             this.raspredX.AllowUserToDeleteRows = false;
@@ -144,7 +130,7 @@
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -168,60 +154,6 @@
             this.raspredX.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.raspredX.Size = new System.Drawing.Size(633, 247);
             this.raspredX.TabIndex = 0;
-            // 
-            // raspredY
-            // 
-            this.raspredY.AllowUserToDeleteRows = false;
-            this.raspredY.AllowUserToOrderColumns = true;
-            this.raspredY.AllowUserToResizeColumns = false;
-            this.raspredY.AllowUserToResizeRows = false;
-            this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NumberY,
-            this.RangeY,
-            this.CountY,
-            this.AverageY,
-            this.HeightPoligonY,
-            this.HeightGistY,
-            this.FuncY});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.DefaultCellStyle = dataGridViewCellStyle3;
-            this.raspredY.EnableHeadersVisualStyles = false;
-            this.raspredY.Location = new System.Drawing.Point(-2, -2);
-            this.raspredY.Name = "raspredY";
-            this.raspredY.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.raspredY.RowHeadersVisible = false;
-            this.raspredY.RowTemplate.ReadOnly = true;
-            this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.Size = new System.Drawing.Size(633, 247);
-            this.raspredY.TabIndex = 1;
-            // 
-            // openFile
-            // 
-            this.openFile.FileName = "openFileDialog1";
             // 
             // NumberX
             // 
@@ -277,6 +209,70 @@
             this.FuncX.Name = "FuncX";
             this.FuncX.ReadOnly = true;
             // 
+            // Y
+            // 
+            this.Y.BackColor = System.Drawing.Color.FloralWhite;
+            this.Y.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Y.Controls.Add(this.raspredY);
+            this.Y.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Y.Location = new System.Drawing.Point(4, 25);
+            this.Y.Name = "Y";
+            this.Y.Padding = new System.Windows.Forms.Padding(3);
+            this.Y.Size = new System.Drawing.Size(944, 508);
+            this.Y.TabIndex = 1;
+            this.Y.Text = "    Y";
+            // 
+            // raspredY
+            // 
+            this.raspredY.AllowUserToDeleteRows = false;
+            this.raspredY.AllowUserToOrderColumns = true;
+            this.raspredY.AllowUserToResizeColumns = false;
+            this.raspredY.AllowUserToResizeRows = false;
+            this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NumberY,
+            this.RangeY,
+            this.CountY,
+            this.AverageY,
+            this.HeightPoligonY,
+            this.HeightGistY,
+            this.FuncY});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredY.DefaultCellStyle = dataGridViewCellStyle3;
+            this.raspredY.EnableHeadersVisualStyles = false;
+            this.raspredY.Location = new System.Drawing.Point(-2, -2);
+            this.raspredY.Name = "raspredY";
+            this.raspredY.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.raspredY.RowHeadersVisible = false;
+            this.raspredY.RowTemplate.ReadOnly = true;
+            this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredY.Size = new System.Drawing.Size(633, 247);
+            this.raspredY.TabIndex = 1;
+            // 
             // NumberY
             // 
             this.NumberY.FillWeight = 31.37694F;
@@ -331,6 +327,10 @@
             this.FuncY.Name = "FuncY";
             this.FuncY.ReadOnly = true;
             // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,8 +345,8 @@
             this.menuStrip1.PerformLayout();
             this.XandY.ResumeLayout(false);
             this.X.ResumeLayout(false);
-            this.Y.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).EndInit();
+            this.Y.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

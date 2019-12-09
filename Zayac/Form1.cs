@@ -14,6 +14,8 @@ namespace Zayac
     public partial class Form1 : Form
     {
 
+        Calculation calc;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +23,8 @@ namespace Zayac
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //const int N = 50;
+
             raspredX.Rows.Clear();
             raspredY.Rows.Clear();
             var filePath = string.Empty;
@@ -40,11 +44,14 @@ namespace Zayac
                 }
 
                 String[] Content = fileContent.Split('\n');
-                //Program.
+                string[] s = new string[2];
+                //Чтение из файла
+                calc = new Calculation();
+                calc.Calculate(Content);
+
 
             }
-
-            
         }
+
     }
 }
