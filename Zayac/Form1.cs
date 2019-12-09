@@ -38,6 +38,8 @@ namespace Zayac
                     fileContent = reader.ReadToEnd();
                 }
 
+                //String[] Content = fileContent.Split('\n');
+                //Program.
             }
 
             
