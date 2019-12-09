@@ -55,6 +55,16 @@ namespace Zayac
         public double sred_kvadr_Y;
 
 
+        public Calculation()
+        {
+            all_average_X = 0;
+            all_average_Y = 0;
+            //dispers_X = 0;
+            //dispers_Y = 0;
+            //sred_kvadr_X = 0;
+            //sred_kvadr_Y = 0;
+        }
+
         public void Calculate(String[] fielRead)
         {
             string[] s = new string[2];
