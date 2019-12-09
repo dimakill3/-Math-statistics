@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,20 +41,22 @@
             this.Y = new System.Windows.Forms.TabPage();
             this.raspredX = new System.Windows.Forms.DataGridView();
             this.raspredY = new System.Windows.Forms.DataGridView();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.NumberY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AverageY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AverageX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightPoligonX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.X.SuspendLayout();
@@ -140,21 +142,22 @@
             this.raspredX.AllowUserToResizeColumns = false;
             this.raspredX.AllowUserToResizeRows = false;
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.raspredX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberX,
             this.RangeX,
             this.CountX,
             this.AverageX,
-            this.HeightX,
+            this.HeightPoligonX,
+            this.HeightGistX,
             this.FuncX});
             this.raspredX.EnableHeadersVisualStyles = false;
             this.raspredX.Location = new System.Drawing.Point(-2, -2);
@@ -173,47 +176,52 @@
             this.raspredY.AllowUserToResizeColumns = false;
             this.raspredY.AllowUserToResizeRows = false;
             this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberY,
             this.RangeY,
             this.CountY,
             this.AverageY,
-            this.HeightY,
+            this.HeightPoligonY,
+            this.HeightGistY,
             this.FuncY});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredY.DefaultCellStyle = dataGridViewCellStyle3;
             this.raspredY.EnableHeadersVisualStyles = false;
             this.raspredY.Location = new System.Drawing.Point(-2, -2);
             this.raspredY.Name = "raspredY";
             this.raspredY.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.raspredY.RowHeadersVisible = false;
             this.raspredY.RowTemplate.ReadOnly = true;
             this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.raspredY.Size = new System.Drawing.Size(633, 247);
             this.raspredY.TabIndex = 1;
+            // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
             // 
             // NumberY
             // 
@@ -248,13 +256,19 @@
             this.AverageY.ReadOnly = true;
             this.AverageY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // HeightY
+            // HeightPoligonY
             // 
-            this.HeightY.FillWeight = 115.1833F;
-            this.HeightY.HeaderText = "nᵢ /(n∙h)";
-            this.HeightY.Name = "HeightY";
-            this.HeightY.ReadOnly = true;
-            this.HeightY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.HeightPoligonY.HeaderText = "nᵢ / n";
+            this.HeightPoligonY.Name = "HeightPoligonY";
+            this.HeightPoligonY.ReadOnly = true;
+            // 
+            // HeightGistY
+            // 
+            this.HeightGistY.FillWeight = 115.1833F;
+            this.HeightGistY.HeaderText = "nᵢ /(n∙h)";
+            this.HeightGistY.Name = "HeightGistY";
+            this.HeightGistY.ReadOnly = true;
+            this.HeightGistY.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FuncY
             // 
@@ -296,13 +310,19 @@
             this.AverageX.ReadOnly = true;
             this.AverageX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // HeightX
+            // HeightPoligonX
             // 
-            this.HeightX.FillWeight = 115.1833F;
-            this.HeightX.HeaderText = "nᵢ /(n∙h)";
-            this.HeightX.Name = "HeightX";
-            this.HeightX.ReadOnly = true;
-            this.HeightX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.HeightPoligonX.HeaderText = "nᵢ /n";
+            this.HeightPoligonX.Name = "HeightPoligonX";
+            this.HeightPoligonX.ReadOnly = true;
+            // 
+            // HeightGistX
+            // 
+            this.HeightGistX.FillWeight = 115.1833F;
+            this.HeightGistX.HeaderText = "nᵢ /(n∙h)";
+            this.HeightGistX.Name = "HeightGistX";
+            this.HeightGistX.ReadOnly = true;
+            this.HeightGistX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FuncX
             // 
@@ -310,10 +330,6 @@
             this.FuncX.HeaderText = "Fn(X)";
             this.FuncX.Name = "FuncX";
             this.FuncX.ReadOnly = true;
-            // 
-            // openFile
-            // 
-            this.openFile.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -348,20 +364,22 @@
         private System.Windows.Forms.DataGridView raspredX;
         private System.Windows.Forms.TabPage Y;
         private System.Windows.Forms.DataGridView raspredY;
+        private System.Windows.Forms.OpenFileDialog openFile;
+        private System.Windows.Forms.SaveFileDialog saveFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberX;
         private System.Windows.Forms.DataGridViewTextBoxColumn RangeX;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountX;
         private System.Windows.Forms.DataGridViewTextBoxColumn AverageX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeightX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightPoligonX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightGistX;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberY;
         private System.Windows.Forms.DataGridViewTextBoxColumn RangeY;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountY;
         private System.Windows.Forms.DataGridViewTextBoxColumn AverageY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeightY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightPoligonY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightGistY;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncY;
-        private System.Windows.Forms.OpenFileDialog openFile;
-        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }
 
