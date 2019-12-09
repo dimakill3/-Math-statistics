@@ -32,7 +32,26 @@ namespace Zayac
         double[] verh_Y = new double[Program.r + 1];
         double[] height_Y = new double[Program.r];
 
+        //X с чертой(математическое ожидание X)
+        double all_average_X;
+        //Y с чертой(математическое ожидание Y)
+        double all_average_Y;
 
+        //Математическое ожидание от X^2
+        double all_average_X_in_degree_two;
+        //Математическое ожидание от Y^2
+        double all_average_Y_in_degree_two;
+
+        //Дисперсия для X
+        double dispers_X;
+        //Дисперсия для Y
+        double dispers_Y;
+
+        //Средне-квадратичное отклонение X
+        double sred_kvadr_X;
+
+        //Средне-квадратичное отклонение Y
+        double sred_kvadr_Y;
 
 
         public void Calculate(String[] fielRead)
@@ -50,9 +69,6 @@ namespace Zayac
                 masY[i] = Convert.ToDouble(s[1]);
 
             }
-
-
-
 
             //Сортировка массивов
             Array.Sort(masX);
@@ -79,9 +95,12 @@ namespace Zayac
 
             //Изменённое начало первого интервала для X (Оно может быть не целым, поэтому округляем в меньшую сторону)
             begin_X = Math.Floor(masX[0]);
+
             //Всегда целое значение, менять не нужно
             begin_Y = masY[0];
 
+            //Установление интервалов
+            #region
             for (int j = 0; j < Program.r; j++)
             {
                 //Установление интервала для X
@@ -104,7 +123,10 @@ namespace Zayac
                 //Начало следующего интервала для Y
                 begin_Y += h_Y;
             }
+            #endregion
 
+            //Нахождение количества элементов, пренадлежащих определённому интервалу
+            #region
             for (int j = 0; j < Program.r; j++)
                 for (int i = 0; i < Program.N; i++)
                 {
@@ -116,7 +138,10 @@ namespace Zayac
                     if (masY[i] >= inter_Y[j].getF() && masY[i] < inter_Y[j].getS())
                         inter_Y[j].addN();
                 }
+            #endregion
 
+            //Высоты и функция
+            #region
             for (int j = 0; j < Program.r; j++)
             {
                 //Задаём высоты для полигона, гистограммы и функцию распределения для X
@@ -129,7 +154,10 @@ namespace Zayac
                 inter_Y[j].setHG(h_Y);
                 inter_Y[j].setFunc(j, inter_Y);
             }
+            #endregion
 
+            //Замолняем массив для полигона
+            #region
             for (int j = 0; j < Program.r; j++)
             {
                 aver_X[j] = inter_X[j].getA();
@@ -138,8 +166,10 @@ namespace Zayac
                 nums_X[j] = inter_X[j].getHP();
                 nums_Y[j] = inter_Y[j].getHP();
             }
+            #endregion
 
-
+            //Заполняем массив для гистограммы
+            #region
             for (int j = 0; j < Program.r; j++)
             {
 
@@ -153,8 +183,43 @@ namespace Zayac
 
                 height_X[j] = inter_X[j].getHG();
                 height_Y[j] = inter_Y[j].getHG();
-
             }
+            #endregion
+
+            //Нахождение математического ожидания(точечная оценка)
+            #region 
+            for (int j = 0; j < Program.r; j++)
+            {
+                all_average_X += inter_X[j].getA() * inter_X[j].getN();
+                all_average_Y += inter_Y[j].getA() * inter_Y[j].getN();
+            }
+
+            all_average_X /= Program.N;
+            all_average_Y /= Program.N;
+            #endregion
+
+            //Находим математическое ожидание от X^2
+            #region
+            for (int j = 0; j < Program.r; j++)
+            {
+                all_average_X_in_degree_two += Math.Pow(inter_X[j].getA(), 2) * inter_X[j].getN();
+                all_average_Y_in_degree_two += Math.Pow(inter_Y[j].getA(), 2) * inter_Y[j].getN();
+            }
+            #endregion
+
+            //Дисперсия для X
+            dispers_X = ((all_average_X_in_degree_two - Math.Pow(all_average_X, 2)) * Program.N) / (Program.N - 1);
+
+            //Дисперсия для Y
+            dispers_Y = ((all_average_Y_in_degree_two - Math.Pow(all_average_Y, 2)) * Program.N) / (Program.N - 1);
+
+            //Средне-квадратичное отклонение X
+            sred_kvadr_X = Math.Sqrt(dispers_X);
+
+            //Средне-квадратичное отклонение Y
+            sred_kvadr_Y = Math.Sqrt(dispers_Y);
+
+
         }
     }
 }

@@ -14,9 +14,6 @@ namespace Zayac
         public const int N = 50;
         public const int r = 7;
 
-        static double[] masX = new double[N];
-        static int[] masY = new int[N];
-
         [STAThread]
         static void Main()
         {
@@ -24,7 +21,7 @@ namespace Zayac
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            string[] lines = File.ReadAllLines("Array.txt");
+            /*string[] lines = File.ReadAllLines("Array.txt");
             string[] s = new string[2];
 
             //Чтение из файла
@@ -197,6 +194,7 @@ namespace Zayac
 
             //Средне-квадратичное отклонение Y
             double sred_kvadr_Y = Math.Sqrt(dispers_Y);
+            */
 
         }
 
