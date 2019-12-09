@@ -23,8 +23,6 @@ namespace Zayac
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //const int N = 50;
-
             raspredX.Rows.Clear();
             raspredY.Rows.Clear();
             var filePath = string.Empty;
@@ -45,8 +43,9 @@ namespace Zayac
 
                 String[] Content = fileContent.Split('\n');
                 string[] s = new string[2];
+
                 //Чтение из файла
-                calc = new Calculation();
+                Calculation calc = new Calculation();
                 calc.Calculate(Content);
 
 
