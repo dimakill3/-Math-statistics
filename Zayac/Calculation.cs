@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 
 namespace Zayac
 {
-    class Program
+    class Calculation
     {
-
 
         public const int N = 50;
         public const int r = 7;
@@ -17,13 +16,9 @@ namespace Zayac
         static double[] masX = new double[N];
         static int[] masY = new int[N];
 
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
 
+        public void Calculate()
+        {
             string[] lines = File.ReadAllLines("Array.txt");
             string[] s = new string[2];
 
@@ -107,7 +102,7 @@ namespace Zayac
                         inter_Y[j].addN();
                 }
 
-            for(int j = 0; j < r; j++)
+            for (int j = 0; j < r; j++)
             {
                 //Задаём высоты для полигона, гистограммы и функцию распределения для X
                 inter_X[j].setHP();
@@ -160,9 +155,8 @@ namespace Zayac
 
                 height_X[j] = inter_X[j].getHG();
                 height_Y[j] = inter_Y[j].getHG();
+
             }
         }
-
-
     }
 }
