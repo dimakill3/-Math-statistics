@@ -19,7 +19,7 @@ namespace Zayac
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
 
             /*string[] lines = File.ReadAllLines("Array.txt");
             string[] s = new string[2];

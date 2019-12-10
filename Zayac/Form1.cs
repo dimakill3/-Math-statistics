@@ -11,11 +11,12 @@ using System.IO;
 
 namespace Zayac
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
 
-        Calculation calc;
-        public Form1()
+        Calculation calc = new Calculation();
+
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -44,7 +45,6 @@ namespace Zayac
                 string[] s = new string[2];
 
                 //Чтение из файла
-                Calculation calc = new Calculation();
                 calc.Calculate(Content);
 
                 for (int i = 0; i < Program.r; i++)

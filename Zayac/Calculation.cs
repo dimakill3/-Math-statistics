@@ -21,6 +21,7 @@ namespace Zayac
 
 
         public double begin_X, begin_Y;
+
         public double[] aver_X = new double[Program.r];
         public double[] nums_X = new double[Program.r];
 
@@ -54,11 +55,40 @@ namespace Zayac
         //Средне-квадратичное отклонение Y
         public double sred_kvadr_Y;
 
+        public int maxN_X, maxN_Y;
+        public int index_X, index_Y;
+
+        //Переход к условным величинам
+        public double[] uslov_vel_X = new double[Program.r];
+        public double[] uslov_vel_Y = new double[Program.r];
+
+        public double[] sum_uslov_vel_X = new double[Program.r];
+        public double[] sum_uslov_vel_Y = new double[Program.r];
+
+        public double[] kv_sum_uslov_vel_X = new double[Program.r];
+        public double[] kv_sum_uslov_vel_Y = new double[Program.r];
+
+        double all_average_uslov_X, all_average_uslov_Y;
+        double all_average_uslov_X_in_two, all_average_uslov_Y_in_two;
+        double dispers_uslov_X, dispers_uslov_Y;
+        double sred_kvadr_uslov_X, sred_kvadr_uslov_Y;
+
+        double all_average_uslov_X_vivod, all_average_uslov_Y_vivod;
+        double dispers_uslov_X_vivod, dispers_uslov_Y_vivod;
+        double sred_kvadr_uslov_X_vivod, sred_kvadr_uslov_Y_vivod;
+
 
         public Calculation()
         {
             all_average_X = 0;
             all_average_Y = 0;
+
+            all_average_uslov_X = 0; 
+            all_average_uslov_Y = 0;
+
+            all_average_uslov_X_in_two = 0;
+            all_average_uslov_Y_in_two = 0;
+
             //dispers_X = 0;
             //dispers_Y = 0;
             //sred_kvadr_X = 0;
@@ -232,6 +262,8 @@ namespace Zayac
                 all_average_X_in_degree_two += Math.Pow(inter_X[j].getA(), 2) * inter_X[j].getN();
                 all_average_Y_in_degree_two += Math.Pow(inter_Y[j].getA(), 2) * inter_Y[j].getN();
             }
+            all_average_X_in_degree_two /= Program.N;
+            all_average_Y_in_degree_two /= Program.N;
             #endregion
 
             //Дисперсия для X
@@ -245,6 +277,79 @@ namespace Zayac
 
             //Средне-квадратичное отклонение Y
             sred_kvadr_Y = Math.Sqrt(dispers_Y);
+
+            //Точеченые оценки с помощью перехода
+            #region
+            maxN_X = 0; maxN_Y = 0;
+            index_X = 0; index_Y = 0;
+
+            //Нахожу среднее значение интервала, у которого максимальное количество элементов
+            for (int j = 0; j < Program.r; j++)
+            {
+                if (inter_X[j].getN() > maxN_X)
+                {
+                    maxN_X = inter_X[j].getN();
+                    index_X = j;
+                }
+
+                if (inter_Y[j].getN() > maxN_Y)
+                {
+                    maxN_Y = inter_Y[j].getN();
+                    index_Y = j;
+                }
+            }
+
+            //Для таблицы условных величин
+            for (int j = 0; j < Program.r; j++)
+            {
+                //Сами условные величины
+                uslov_vel_X[j] = (inter_X[j].getA() - inter_X[index_X].getA()) / 2;
+                //Сумма всех одинаковых условных величин
+                sum_uslov_vel_X[j] = uslov_vel_X[j] * inter_X[j].getN();
+                //Квадрат суммы равных условных величин
+                kv_sum_uslov_vel_X[j] = sum_uslov_vel_X[j] * uslov_vel_X[j];
+
+                uslov_vel_Y[j] = (inter_Y[j].getA() - inter_X[index_Y].getA()) / 2;
+                sum_uslov_vel_Y[j] = uslov_vel_Y[j] * inter_Y[j].getN();
+                kv_sum_uslov_vel_Y[j] = sum_uslov_vel_Y[j] * uslov_vel_Y[j];
+            }
+
+
+            for (int j = 0; j < Program.r; j++)
+            {
+                all_average_uslov_X += sum_uslov_vel_X[j];
+                all_average_uslov_X_in_two += kv_sum_uslov_vel_X[j];
+
+                all_average_uslov_Y += sum_uslov_vel_Y[j];
+                all_average_uslov_Y_in_two += kv_sum_uslov_vel_Y[j];
+            }
+            //Мат ожидание
+            all_average_uslov_X /= Program.N;
+            all_average_uslov_Y /= Program.N;
+
+            //Мат ожидание квадратов
+            all_average_uslov_X_in_two /= Program.N;
+            all_average_uslov_Y_in_two /= Program.N;
+
+            //Дисперсия
+            dispers_uslov_X = ((all_average_uslov_X_in_two - Math.Pow(all_average_uslov_X, 2)) * Program.N) / (Program.N - 1);
+            dispers_uslov_Y = ((all_average_uslov_Y_in_two - Math.Pow(all_average_uslov_Y, 2)) * Program.N) / (Program.N - 1);
+
+            //Средне-квадратичное отклонение
+            sred_kvadr_uslov_X = Math.Sqrt(dispers_uslov_X);
+            sred_kvadr_uslov_Y = Math.Sqrt(dispers_uslov_Y);
+
+            //Переход от условных к нормальным
+            all_average_uslov_X_vivod = h_X * all_average_uslov_X + inter_X[index_X].getA();
+            dispers_uslov_X_vivod = Math.Pow(h_X, 2) * dispers_uslov_X;
+            sred_kvadr_uslov_X_vivod = Math.Sqrt(dispers_uslov_X_vivod);
+
+            all_average_uslov_Y_vivod = h_Y * all_average_uslov_Y + inter_Y[index_Y].getA();
+            dispers_uslov_Y_vivod = Math.Pow(h_Y, 2) * dispers_uslov_Y;
+            sred_kvadr_uslov_Y_vivod = Math.Sqrt(dispers_uslov_Y_vivod);
         }
+        #endregion
+
+
     }
 }
