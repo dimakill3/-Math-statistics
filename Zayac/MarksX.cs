@@ -16,5 +16,15 @@ namespace Zayac
         {
             InitializeComponent();
         }
+
+        private void Marks_X_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Marks_X_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GlobalVars.FormMarksX = false;
+        }
     }
 }
