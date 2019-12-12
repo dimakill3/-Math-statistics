@@ -151,5 +151,80 @@ namespace Zayac
         {
 
         }
+
+        private void X_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CustomToolTip tip = new CustomToolTip();
+            tip.AutomaticDelay = 1000;
+            
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToGraphicsX, "х");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToMarksX, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelRazmah, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelKolVoInter, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelLenghtInter, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelRash, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelRazmahY, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelKolVoInterY, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelLenghtInterY, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.labelRashY, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToGraphicsY, "x");
+
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToMarksY, "x");
+        }
+        /*
+        static void SetRoundedShape(CustomToolTip control, int radius)
+        {
+            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddLine(radius, 0, control.getImageWidth() - radius, 0);
+            path.AddArc(control.getImageWidth() - radius, 0, radius, radius, 270, 90);
+            path.AddLine(control.getImageWidth(), radius, control.getImageWidth(), control.getImageHeight() - radius);
+            path.AddArc(control.getImageWidth() - radius, control.getImageHeight() - radius, radius, radius, 0, 90);
+            path.AddLine(control.getImageWidth() - radius, control.getImageHeight(), radius, control.getImageHeight());
+            path.AddArc(0, control.getImageHeight() - radius, radius, radius, 90, 90);
+            path.AddLine(0, control.getImageHeight() - radius, 0, radius);
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            //control.Region = new Region(path);
+        }
+        */
+        private void RashPromX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RashPromX_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToMarksX_MouseHover(object sender, EventArgs e)
+        {
+        }
     }
 }
