@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data;
 
 namespace Zayac
 {
@@ -19,7 +20,6 @@ namespace Zayac
         public double rashirenie_X, rashirenie_Y;
         public Intervals[] inter_X = new Intervals[Program.r];
         public Intervals[] inter_Y = new Intervals[Program.r];
-
 
         public double begin_X, begin_Y;
 
