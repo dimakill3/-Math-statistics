@@ -433,6 +433,9 @@ namespace Zayac
                     Integral.Function int_lap = Integral.laplas;
                     form_lap_X[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_X[j], Integral.iterasion);
                     form_lap_Y[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_Y[j], Integral.iterasion);
+
+                    form_lap_X[j] *= lap;
+                    form_lap_Y[j] *= lap;
                 }
 
                 if (j == 0)
@@ -442,6 +445,7 @@ namespace Zayac
                 }
                 else
                 {
+                    ver_sob_X[j] = form_lap_X[j] - form_lap_X[j - 1];
                     ver_sob_Y[j] = form_lap_Y[j] - form_lap_Y[j - 1];
                 }
 
@@ -451,14 +455,14 @@ namespace Zayac
             }
             #endregion
 
+            
+             //Объединение интервалов
+             #region
+             int d_X = 0;
+             int k_X = 0;
 
-            //Объединение интервалов
-            #region
-            int d_X = 0;
-            int k_X = 0;
-
-            int d_Y = 0;
-            int k_Y = 0;
+             int d_Y = 0;
+             int k_Y = 0;
 
             for (int j = 0; j < Program.r; j++)
             {
@@ -468,6 +472,10 @@ namespace Zayac
                     {
                         flags_X[d_X]++;
                         teor_vel_X[d_X] += teor_vel_X[j + 1];
+                        if (j == (Program.r - 2))
+                        {
+                            break;
+                        }
                     }
                     else
                     {
@@ -479,18 +487,23 @@ namespace Zayac
                 else
                 {
                     if (d_X != 0)
-                        k_X = d_X - 1;
+                        k_X = d_X;
 
-                    d_X = j + 1;
+                        d_X = j + 1;
                 }
 
                 //////////////////////////////////
-                if (teor_vel_Y[d_Y] < 5)
+                 if (teor_vel_Y[d_Y] < 5)
                 {
                     if (d_Y == 0)
                     {
                         flags_Y[d_Y]++;
                         teor_vel_Y[d_Y] += teor_vel_Y[j + 1];
+
+                        if (j == (Program.r - 2))
+                        {
+                            break;
+                        }
                     }
                     else
                     {
@@ -502,30 +515,40 @@ namespace Zayac
                 else
                 {
                     if (d_Y != 0)
-                        k_Y = d_Y - 1;
+                        k_Y = d_Y;
 
                     d_Y = j + 1;
                 }
             }
 
-            d_X = 0;
-            d_Y = 0;
+                        d_X = 0;
+                        d_Y = 0;
 
-            for (int j = 0; j < Program.N - 1; j++)
+            for (int j = 0; j < Program.r - 1; j++)
             {
                 d_X += flags_X[j];
                 d_Y += flags_Y[j];
             }
 
-            new_inter_X = new Intervals[d_X];
-            new_inter_Y = new Intervals[d_Y];
+                        new_inter_X = new Intervals[d_X];
+                        new_inter_Y = new Intervals[d_Y];
+
+            for (int j = 0; j < d_X; j++)
+            {
+                new_inter_X[j] = new Intervals();
+            }
+
+            for (int j = 0; j < d_Y; j++)
+            {
+                new_inter_Y[j] = new Intervals();
+            }
 
             new_inter_X[0].setF(inter_X[0].getF());
             new_inter_Y[0].setF(inter_Y[0].getF());
 
             k_X = 0;
 
-            for (int j = 0; j < d_X; j++)
+            /*for (int j = 0; j < d_X; j++)
             {
                 if (j == 0)
                 {
@@ -538,11 +561,11 @@ namespace Zayac
                     new_inter_X[j].setS(new_inter_X[j].getF() + h_X + flags_X[k_X] * h_X);
                     k_X += 1 + flags_X[k_X];
                 }
-            }
+            }*/
 
+                        #endregion
+                       
 
-
-            #endregion
         }
     }
 }
