@@ -22,7 +22,7 @@ namespace Zayac
             return sum;
         }
 
-        static double laplas(double x)
+        public static double laplas(double x)
         {
             x = Math.Pow(x, 2);
             x /= -2;
