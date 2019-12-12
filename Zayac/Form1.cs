@@ -148,5 +148,34 @@ namespace Zayac
         {
 
         }
+
+        private void X_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            CustomToolTip tip = new CustomToolTip();
+            tip.AutomaticDelay = 1000;
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToGraphicsX, "x");
+            tip.setImage("b.png");
+            tip.SetToolTip(this.ToMarksX, "x");
+        }
+
+        private void RashPromX_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RashPromX_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToMarksX_MouseHover(object sender, EventArgs e)
+        {
+        }
     }
 }
