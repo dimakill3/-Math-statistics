@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integral.cs" />
     <Compile Include="MarksX.cs">
       <SubType>Form</SubType>
     </Compile>
