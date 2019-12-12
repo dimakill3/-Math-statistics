@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Zayac
 {
-    public partial class Marks_Y : Form
+    public partial class GraphicsX : Form
     {
-        public Marks_Y()
+        public GraphicsX()
         {
             InitializeComponent();
         }
 
-        private void Marks_Y_FormClosed(object sender, FormClosedEventArgs e)
+        private void GraphicsX_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GlobalVars.FormMarksY = false;
+            GlobalVars.FormGraphicsX = false;
         }
     }
 }
