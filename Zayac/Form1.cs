@@ -14,7 +14,7 @@ namespace Zayac
     public partial class MainForm : Form
     {
 
-        Calculation calc = new Calculation();
+        public static Calculation calc = new Calculation();
 
         public MainForm()
         {
@@ -96,6 +96,9 @@ namespace Zayac
                 LenghtInterY.Text = Convert.ToString(calc.h_Y);
                 RashPromX.Text = Convert.ToString(calc.rashirenie_X);
                 RashPromY.Text = Convert.ToString(calc.rashirenie_Y);
+
+
+                
             }
         }
 

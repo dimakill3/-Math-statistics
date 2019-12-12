@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zayac
 {
-    class Intervals
+   public class Intervals
     {
 
         private double first;

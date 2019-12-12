@@ -7,8 +7,9 @@ using System.IO;
 
 namespace Zayac
 {
-    class Calculation
+    public class Calculation
     {
+        double lap;
 
         public double[] masX = new double[Program.N];
         public double[] masY = new double[Program.N];
@@ -29,10 +30,16 @@ namespace Zayac
         public double[] nums_Y = new double[Program.r];
 
         public double[] verh_X = new double[Program.r + 1];
-        public double[] height_X = new double[Program.r];
+        public double[] height_X = new double[Program.r + 1];
 
         public double[] verh_Y = new double[Program.r + 1];
-        public double[] height_Y = new double[Program.r];
+        public double[] height_Y = new double[Program.r + 1];
+
+        public double[] func_X = new double[Program.r + 2];
+        public double[] func_Y = new double[Program.r + 2];
+
+        public double[] func_int_X = new double[Program.r + 2];
+        public double[] func_int_Y = new double[Program.r + 2];
 
         //X с чертой(математическое ожидание X)
         public double all_average_X;
@@ -83,16 +90,16 @@ namespace Zayac
             all_average_X = 0;
             all_average_Y = 0;
 
+            all_average_X_in_degree_two = 0;
+            all_average_Y_in_degree_two = 0;
+
             all_average_uslov_X = 0; 
             all_average_uslov_Y = 0;
 
             all_average_uslov_X_in_two = 0;
             all_average_uslov_Y_in_two = 0;
 
-            //dispers_X = 0;
-            //dispers_Y = 0;
-            //sred_kvadr_X = 0;
-            //sred_kvadr_Y = 0;
+            lap = (1 / Math.Sqrt(2 * Math.PI));
         }
 
         public void Calculate(String[] fielRead)
@@ -236,10 +243,48 @@ namespace Zayac
                 {
                     verh_X[j + 1] = inter_X[j].getS();
                     verh_Y[j + 1] = inter_Y[j].getS();
+
+                    height_X[j + 1] = inter_X[j].getHG();
+                    height_Y[j + 1] = inter_Y[j].getHG();
                 }
 
                 height_X[j] = inter_X[j].getHG();
                 height_Y[j] = inter_Y[j].getHG();
+            }
+            #endregion
+
+            //Заполняем массивы для функции
+            #region
+            for (int j = 0; j < Program.r + 2; j++)
+            {
+                if (j == 0)
+                {
+                    func_X[j] = 0;
+                    func_int_X[j] = inter_X[j].getF() - h_X;
+
+                    func_Y[j] = 0;
+                    func_int_Y[j] = inter_Y[j].getF() - h_Y;
+                }
+                else
+                {
+                    if (j == 8)
+                    {
+                        func_X[j] = func_X[j - 1];
+                        func_int_X[j] = verh_X[j - 1];
+
+                        func_Y[j] = func_Y[j - 1];
+                        func_int_Y[j] = verh_Y[j - 1];
+                    }
+                    else
+                    {
+                        func_X[j] = inter_X[j - 1].getFunc();
+                        func_int_X[j] = verh_X[j - 1];
+
+                        func_Y[j] = inter_Y[j - 1].getFunc();
+                        func_int_Y[j] = verh_Y[j - 1];
+                    }
+                }
+
             }
             #endregion
 
