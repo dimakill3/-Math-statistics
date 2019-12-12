@@ -30,6 +30,7 @@ namespace Zayac
         {
             g = e.Graphics;
             g.DrawImage(b, new Point(0, 0));
+            g.Dispose();
         }
 
         public void setImage(String s)
