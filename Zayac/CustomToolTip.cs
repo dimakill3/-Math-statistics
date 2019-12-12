@@ -35,7 +35,7 @@ namespace Zayac
 
         public void setImage(String s)
         {
-            this.b = Image.FromFile(s);
+            this.b = Image.FromFile("images\\" + s);
         }
 
     }
