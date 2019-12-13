@@ -84,6 +84,24 @@ namespace Zayac
         double dispers_uslov_X_vivod, dispers_uslov_Y_vivod;
         double sred_kvadr_uslov_X_vivod, sred_kvadr_uslov_Y_vivod;
 
+        //Массив показателей объединения
+        public char[] flags_X;
+        public char[] flags_Y;
+
+        public double[] norm_vel_X = new double[Program.r];
+        public double[] norm_vel_Y = new double[Program.r];
+
+        public double[] form_lap_X = new double[Program.r];
+        public double[] form_lap_Y = new double[Program.r];
+
+        public double[] ver_sob_X = new double[Program.r];
+        public double[] ver_sob_Y = new double[Program.r];
+
+        public double[] teor_vel_X = new double[Program.r];
+        public double[] teor_vel_Y = new double[Program.r];
+
+        public Intervals[] new_inter_X;
+        public Intervals[] new_inter_Y;
 
         public Calculation()
         {
@@ -93,13 +111,16 @@ namespace Zayac
             all_average_X_in_degree_two = 0;
             all_average_Y_in_degree_two = 0;
 
-            all_average_uslov_X = 0; 
+            all_average_uslov_X = 0;
             all_average_uslov_Y = 0;
 
             all_average_uslov_X_in_two = 0;
             all_average_uslov_Y_in_two = 0;
 
             lap = (1 / Math.Sqrt(2 * Math.PI));
+
+            flags_X = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
+            flags_Y = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
         }
 
         public void Calculate(String[] fielRead)
@@ -201,7 +222,7 @@ namespace Zayac
                         if (masY[i] >= inter_Y[j].getF() && masY[i] < inter_Y[j].getS())
                             inter_Y[j].addN();
                     }
-                  
+
                 }
             #endregion
 
@@ -395,8 +416,51 @@ namespace Zayac
             sred_kvadr_uslov_Y_vivod = Math.Sqrt(dispers_uslov_Y_vivod);
             #endregion
 
+            //Подсчёт нормального распределения на каждом интервале, нахождение теоретических частот
+            #region
+            for (int j = 0; j < Program.r; j++)
+            {
+                
+                    norm_vel_X[j] = (inter_X[j].getS() - all_average_X) / sred_kvadr_X;
+                    norm_vel_Y[j] = (inter_Y[j].getS() - all_average_Y) / sred_kvadr_Y;
 
+                if (j == 6)
+                {
+                    form_lap_X[j] = 0.5;
+                    form_lap_Y[j] = 0.5;
+                }
+                else 
+                {
+                    Integral.Function int_lap = Integral.laplas;
+                    form_lap_X[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_X[j], Integral.iterasion);
+                    form_lap_Y[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_Y[j], Integral.iterasion);
 
+                    form_lap_X[j] *= lap;
+                    form_lap_Y[j] *= lap;
+                }
+
+                if (j == 0)
+                {
+                    ver_sob_X[j] = form_lap_X[j] + 0.5;
+                    ver_sob_Y[j] = form_lap_Y[j] + 0.5;
+                }
+                else
+                {
+                    ver_sob_X[j] = form_lap_X[j] - form_lap_X[j - 1];
+                    ver_sob_Y[j] = form_lap_Y[j] - form_lap_Y[j - 1];
+                }
+
+                teor_vel_X[j] = ver_sob_X[j] * Program.N;
+                teor_vel_Y[j] = ver_sob_Y[j] * Program.N;
+
+            }
+            #endregion
+
+            
+             //Объединение интервалов
+             #region
+             int d_X = 0;
+             int k_X = 0;
         }
 
         public double getQuant(int k, double p)
@@ -441,6 +505,111 @@ namespace Zayac
         }
 
 
+             int d_Y = 0;
+             int k_Y = 0;
 
+            for (int j = 0; j < Program.r; j++)
+            {
+                if (teor_vel_X[d_X] < 5)
+                {
+                    if (d_X == 0)
+                    {
+                        flags_X[d_X]++;
+                        teor_vel_X[d_X] += teor_vel_X[j + 1];
+                        if (j == (Program.r - 2))
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        flags_X[k_X]++;
+                        teor_vel_X[k_X] += teor_vel_X[d_X];
+                        d_X++;
+                    }
+                }
+                else
+                {
+                    if (d_X != 0)
+                        k_X = d_X;
+
+                        d_X = j + 1;
+                }
+
+                //////////////////////////////////
+                 if (teor_vel_Y[d_Y] < 5)
+                {
+                    if (d_Y == 0)
+                    {
+                        flags_Y[d_Y]++;
+                        teor_vel_Y[d_Y] += teor_vel_Y[j + 1];
+
+                        if (j == (Program.r - 2))
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        flags_Y[k_Y]++;
+                        teor_vel_Y[k_Y] += teor_vel_Y[d_Y];
+                        d_Y++;
+                    }
+                }
+                else
+                {
+                    if (d_Y != 0)
+                        k_Y = d_Y;
+
+                    d_Y = j + 1;
+                }
+            }
+
+                        d_X = 0;
+                        d_Y = 0;
+
+            for (int j = 0; j < Program.r - 1; j++)
+            {
+                d_X += flags_X[j];
+                d_Y += flags_Y[j];
+            }
+
+                        new_inter_X = new Intervals[d_X];
+                        new_inter_Y = new Intervals[d_Y];
+
+            for (int j = 0; j < d_X; j++)
+            {
+                new_inter_X[j] = new Intervals();
+            }
+
+            for (int j = 0; j < d_Y; j++)
+            {
+                new_inter_Y[j] = new Intervals();
+            }
+
+            new_inter_X[0].setF(inter_X[0].getF());
+            new_inter_Y[0].setF(inter_Y[0].getF());
+
+            k_X = 0;
+
+            /*for (int j = 0; j < d_X; j++)
+            {
+                if (j == 0)
+                {
+                    new_inter_X[j].setS(new_inter_X[j].getF() + h_X + flags_X[k_X] * h_X);
+                    k_X += flags_X[k_X];
+                }
+                else
+                {
+                    new_inter_X[j].setF(new_inter_X[j - 1].getS());
+                    new_inter_X[j].setS(new_inter_X[j].getF() + h_X + flags_X[k_X] * h_X);
+                    k_X += 1 + flags_X[k_X];
+                }
+            }*/
+
+                        #endregion
+                       
+
+        }
     }
 }
