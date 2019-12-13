@@ -162,41 +162,29 @@ namespace Zayac
             CustomToolTip tip = new CustomToolTip();
             tip.AutomaticDelay = 1000;
             
-            tip.setImage("b.png");
-            tip.SetToolTip(this.ToGraphicsX, "х");
+            tip.SetCustomToolTip(this.ToGraphicsX, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.ToMarksX, "x");
+            tip.SetCustomToolTip(this.ToMarksX, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelRazmah, "x");
+            tip.SetCustomToolTip(this.labelRazmah, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelKolVoInter, "x");
+            tip.SetCustomToolTip(this.labelKolVoInter, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelLenghtInter, "x");
+            tip.SetCustomToolTip(this.labelLenghtInter, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelRash, "x");
+            tip.SetCustomToolTip(this.labelRash, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelRazmahY, "x");
+            tip.SetCustomToolTip(this.labelRazmahY, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelKolVoInterY, "x");
+            tip.SetCustomToolTip(this.labelKolVoInterY, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelLenghtInterY, "x");
+            tip.SetCustomToolTip(this.labelLenghtInterY, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.labelRashY, "x");
+            tip.SetCustomToolTip(this.labelRashY, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.ToGraphicsY, "x");
+            tip.SetCustomToolTip(this.ToGraphicsY, "b.png");
 
-            tip.setImage("b.png");
-            tip.SetToolTip(this.ToMarksY, "x");
+            tip.SetCustomToolTip(this.ToMarksY, "b.png");
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)

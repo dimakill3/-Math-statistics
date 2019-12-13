@@ -104,6 +104,7 @@ namespace Zayac
 
         public void Calculate(String[] fielRead)
         {
+            getQuant(20, 0.05);
             string[] s = new string[2];
 
             for (int i = 0; i < fielRead.Length; i++)
@@ -396,6 +397,47 @@ namespace Zayac
 
 
 
+        }
+
+        public double getQuant(int k, double p)
+        {
+            int index_p;
+            if (p == 0.005)
+                index_p = 0;
+            else if (p == 0.01)
+                index_p = 1;
+            else if (p == 0.025)
+                index_p = 2;
+            else if (p == 0.05)
+                index_p = 3;
+            else if (p == 0.1)
+                index_p = 4;
+            else if (p == 0.9)
+                index_p = 5;
+            else if (p == 0.95)
+                index_p = 6;
+            else if (p == 0.975)
+                index_p = 7;
+            else if (p == 0.99)
+                index_p = 8;
+            else if (p == 0.995)
+                index_p = 9;
+            else
+                index_p = 10;
+
+            using (FileStream fstream = File.OpenRead("tableQuant.txt"))
+            {
+                // преобразуем строку в байты
+                byte[] array = new byte[fstream.Length];
+                // считываем данные
+                fstream.Read(array, 0, array.Length);
+                // декодируем байты в строку
+                string textFromFile = System.Text.Encoding.Default.GetString(array);
+                string[] s = textFromFile.Split('\n');
+                string[] s1 = s[k - 1].Split(' ');
+                double x = Convert.ToDouble(s1[index_p]);
+                return x;
+            }
         }
 
 
