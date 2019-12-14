@@ -70,6 +70,18 @@
     <Compile Include="GraphicsY.Designer.cs">
       <DependentUpon>GraphicsY.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hipotesy_X.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hipotesy_X.Designer.cs">
+      <DependentUpon>Hipotesy_X.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hipotesy_Y.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hipotesy_Y.Designer.cs">
+      <DependentUpon>Hipotesy_Y.cs</DependentUpon>
+    </Compile>
     <Compile Include="Integral.cs" />
     <Compile Include="MarksX.cs">
       <SubType>Form</SubType>
@@ -109,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,6 +135,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 215726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 220427.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 220913.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 221132.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 221531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 221422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 221408.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152057.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152107.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152422.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 14-12-2019 010455.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 14-12-2019 011021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 14-12-2019 0110211.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 14-12-2019 013526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 1520571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 1521011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 1521071.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 150726.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 150730.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 150735.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 1524371.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 14-12-2019 013511.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 13-12-2019 152249.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

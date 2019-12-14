@@ -49,11 +49,8 @@ namespace Zayac
 
                 for (int i = 0; i < Program.r; i++)
                 {
-                    if (i != 6)
-                    {
                         raspredX.Rows.Add();
                         raspredY.Rows.Add();
-                    }
 
                     raspredX.Rows[i].Cells[0].Value = i + 1;
                     raspredY.Rows[i].Cells[0].Value = i + 1;
@@ -88,17 +85,17 @@ namespace Zayac
                 }
 
                 //Вывод в общей информации в общую форму
-                razmahX.Text = Convert.ToString(calc.razryv_X);
-                razmahY.Text = Convert.ToString(calc.razryv_Y);
-                countInterX.Text = Convert.ToString(Program.r);
-                countInterY.Text = Convert.ToString(Program.r);
-                LenghtInterX.Text = Convert.ToString(calc.h_X);
-                LenghtInterY.Text = Convert.ToString(calc.h_Y);
-                RashPromX.Text = Convert.ToString(calc.rashirenie_X);
-                RashPromY.Text = Convert.ToString(calc.rashirenie_Y);
+                razmahX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.razryv_X));
+                razmahY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.razryv_Y));
+                countInterX.Text = String.Format("{0:0.0000}", Convert.ToString(Program.r));
+                countInterY.Text = String.Format("{0:0.0000}", Convert.ToString(Program.r));
+                LenghtInterX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.h_X));
+                LenghtInterY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.h_Y));
+                RashPromX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.rashirenie_X));
+                RashPromY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.rashirenie_Y));
 
 
-                
+
             }
         }
 

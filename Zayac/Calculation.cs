@@ -10,7 +10,7 @@ namespace Zayac
 {
     public class Calculation
     {
-        double lap;
+        public double lap;
 
         public double[] masX = new double[Program.N];
         public double[] masY = new double[Program.N];
@@ -30,10 +30,10 @@ namespace Zayac
         public double[] nums_Y = new double[Program.r];
 
         public double[] verh_X = new double[Program.r + 1];
-        public double[] height_X = new double[Program.r + 1];
+        public double[] height_X = new double[Program.r];
 
         public double[] verh_Y = new double[Program.r + 1];
-        public double[] height_Y = new double[Program.r + 1];
+        public double[] height_Y = new double[Program.r];
 
         public double[] func_X = new double[Program.r + 2];
         public double[] func_Y = new double[Program.r + 2];
@@ -62,7 +62,6 @@ namespace Zayac
         //Средне-квадратичное отклонение Y
         public double sred_kvadr_Y;
 
-        public int maxN_X, maxN_Y;
         public int index_X, index_Y;
 
         //Переход к условным величинам
@@ -75,14 +74,14 @@ namespace Zayac
         public double[] kv_sum_uslov_vel_X = new double[Program.r];
         public double[] kv_sum_uslov_vel_Y = new double[Program.r];
 
-        double all_average_uslov_X, all_average_uslov_Y;
-        double all_average_uslov_X_in_two, all_average_uslov_Y_in_two;
-        double dispers_uslov_X, dispers_uslov_Y;
-        double sred_kvadr_uslov_X, sred_kvadr_uslov_Y;
+        public double all_average_uslov_X, all_average_uslov_Y;
+        public double all_average_uslov_X_in_two, all_average_uslov_Y_in_two;
+        public double dispers_uslov_X, dispers_uslov_Y;
+        public double sred_kvadr_uslov_X, sred_kvadr_uslov_Y;
 
-        double all_average_uslov_X_vivod, all_average_uslov_Y_vivod;
-        double dispers_uslov_X_vivod, dispers_uslov_Y_vivod;
-        double sred_kvadr_uslov_X_vivod, sred_kvadr_uslov_Y_vivod;
+        public double all_average_uslov_X_vivod, all_average_uslov_Y_vivod;
+        public double dispers_uslov_X_vivod, dispers_uslov_Y_vivod;
+        public double sred_kvadr_uslov_X_vivod, sred_kvadr_uslov_Y_vivod;
 
         //Массив показателей объединения
         public char[] flags_X;
@@ -163,10 +162,10 @@ namespace Zayac
 
 
             //Изменённое начало первого интервала для X (Оно может быть не целым, поэтому округляем в меньшую сторону)
-            begin_X = Math.Floor(masX[0]);
+            begin_X = Math.Floor(masX[0]) - Math.Floor(rashirenie_X / 2);
 
             //Всегда целое значение, менять не нужно
-            begin_Y = masY[0];
+            begin_Y = masY[0] - Math.Floor(rashirenie_Y / 2);
 
             //Установление интервалов
             #region
@@ -257,16 +256,13 @@ namespace Zayac
             #region
             for (int j = 0; j < Program.r; j++)
             {
-
                 verh_X[j] = inter_X[j].getF();
                 verh_Y[j] = inter_Y[j].getF();
+
                 if (j == 6)
                 {
                     verh_X[j + 1] = inter_X[j].getS();
                     verh_Y[j + 1] = inter_Y[j].getS();
-
-                    height_X[j + 1] = inter_X[j].getHG();
-                    height_Y[j + 1] = inter_Y[j].getHG();
                 }
 
                 height_X[j] = inter_X[j].getHG();
@@ -346,36 +342,20 @@ namespace Zayac
 
             //Точеченые оценки с помощью перехода
             #region
-            maxN_X = 0; maxN_Y = 0;
-            index_X = 0; index_Y = 0;
 
-            //Нахожу среднее значение интервала, у которого максимальное количество элементов
-            for (int j = 0; j < Program.r; j++)
-            {
-                if (inter_X[j].getN() > maxN_X)
-                {
-                    maxN_X = inter_X[j].getN();
-                    index_X = j;
-                }
-
-                if (inter_Y[j].getN() > maxN_Y)
-                {
-                    maxN_Y = inter_Y[j].getN();
-                    index_Y = j;
-                }
-            }
+            index_X = 3; index_Y = 3;
 
             //Для таблицы условных величин
             for (int j = 0; j < Program.r; j++)
             {
                 //Сами условные величины
-                uslov_vel_X[j] = (inter_X[j].getA() - inter_X[index_X].getA()) / 2;
+                uslov_vel_X[j] = (inter_X[j].getA() - inter_X[index_X].getA()) / h_X;
                 //Сумма всех одинаковых условных величин
                 sum_uslov_vel_X[j] = uslov_vel_X[j] * inter_X[j].getN();
                 //Квадрат суммы равных условных величин
                 kv_sum_uslov_vel_X[j] = sum_uslov_vel_X[j] * uslov_vel_X[j];
 
-                uslov_vel_Y[j] = (inter_Y[j].getA() - inter_X[index_Y].getA()) / 2;
+                uslov_vel_Y[j] = (inter_Y[j].getA() - inter_Y[index_Y].getA()) / h_Y;
                 sum_uslov_vel_Y[j] = uslov_vel_Y[j] * inter_Y[j].getN();
                 kv_sum_uslov_vel_Y[j] = sum_uslov_vel_Y[j] * uslov_vel_Y[j];
             }
@@ -455,7 +435,6 @@ namespace Zayac
             }
             #endregion
 
-            
              //Объединение интервалов
              #region
              int d_X = 0;
@@ -493,7 +472,7 @@ namespace Zayac
                 }
 
                 //////////////////////////////////
-                 if (teor_vel_Y[d_Y] < 5)
+                if (teor_vel_Y[d_Y] < 5)
                 {
                     if (d_Y == 0)
                     {
@@ -520,6 +499,7 @@ namespace Zayac
                     d_Y = j + 1;
                 }
             }
+            
 
                         d_X = 0;
                         d_Y = 0;
@@ -530,8 +510,11 @@ namespace Zayac
                 d_Y += flags_Y[j];
             }
 
-                        new_inter_X = new Intervals[d_X];
-                        new_inter_Y = new Intervals[d_Y];
+            d_X = Program.r - d_X;
+            d_Y = Program.r - d_Y;
+
+            new_inter_X = new Intervals[d_X];
+            new_inter_Y = new Intervals[d_Y];
 
             for (int j = 0; j < d_X; j++)
             {
@@ -548,12 +531,12 @@ namespace Zayac
 
             k_X = 0;
 
-            /*for (int j = 0; j < d_X; j++)
+            for (int j = 0; j < d_X; j++)
             {
                 if (j == 0)
                 {
                     new_inter_X[j].setS(new_inter_X[j].getF() + h_X + flags_X[k_X] * h_X);
-                    k_X += flags_X[k_X];
+                    k_X += 1 + flags_X[k_X];
                 }
                 else
                 {
@@ -561,10 +544,27 @@ namespace Zayac
                     new_inter_X[j].setS(new_inter_X[j].getF() + h_X + flags_X[k_X] * h_X);
                     k_X += 1 + flags_X[k_X];
                 }
-            }*/
+            }
 
-                        #endregion
-                       
+            k_Y = 0;
+
+            for (int j = 0; j < d_Y; j++)
+            {
+                if (j == 0)
+                {
+                    new_inter_Y[j].setS(new_inter_Y[j].getF() + h_Y + flags_Y[k_Y] * h_Y);
+                    k_Y += 1 + flags_Y[k_Y];
+                }
+                else
+                {
+                    new_inter_Y[j].setF(new_inter_Y[j - 1].getS());
+                    new_inter_Y[j].setS(new_inter_Y[j].getF() + h_Y + flags_Y[k_Y] * h_Y);
+                    k_Y += 1 + flags_Y[k_Y];
+                }
+            }
+
+            #endregion
+
 
         }
     }

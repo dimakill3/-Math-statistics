@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +69,8 @@
             this.labelKolVoInterY = new System.Windows.Forms.Label();
             this.labelRazmahY = new System.Windows.Forms.Label();
             this.raspredY = new System.Windows.Forms.DataGridView();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.NumberY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountY = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +78,7 @@
             this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.X.SuspendLayout();
@@ -107,21 +109,21 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
             // 
             this.XandY.Controls.Add(this.X);
             this.XandY.Controls.Add(this.Y);
-            this.XandY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.XandY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.XandY.Location = new System.Drawing.Point(0, 27);
             this.XandY.Name = "XandY";
             this.XandY.Padding = new System.Drawing.Point(3, 3);
@@ -144,12 +146,13 @@
             this.X.Controls.Add(this.labelKolVoInter);
             this.X.Controls.Add(this.labelRazmah);
             this.X.Controls.Add(this.raspredX);
+            this.X.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.X.Location = new System.Drawing.Point(4, 25);
             this.X.Name = "X";
             this.X.Padding = new System.Windows.Forms.Padding(3);
             this.X.Size = new System.Drawing.Size(944, 508);
             this.X.TabIndex = 0;
-            this.X.Text = "    X";
+            this.X.Text = "Группированный ряд для X";
             this.X.Click += new System.EventHandler(this.X_Click);
             // 
             // ToGraphicsX
@@ -165,6 +168,7 @@
             // 
             // ToMarksX
             // 
+            this.ToMarksX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ToMarksX.Location = new System.Drawing.Point(811, 236);
             this.ToMarksX.Name = "ToMarksX";
             this.ToMarksX.Size = new System.Drawing.Size(99, 43);
@@ -176,7 +180,8 @@
             // RashPromX
             // 
             this.RashPromX.Enabled = false;
-            this.RashPromX.Location = new System.Drawing.Point(811, 157);
+            this.RashPromX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RashPromX.Location = new System.Drawing.Point(812, 156);
             this.RashPromX.Name = "RashPromX";
             this.RashPromX.Size = new System.Drawing.Size(100, 22);
             this.RashPromX.TabIndex = 9;
@@ -186,7 +191,8 @@
             // LenghtInterX
             // 
             this.LenghtInterX.Enabled = false;
-            this.LenghtInterX.Location = new System.Drawing.Point(811, 111);
+            this.LenghtInterX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LenghtInterX.Location = new System.Drawing.Point(812, 110);
             this.LenghtInterX.Name = "LenghtInterX";
             this.LenghtInterX.Size = new System.Drawing.Size(100, 22);
             this.LenghtInterX.TabIndex = 8;
@@ -195,7 +201,8 @@
             // countInterX
             // 
             this.countInterX.Enabled = false;
-            this.countInterX.Location = new System.Drawing.Point(811, 62);
+            this.countInterX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countInterX.Location = new System.Drawing.Point(812, 61);
             this.countInterX.Name = "countInterX";
             this.countInterX.Size = new System.Drawing.Size(100, 22);
             this.countInterX.TabIndex = 7;
@@ -203,7 +210,8 @@
             // razmahX
             // 
             this.razmahX.Enabled = false;
-            this.razmahX.Location = new System.Drawing.Point(811, 11);
+            this.razmahX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.razmahX.Location = new System.Drawing.Point(812, 10);
             this.razmahX.Name = "razmahX";
             this.razmahX.Size = new System.Drawing.Size(100, 22);
             this.razmahX.TabIndex = 6;
@@ -211,7 +219,8 @@
             // 
             // labelRash
             // 
-            this.labelRash.Location = new System.Drawing.Point(651, 146);
+            this.labelRash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRash.Location = new System.Drawing.Point(637, 145);
             this.labelRash.Name = "labelRash";
             this.labelRash.Size = new System.Drawing.Size(151, 48);
             this.labelRash.TabIndex = 5;
@@ -220,32 +229,36 @@
             // labelLenghtInter
             // 
             this.labelLenghtInter.AutoSize = true;
-            this.labelLenghtInter.Location = new System.Drawing.Point(651, 117);
+            this.labelLenghtInter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLenghtInter.Location = new System.Drawing.Point(637, 116);
             this.labelLenghtInter.Name = "labelLenghtInter";
-            this.labelLenghtInter.Size = new System.Drawing.Size(138, 16);
+            this.labelLenghtInter.Size = new System.Drawing.Size(162, 16);
             this.labelLenghtInter.TabIndex = 4;
-            this.labelLenghtInter.Text = "Длина интервала";
+            this.labelLenghtInter.Text = "Длина интервала h =";
             // 
             // labelKolVoInter
             // 
             this.labelKolVoInter.AutoSize = true;
-            this.labelKolVoInter.Location = new System.Drawing.Point(651, 68);
+            this.labelKolVoInter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelKolVoInter.Location = new System.Drawing.Point(637, 67);
             this.labelKolVoInter.Name = "labelKolVoInter";
-            this.labelKolVoInter.Size = new System.Drawing.Size(151, 16);
+            this.labelKolVoInter.Size = new System.Drawing.Size(172, 16);
             this.labelKolVoInter.TabIndex = 3;
-            this.labelKolVoInter.Text = "Кол-во интервалов";
+            this.labelKolVoInter.Text = "Кол-во интервалов r =";
             // 
             // labelRazmah
             // 
             this.labelRazmah.AutoSize = true;
-            this.labelRazmah.Location = new System.Drawing.Point(651, 17);
+            this.labelRazmah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRazmah.Location = new System.Drawing.Point(637, 16);
             this.labelRazmah.Name = "labelRazmah";
-            this.labelRazmah.Size = new System.Drawing.Size(129, 16);
+            this.labelRazmah.Size = new System.Drawing.Size(156, 16);
             this.labelRazmah.TabIndex = 2;
-            this.labelRazmah.Text = "Размах выборки";
+            this.labelRazmah.Text = "Размах выборки R =";
             // 
             // raspredX
             // 
+            this.raspredX.AllowUserToAddRows = false;
             this.raspredX.AllowUserToDeleteRows = false;
             this.raspredX.AllowUserToOrderColumns = true;
             this.raspredX.AllowUserToResizeColumns = false;
@@ -253,7 +266,7 @@
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -268,6 +281,14 @@
             this.HeightPoligonX,
             this.HeightGistX,
             this.FuncX});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredX.DefaultCellStyle = dataGridViewCellStyle2;
             this.raspredX.EnableHeadersVisualStyles = false;
             this.raspredX.Location = new System.Drawing.Point(-2, -2);
             this.raspredX.Name = "raspredX";
@@ -355,12 +376,12 @@
             this.Y.Padding = new System.Windows.Forms.Padding(3);
             this.Y.Size = new System.Drawing.Size(944, 508);
             this.Y.TabIndex = 1;
-            this.Y.Text = "    Y";
+            this.Y.Text = "Группированный ряд для Y";
             // 
             // ToGraphicsY
             // 
             this.ToGraphicsY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToGraphicsY.Location = new System.Drawing.Point(812, 307);
+            this.ToGraphicsY.Location = new System.Drawing.Point(811, 306);
             this.ToGraphicsY.Name = "ToGraphicsY";
             this.ToGraphicsY.Size = new System.Drawing.Size(99, 23);
             this.ToGraphicsY.TabIndex = 19;
@@ -371,7 +392,7 @@
             // ToMarksY
             // 
             this.ToMarksY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ToMarksY.Location = new System.Drawing.Point(812, 237);
+            this.ToMarksY.Location = new System.Drawing.Point(811, 236);
             this.ToMarksY.Name = "ToMarksY";
             this.ToMarksY.Size = new System.Drawing.Size(99, 43);
             this.ToMarksY.TabIndex = 18;
@@ -419,7 +440,7 @@
             // labelRashY
             // 
             this.labelRashY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelRashY.Location = new System.Drawing.Point(652, 145);
+            this.labelRashY.Location = new System.Drawing.Point(637, 145);
             this.labelRashY.Name = "labelRashY";
             this.labelRashY.Size = new System.Drawing.Size(151, 48);
             this.labelRashY.TabIndex = 13;
@@ -429,47 +450,48 @@
             // 
             this.labelLenghtInterY.AutoSize = true;
             this.labelLenghtInterY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLenghtInterY.Location = new System.Drawing.Point(652, 116);
+            this.labelLenghtInterY.Location = new System.Drawing.Point(637, 116);
             this.labelLenghtInterY.Name = "labelLenghtInterY";
-            this.labelLenghtInterY.Size = new System.Drawing.Size(138, 16);
+            this.labelLenghtInterY.Size = new System.Drawing.Size(162, 16);
             this.labelLenghtInterY.TabIndex = 12;
-            this.labelLenghtInterY.Text = "Длина интервала";
+            this.labelLenghtInterY.Text = "Длина интервала h =";
             // 
             // labelKolVoInterY
             // 
             this.labelKolVoInterY.AutoSize = true;
             this.labelKolVoInterY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelKolVoInterY.Location = new System.Drawing.Point(652, 67);
+            this.labelKolVoInterY.Location = new System.Drawing.Point(637, 67);
             this.labelKolVoInterY.Name = "labelKolVoInterY";
-            this.labelKolVoInterY.Size = new System.Drawing.Size(151, 16);
+            this.labelKolVoInterY.Size = new System.Drawing.Size(172, 16);
             this.labelKolVoInterY.TabIndex = 11;
-            this.labelKolVoInterY.Text = "Кол-во интервалов";
+            this.labelKolVoInterY.Text = "Кол-во интервалов r =";
             // 
             // labelRazmahY
             // 
             this.labelRazmahY.AutoSize = true;
             this.labelRazmahY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelRazmahY.Location = new System.Drawing.Point(652, 16);
+            this.labelRazmahY.Location = new System.Drawing.Point(637, 16);
             this.labelRazmahY.Name = "labelRazmahY";
-            this.labelRazmahY.Size = new System.Drawing.Size(129, 16);
+            this.labelRazmahY.Size = new System.Drawing.Size(156, 16);
             this.labelRazmahY.TabIndex = 10;
-            this.labelRazmahY.Text = "Размах выборки";
+            this.labelRazmahY.Text = "Размах выборки R =";
             // 
             // raspredY
             // 
+            this.raspredY.AllowUserToAddRows = false;
             this.raspredY.AllowUserToDeleteRows = false;
             this.raspredY.AllowUserToOrderColumns = true;
             this.raspredY.AllowUserToResizeColumns = false;
             this.raspredY.AllowUserToResizeRows = false;
             this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberY,
@@ -479,32 +501,36 @@
             this.HeightPoligonY,
             this.HeightGistY,
             this.FuncY});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredY.DefaultCellStyle = dataGridViewCellStyle4;
             this.raspredY.EnableHeadersVisualStyles = false;
             this.raspredY.Location = new System.Drawing.Point(-2, -2);
             this.raspredY.Name = "raspredY";
             this.raspredY.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.raspredY.RowHeadersVisible = false;
             this.raspredY.RowTemplate.ReadOnly = true;
             this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.raspredY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.raspredY.Size = new System.Drawing.Size(633, 181);
             this.raspredY.TabIndex = 1;
+            // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
             // 
             // NumberY
             // 
@@ -556,13 +582,9 @@
             // FuncY
             // 
             this.FuncY.FillWeight = 115.1833F;
-            this.FuncY.HeaderText = "Fm(Y)";
+            this.FuncY.HeaderText = "Fn(Y)";
             this.FuncY.Name = "FuncY";
             this.FuncY.ReadOnly = true;
-            // 
-            // openFile
-            // 
-            this.openFile.FileName = "openFileDialog1";
             // 
             // MainForm
             // 
@@ -609,13 +631,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HeightPoligonX;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeightGistX;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RangeY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AverageY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeightPoligonY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeightGistY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuncY;
         private System.Windows.Forms.TextBox RashPromX;
         private System.Windows.Forms.TextBox LenghtInterX;
         private System.Windows.Forms.TextBox countInterX;
@@ -636,6 +651,14 @@
         private System.Windows.Forms.Button ToMarksY;
         private System.Windows.Forms.Button ToGraphicsX;
         private System.Windows.Forms.Button ToGraphicsY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RangeY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AverageY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightPoligonY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeightGistY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuncY;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
