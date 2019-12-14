@@ -31,16 +31,16 @@ namespace Zayac
                 tip[i] = new CustomToolTip();
                 tip[i].AutomaticDelay = 1000;
             }
-            tip[0].SetCustomToolTip(this.pictureBox8, "Выборочное_среднее_V.png");
-            tip[1].SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_квадратов_V.png");
-            tip[2].SetCustomToolTip(this.pictureBox6, "дисперсия_V.png");
+            tip[0].SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_V.png");
+            tip[1].SetCustomToolTip(this.pictureBox2, "Выборочное_среднее_квадратов_V.png");
+            tip[2].SetCustomToolTip(this.pictureBox3, "дисперсия_V.png");
 
             tip[3].SetCustomToolTip(this.pictureBox4, "мат_ожид_Y.png");
-            tip[4].SetCustomToolTip(this.pictureBox7, "дисперсия_Y.png");
-            tip[5].SetCustomToolTip(this.pictureBox2, "среднеквадр_Y.png");
+            tip[4].SetCustomToolTip(this.pictureBox5, "дисперсия_Y.png");
+            tip[5].SetCustomToolTip(this.pictureBox6, "среднеквадр_Y.png");
 
-            tip[6].SetCustomToolTip(this.pictureBox11, "мат_ожид_усл_X.png");
-            tip[7].SetCustomToolTip(this.pictureBox10, "дисп_услов_Y.png");
+            tip[6].SetCustomToolTip(this.pictureBox7, "мат_ожид_усл_X.png");
+            tip[7].SetCustomToolTip(this.pictureBox8, "дисп_услов_Y.png");
             tip[8].SetCustomToolTip(this.pictureBox9, "среднеквадр_услов_Y.png");
 
 
