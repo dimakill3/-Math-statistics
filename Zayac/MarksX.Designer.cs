@@ -207,6 +207,7 @@
             this.disp_X.Name = "disp_X";
             this.disp_X.Size = new System.Drawing.Size(100, 20);
             this.disp_X.TabIndex = 14;
+            this.disp_X.TextChanged += new System.EventHandler(this.Disp_X_TextChanged);
             // 
             // mat_ojid_X
             // 

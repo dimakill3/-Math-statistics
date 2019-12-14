@@ -162,9 +162,9 @@ namespace Zayac
                 tip[i].AutomaticDelay = 1000;
             }
             tip[0].SetCustomToolTip(this.labelRash, "расширение_X.png");
-            tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_X.png");
+            tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_Y.png");
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
-            tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_Y.png");
+            tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)

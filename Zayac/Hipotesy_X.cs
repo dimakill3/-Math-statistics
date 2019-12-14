@@ -17,6 +17,11 @@ namespace Zayac
             InitializeComponent();
         }
 
+        private void Hipotesy_X_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GlobalVars.FormHipotezyX = false;
+        }
+
         private void Hipotesy_X_Load(object sender, EventArgs e)
         {
             int k = 0;
