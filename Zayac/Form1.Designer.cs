@@ -108,14 +108,14 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
@@ -289,7 +289,7 @@
             this.raspredX.RowTemplate.ReadOnly = true;
             this.raspredX.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.raspredX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.raspredX.Size = new System.Drawing.Size(633, 158);
+            this.raspredX.Size = new System.Drawing.Size(633, 181);
             this.raspredX.TabIndex = 1;
             this.raspredX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RaspredX_CellContentClick);
             // 
