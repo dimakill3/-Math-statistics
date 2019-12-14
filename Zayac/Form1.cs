@@ -154,6 +154,8 @@ namespace Zayac
 
         }
 
+        
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             CustomToolTip tip = new CustomToolTip();
@@ -182,7 +184,7 @@ namespace Zayac
             tip.SetCustomToolTip(this.ToGraphicsY, "b.png");
 
             tip.SetCustomToolTip(this.ToMarksY, "b.png");
-        }
+       }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
         {

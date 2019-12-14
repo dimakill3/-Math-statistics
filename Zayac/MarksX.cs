@@ -19,6 +19,13 @@ namespace Zayac
 
         private void Marks_X_Load(object sender, EventArgs e)
         {
+
+            CustomToolTip tip = new CustomToolTip();
+            tip.AutomaticDelay = 1000;
+            tip.SetCustomToolTip(this.pictureBox1, "b.png");
+            tip.SetCustomToolTip(this.pictureBox2, "b.png");
+
+
             for (int i = 0; i < Program.r; i++)
             {
                 raspredX.Rows.Add();
