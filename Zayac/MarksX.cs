@@ -22,8 +22,24 @@ namespace Zayac
 
             CustomToolTip tip = new CustomToolTip();
             tip.AutomaticDelay = 1000;
-            tip.SetCustomToolTip(this.pictureBox1, "b.png");
-            tip.SetCustomToolTip(this.pictureBox2, "b.png");
+
+            tip.SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_U.png");
+
+            tip.SetCustomToolTip(this.pictureBox2, "Выборочное_среднее_квадратов_U.png");
+
+            tip.SetCustomToolTip(this.pictureBox3, "дисперсия_U.png");
+
+            tip.SetCustomToolTip(this.pictureBox4, "мат_ожид_X.png");
+
+            tip.SetCustomToolTip(this.pictureBox5, "дисперсия_X.png");
+
+            tip.SetCustomToolTip(this.pictureBox6, "среднеквадр_X.png");
+
+            tip.SetCustomToolTip(this.pictureBox7, "мат_ожид_усл_X.png");
+
+            tip.SetCustomToolTip(this.pictureBox8, "дисп_услов_X.png");
+
+            tip.SetCustomToolTip(this.pictureBox9, "среднеквадр_услов_X.png");
 
 
             for (int i = 0; i < Program.r; i++)

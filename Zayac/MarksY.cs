@@ -24,6 +24,27 @@ namespace Zayac
 
         private void Marks_Y_Load(object sender, EventArgs e)
         {
+            CustomToolTip tip = new CustomToolTip();
+            tip.AutomaticDelay = 1000;
+
+            tip.SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_V.png");
+
+            tip.SetCustomToolTip(this.pictureBox2, "Выборочное_среднее_квадратов_V.png");
+
+            tip.SetCustomToolTip(this.pictureBox3, "дисперсия_V.png");
+
+            tip.SetCustomToolTip(this.pictureBox4, "мат_ожид_Y.png");
+
+            tip.SetCustomToolTip(this.pictureBox5, "дисперсия_Y.png");
+
+            tip.SetCustomToolTip(this.pictureBox6, "среднеквадр_Y.png");
+
+            tip.SetCustomToolTip(this.pictureBox7, "мат_ожид_усл_Y.png");
+
+            tip.SetCustomToolTip(this.pictureBox8, "дисп_услов_Y.png");
+
+            tip.SetCustomToolTip(this.pictureBox9, "среднеквадр_услов_Y.png");
+
             for (int i = 0; i < Program.r; i++)
             {
                 raspredY.Rows.Add();
@@ -50,6 +71,11 @@ namespace Zayac
             sum_all_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.all_average_uslov_Y_vivod);
             disp_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.dispers_uslov_Y_vivod);
             sred_kv_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.sred_kvadr_uslov_Y_vivod);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

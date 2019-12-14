@@ -161,29 +161,29 @@ namespace Zayac
             CustomToolTip tip = new CustomToolTip();
             tip.AutomaticDelay = 1000;
             
-            tip.SetCustomToolTip(this.ToGraphicsX, "b.png");
+            //tip.SetCustomToolTip(this.ToGraphicsX, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.ToMarksX, "b.png");
+            //tip.SetCustomToolTip(this.ToMarksX, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelRazmah, "b.png");
+            //tip.SetCustomToolTip(this.labelRazmah, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelKolVoInter, "b.png");
+            //tip.SetCustomToolTip(this.labelKolVoInter, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelLenghtInter, "b.png");
+            //tip.SetCustomToolTip(this.labelLenghtInter, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelRash, "b.png");
+            //tip.SetCustomToolTip(this.labelRash, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelRazmahY, "b.png");
+            //tip.SetCustomToolTip(this.labelRazmahY, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelKolVoInterY, "b.png");
+            //tip.SetCustomToolTip(this.labelKolVoInterY, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelLenghtInterY, "b.png");
+            //tip.SetCustomToolTip(this.labelLenghtInterY, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.labelRashY, "b.png");
+            //tip.SetCustomToolTip(this.labelRashY, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.ToGraphicsY, "b.png");
+            //tip.SetCustomToolTip(this.ToGraphicsY, "среднеквадр_услов_Y.png");
 
-            tip.SetCustomToolTip(this.ToMarksY, "b.png");
+            //tip.SetCustomToolTip(this.ToMarksY, "среднеквадр_услов_Y.png");
        }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
