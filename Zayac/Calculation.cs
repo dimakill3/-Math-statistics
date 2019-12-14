@@ -110,6 +110,21 @@ namespace Zayac
 
         public double hi_X, hi_Y;
 
+        // Доверительный интервал
+        public double dover_P = 0.95;
+        public double dover_inter_MX_min;
+        public double dover_inter_MX_max;
+
+        public double dover_inter_MY_min;
+        public double dover_inter_MY_max;
+
+        public double dover_inter_DX_min;
+        public double dover_inter_DX_max;
+
+        public double dover_inter_DY_min;
+        public double dover_inter_DY_max;
+
+
         public Calculation()
         {
             all_average_X = 0;
@@ -135,30 +150,43 @@ namespace Zayac
         public double getQuant(int k, double p)
         {
             int index_p;
-            if (p == 0.005)
+            if (p <= 0.005)
                 index_p = 0;
-            else if (p == 0.01)
+            else if (p <= 0.01)
                 index_p = 1;
-            else if (p == 0.025)
+            else if (p <= 0.025)
                 index_p = 2;
-            else if (p == 0.05)
+            else if (p <= 0.05)
                 index_p = 3;
-            else if (p == 0.1)
+            else if (p <= 0.1)
                 index_p = 4;
-            else if (p == 0.9)
+            else if (p <= 0.9)
                 index_p = 5;
-            else if (p == 0.95)
+            else if (p <= 0.95)
                 index_p = 6;
-            else if (p == 0.975)
+            else if (p <= 0.975)
                 index_p = 7;
-            else if (p == 0.99)
+            else if (p <= 0.99)
                 index_p = 8;
-            else if (p == 0.995)
+            else if (p <= 0.995)
                 index_p = 9;
             else
                 index_p = 10;
 
-            using (FileStream fstream = File.OpenRead("tableQuant.txt"))
+            if (k > 30 && k < 35)
+                k = 30;
+            else if (k > 35 && k < 40)
+                k = 31;
+            else if (k > 40 && k < 45)
+                k = 32;
+            else if (k > 45 && k < 50)
+                k = 33;
+            else if (k > 50 && k < 75)
+                k = 34;
+            else if (k > 75 && k < 100)
+                k = 35;
+
+                using (FileStream fstream = File.OpenRead("tableQuant.txt"))
             {
                 // преобразуем строку в байты
                 byte[] array = new byte[fstream.Length];
@@ -172,6 +200,58 @@ namespace Zayac
                 return x;
             }
         }
+
+        public double getQuantStud(double p, int k)
+        {
+            int index_p;
+            if (p <= 0.55)
+                index_p = 0;
+            else if (p <= 0.60)
+                index_p = 1;
+            else if (p <= 0.65)
+                index_p = 2;
+            else if (p <= 0.7)
+                index_p = 3;
+            else if (p <= 0.75)
+                index_p = 4;
+            else if (p <= 0.8)
+                index_p = 5;
+            else if (p <= 0.85)
+                index_p = 6;
+            else if (p <= 0.9)
+                index_p = 7;
+            else if (p <= 0.95)
+                index_p = 8;
+            else if (p <= 0.975)
+                index_p = 9;
+            else if (p <= 0.99)
+                index_p = 10;
+            else if (p <= 0.995)
+                index_p = 11;
+            else if (p <= 0.9975)
+                index_p = 12;
+            else if (p <= 0.999)
+                index_p = 13;
+            else
+                index_p = 14;
+
+
+            using (FileStream fstream1 = File.OpenRead("tableQuantStud.txt"))
+            {
+                // преобразуем строку в байты
+                byte[] array = new byte[fstream1.Length];
+                // считываем данные
+                fstream1.Read(array, 0, array.Length);
+                // декодируем байты в строку
+                string textFromFile = System.Text.Encoding.Default.GetString(array);
+                string[] s = textFromFile.Split('\n');
+                string[] s1 = s[k - 1].Split('\t');
+                string chislo = s1[index_p];
+                double x = Convert.ToDouble(chislo);
+                return x;
+            }
+        }
+
 
         public void Calculate(String[] fielRead)
         {
@@ -679,6 +759,22 @@ namespace Zayac
                 dlya_stat_Y[j] = Math.Pow((new_inter_Y[j].getN() - teor_vel_Y[j]), 2) / teor_vel_Y[j];
                 hi_Y += dlya_stat_Y[j];
             }
+            #endregion
+
+            #region Доверительный интервал
+            dover_inter_MX_min = all_average_X - ((sred_kvadr_X / Math.Sqrt(Program.N)) * getQuantStud(1 - (1 - dover_P) / 2, Program.N - 1));
+            dover_inter_MX_max = all_average_X + ((sred_kvadr_X / Math.Sqrt(Program.N)) * getQuantStud(1 - (1 - dover_P) / 2, Program.N - 1));
+
+            dover_inter_MY_min = all_average_Y - ((sred_kvadr_Y / Math.Sqrt(Program.N)) * getQuantStud(1 - (1 - dover_P) / 2, Program.N - 1));
+            dover_inter_MY_max = all_average_Y + ((sred_kvadr_Y / Math.Sqrt(Program.N)) * getQuantStud(1 - (1 - dover_P) / 2, Program.N - 1));
+
+            dover_inter_DX_min = ((Program.N - 1) * dispers_X) / getQuant(Program.N - 1, 1 - (1 - dover_P) / 2);
+            dover_inter_DX_max = ((Program.N - 1) * dispers_X) / getQuant(Program.N - 1, (1 - dover_P) / 2);
+
+            dover_inter_DY_min = ((Program.N - 1) * dispers_Y) / getQuant(Program.N - 1, 1 - ((1 - dover_P) / 2));
+            dover_inter_DY_max = ((Program.N - 1) * dispers_Y) / getQuant(Program.N - 1, ((1 - dover_P) / 2));
+
+
             #endregion
         }
     }

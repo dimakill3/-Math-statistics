@@ -34,9 +34,9 @@ namespace Zayac
             tip[4].SetCustomToolTip(this.pictureBox5, "дисперсия_X.png");
             tip[5].SetCustomToolTip(this.pictureBox6, "среднеквадр_X.png");
 
-            tip[6].SetCustomToolTip(this.pictureBox9, "мат_ожид_усл_Y.png");
-            tip[7].SetCustomToolTip(this.pictureBox8, "дисп_услов_X.png");
-            tip[8].SetCustomToolTip(this.pictureBox7, "среднеквадр_услов_X.png");
+            tip[6].SetCustomToolTip(this.pictureBox9, "среднеквадр_услов_X.png"); 
+             tip[7].SetCustomToolTip(this.pictureBox8, "дисп_услов_X.png");
+            tip[8].SetCustomToolTip(this.pictureBox7, "мат_ожид_усл_Y.png");
 
 
             for (int i = 0; i < Program.r; i++)
@@ -73,6 +73,11 @@ namespace Zayac
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Disp_X_TextChanged(object sender, EventArgs e)
         {
 
         }

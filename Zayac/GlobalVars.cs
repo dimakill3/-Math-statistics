@@ -12,5 +12,7 @@ namespace Zayac
         public static bool FormMarksY = false;
         public static bool FormGraphicsX = false;
         public static bool FormGraphicsY = false;
+        public static bool FormHipotezyX = false;
+        public static bool FormHipotezyY = false;
     }
 }

@@ -165,9 +165,9 @@ namespace Zayac
                 tip[i].AutomaticDelay = 1000;
             }
             tip[0].SetCustomToolTip(this.labelRash, "расширение_X.png");
-            tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_X.png");
+            tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_Y.png");
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
-            tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_Y.png");
+            tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
@@ -201,6 +201,26 @@ namespace Zayac
         private void RaspredX_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Button_Hipotezy_X_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormHipotezyX)
+            {
+                GlobalVars.FormHipotezyX = !GlobalVars.FormHipotezyX;
+                Hipotesy_X HX = new Hipotesy_X();
+                HX.Show();
+            }
+        }
+
+        private void Button_Hipotezy_Y_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormHipotezyY)
+            {
+                GlobalVars.FormHipotezyY = !GlobalVars.FormHipotezyY;
+                Hipotesy_Y HY = new Hipotesy_Y();
+                HY.Show();
+            }
         }
     }
 }

@@ -145,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.raspredX);
             this.Name = "Hipotesy_X";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Hipotesy_X_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).EndInit();
             this.ResumeLayout(false);
 
