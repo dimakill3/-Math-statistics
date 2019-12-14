@@ -109,6 +109,7 @@ namespace Zayac
         public double[] dlya_stat_Y;
 
         public double hi_X, hi_Y;
+        public int d_X, d_Y;
 
         // Доверительный интервал
         public double dover_P = 0.95;
@@ -569,10 +570,10 @@ namespace Zayac
 
             //Объединение интервалов
             #region
-             int d_X = 0;
+             d_X = 0;
              int k_X = 0;
         
-             int d_Y = 0;
+             d_Y = 0;
              int k_Y = 0;
 
             for (int j = 0; j < Program.r; j++)
