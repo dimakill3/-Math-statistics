@@ -40,7 +40,6 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XandY = new System.Windows.Forms.TabControl();
             this.X = new System.Windows.Forms.TabPage();
-            this.button_Hipotezy_X = new System.Windows.Forms.Button();
             this.ToGraphicsX = new System.Windows.Forms.Button();
             this.ToMarksX = new System.Windows.Forms.Button();
             this.RashPromX = new System.Windows.Forms.TextBox();
@@ -60,7 +59,6 @@
             this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.TabPage();
-            this.button_Hipotezy_Y = new System.Windows.Forms.Button();
             this.ToGraphicsY = new System.Windows.Forms.Button();
             this.ToMarksY = new System.Windows.Forms.Button();
             this.RashPromY = new System.Windows.Forms.TextBox();
@@ -160,18 +158,7 @@
             this.X.Size = new System.Drawing.Size(944, 511);
             this.X.TabIndex = 0;
             this.X.Text = "Группированный ряд для X";
-            this.X.Click += new System.EventHandler(this.X_Click);
-            // 
-            // button_Hipotezy_X
-            // 
-            this.button_Hipotezy_X.Location = new System.Drawing.Point(812, 357);
-            this.button_Hipotezy_X.Name = "button_Hipotezy_X";
-            this.button_Hipotezy_X.Size = new System.Drawing.Size(98, 23);
-            this.button_Hipotezy_X.TabIndex = 21;
-            this.button_Hipotezy_X.Text = "Гипотезы";
-            this.button_Hipotezy_X.UseVisualStyleBackColor = true;
-            this.button_Hipotezy_X.Click += new System.EventHandler(this.Button_Hipotezy_X_Click);
-            // 
+            this.X.Click += new System.EventHandler(this.X_Click); 
             // ToGraphicsX
             // 
             this.ToGraphicsX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -404,17 +391,6 @@
             this.Y.Size = new System.Drawing.Size(944, 511);
             this.Y.TabIndex = 1;
             this.Y.Text = "Группированный ряд для Y";
-            // 
-            // button_Hipotezy_Y
-            // 
-            this.button_Hipotezy_Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Hipotezy_Y.Location = new System.Drawing.Point(811, 358);
-            this.button_Hipotezy_Y.Name = "button_Hipotezy_Y";
-            this.button_Hipotezy_Y.Size = new System.Drawing.Size(99, 23);
-            this.button_Hipotezy_Y.TabIndex = 20;
-            this.button_Hipotezy_Y.Text = "Гипотезы";
-            this.button_Hipotezy_Y.UseVisualStyleBackColor = true;
-            this.button_Hipotezy_Y.Click += new System.EventHandler(this.Button_Hipotezy_Y_Click);
             // 
             // ToGraphicsY
             // 
