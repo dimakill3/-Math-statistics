@@ -291,6 +291,7 @@
             this.raspredX.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.raspredX.Size = new System.Drawing.Size(633, 158);
             this.raspredX.TabIndex = 1;
+            this.raspredX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RaspredX_CellContentClick);
             // 
             // NumberX
             // 

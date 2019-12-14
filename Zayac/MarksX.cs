@@ -20,26 +20,23 @@ namespace Zayac
         private void Marks_X_Load(object sender, EventArgs e)
         {
 
-            CustomToolTip tip = new CustomToolTip();
-            tip.AutomaticDelay = 1000;
+            CustomToolTip[] tip = new CustomToolTip[20];
+            for (int i = 0; i < 20; i++)
+            {
+                tip[i] = new CustomToolTip();
+                tip[i].AutomaticDelay = 1000;
+            }
+            tip[0].SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_U.png");
+            tip[1].SetCustomToolTip(this.pictureBox2, "Выборочное_среднее_квадратов_U.png");
+            tip[2].SetCustomToolTip(this.pictureBox3, "дисперсия_U.png");
 
-            tip.SetCustomToolTip(this.pictureBox1, "Выборочное_среднее_U.png");
+            tip[3].SetCustomToolTip(this.pictureBox4, "мат_ожид_X.png");
+            tip[4].SetCustomToolTip(this.pictureBox5, "дисперсия_X.png");
+            tip[5].SetCustomToolTip(this.pictureBox6, "среднеквадр_X.png");
 
-            tip.SetCustomToolTip(this.pictureBox2, "Выборочное_среднее_квадратов_U.png");
-
-            tip.SetCustomToolTip(this.pictureBox3, "дисперсия_U.png");
-
-            tip.SetCustomToolTip(this.pictureBox4, "мат_ожид_X.png");
-
-            tip.SetCustomToolTip(this.pictureBox5, "дисперсия_X.png");
-
-            tip.SetCustomToolTip(this.pictureBox6, "среднеквадр_X.png");
-
-            tip.SetCustomToolTip(this.pictureBox7, "мат_ожид_усл_X.png");
-
-            tip.SetCustomToolTip(this.pictureBox8, "дисп_услов_X.png");
-
-            tip.SetCustomToolTip(this.pictureBox9, "среднеквадр_услов_X.png");
+            tip[6].SetCustomToolTip(this.pictureBox9, "мат_ожид_усл_Y.png");
+            tip[7].SetCustomToolTip(this.pictureBox8, "дисп_услов_X.png");
+            tip[8].SetCustomToolTip(this.pictureBox7, "среднеквадр_услов_X.png");
 
 
             for (int i = 0; i < Program.r; i++)
@@ -73,6 +70,11 @@ namespace Zayac
         private void Marks_X_FormClosed(object sender, FormClosedEventArgs e)
         {
             GlobalVars.FormMarksX = false;
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

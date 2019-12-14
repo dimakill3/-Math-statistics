@@ -35,7 +35,7 @@ namespace Zayac
 
         public void SetCustomToolTip(Control control, String name)
         {
-            setImage(name);
+            b = Image.FromFile("images\\" + name);
             SetToolTip(control, "x");
         }
 
