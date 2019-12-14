@@ -33,6 +33,12 @@ namespace Zayac
             g.Dispose();
         }
 
+        public void SetCustomToolTip(Control control, String name)
+        {
+            setImage(name);
+            SetToolTip(control, "x");
+        }
+
         public void setImage(String s)
         {
             this.b = Image.FromFile("images\\" + s);
