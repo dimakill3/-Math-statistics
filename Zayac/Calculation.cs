@@ -96,8 +96,11 @@ namespace Zayac
         public double[] ver_sob_X = new double[Program.r];
         public double[] ver_sob_Y = new double[Program.r];
 
-        public double[] teor_vel_X = new double[Program.r];
-        public double[] teor_vel_Y = new double[Program.r];
+        public double[] teor_znach_X = new double[Program.r];
+        public double[] teor_znach_Y = new double[Program.r];
+
+        public double[] teor_vel_X;
+        public double[] teor_vel_Y;
 
         public Intervals[] new_inter_X;
         public Intervals[] new_inter_Y;
@@ -471,8 +474,8 @@ namespace Zayac
                     ver_sob_Y[j] = form_lap_Y[j] - form_lap_Y[j - 1];
                 }
 
-                teor_vel_X[j] = ver_sob_X[j] * Program.N;
-                teor_vel_Y[j] = ver_sob_Y[j] * Program.N;
+                teor_znach_X[j] = ver_sob_X[j] * Program.N;
+                teor_znach_Y[j] = ver_sob_Y[j] * Program.N;
 
             }
             #endregion
@@ -482,18 +485,18 @@ namespace Zayac
              int d_X = 0;
              int k_X = 0;
         
-
              int d_Y = 0;
              int k_Y = 0;
 
             for (int j = 0; j < Program.r; j++)
             {
-                if (teor_vel_X[d_X] < 5)
+                //Объединение для X
+                if (teor_znach_X[d_X] < 5)
                 {
                     if (d_X == 0)
                     {
                         flags_X[d_X]++;
-                        teor_vel_X[d_X] += teor_vel_X[j + 1];
+                        teor_znach_X[d_X] += teor_znach_X[j + 1];
                         if (j == (Program.r - 2))
                         {
                             break;
@@ -502,7 +505,7 @@ namespace Zayac
                     else
                     {
                         flags_X[k_X]++;
-                        teor_vel_X[k_X] += teor_vel_X[d_X];
+                        teor_znach_X[k_X] += teor_znach_X[d_X];
                         d_X++;
                     }
                 }
@@ -514,13 +517,13 @@ namespace Zayac
                         d_X = j + 1;
                 }
 
-                //////////////////////////////////
-                if (teor_vel_Y[d_Y] < 5)
+                //Объединение для Y
+                if (teor_znach_Y[d_Y] < 5)
                 {
                     if (d_Y == 0)
                     {
                         flags_Y[d_Y]++;
-                        teor_vel_Y[d_Y] += teor_vel_Y[j + 1];
+                        teor_znach_Y[d_Y] += teor_znach_Y[j + 1];
 
                         if (j == (Program.r - 2))
                         {
@@ -530,7 +533,7 @@ namespace Zayac
                     else
                     {
                         flags_Y[k_Y]++;
-                        teor_vel_Y[k_Y] += teor_vel_Y[d_Y];
+                        teor_znach_Y[k_Y] += teor_znach_Y[d_Y];
                         d_Y++;
                     }
                 }
@@ -543,9 +546,8 @@ namespace Zayac
                 }
             }
             
-
-                        d_X = 0;
-                        d_Y = 0;
+            d_X = 0;
+            d_Y = 0;
 
             for (int j = 0; j < Program.r - 1; j++)
             {
@@ -559,19 +561,25 @@ namespace Zayac
             new_inter_X = new Intervals[d_X];
             new_inter_Y = new Intervals[d_Y];
 
+            teor_vel_X = new double[d_X];
+            teor_vel_Y = new double[d_Y];
+
             for (int j = 0; j < d_X; j++)
             {
                 new_inter_X[j] = new Intervals();
+                teor_vel_X[j] = new double();
             }
 
             for (int j = 0; j < d_Y; j++)
             {
                 new_inter_Y[j] = new Intervals();
+                teor_vel_Y[j] = new double();
             }
 
             new_inter_X[0].setF(inter_X[0].getF());
-            new_inter_Y[0].setF(inter_Y[0].getF());
+            new_inter_X[0].setN(inter_X[0].getN());
 
+            //Объединение интервалов для X
             k_X = 0;
 
             for (int j = 0; j < d_X; j++)
@@ -589,6 +597,7 @@ namespace Zayac
                 }
             }
 
+            //Объединение интервалов для Y
             k_Y = 0;
 
             for (int j = 0; j < d_Y; j++)
@@ -606,8 +615,56 @@ namespace Zayac
                 }
             }
 
+
+            //Устанавливаем начальное количество выборочных данных для первого интервала
+            new_inter_Y[0].setF(inter_Y[0].getF());
+            new_inter_Y[0].setN(inter_Y[0].getN());
+
+            //Подсчёт колличества выборочных данных на объединённых интервалах для X
+            k_X = 0;
+            for (int j = 0; j < d_X; j++)
+            {
+                char count = flags_X[k_X];
+                char step = (char)1;
+                
+                if(j != 0)
+                    new_inter_X[j].setN(inter_X[k_X].getN());
+
+               
+                    while (count != 0)
+                    {
+                        new_inter_X[j].setN(new_inter_X[j].getN() + inter_X[k_X + step++].getN());
+                        count--;
+                    }
+                k_X += step;
+            }
+
+            //Подсчёт колличества выборочных данных на объединённых интервалах для Y
+            k_Y = 0;
+            for (int j = 0; j < d_Y; j++)
+            {
+                char count = flags_Y[k_Y];
+                char step = (char)1;
+
+                if (j != 0)
+                    new_inter_Y[j].setN(inter_Y[k_Y].getN());
+
+
+                while (count != 0)
+                {
+                    new_inter_Y[j].setN(new_inter_Y[j].getN() + inter_Y[k_Y + step++].getN());
+                    count--;
+                }
+                k_Y += step;
+            }
+
             #endregion
 
+            //Вычисление хи-квадрат
+            for (int j = 0; j < d_X; j++)
+            {
+                
+            }
         }
     }
 }

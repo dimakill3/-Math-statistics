@@ -52,6 +52,10 @@ namespace Zayac
         {
             n++;
         }
+        public void setN(int n)
+        {
+            this.n = n;
+        }
 
         public int getN()
         {
