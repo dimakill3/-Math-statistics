@@ -575,7 +575,6 @@ namespace Zayac
             for (int j = 0; j < d_X; j++)
             {
                 new_inter_X[j] = new Intervals();
-                //teor_vel_X[j] = new double();
             }
 
             for (int j = 0; j < d_Y; j++)
@@ -585,6 +584,8 @@ namespace Zayac
 
             new_inter_X[0].setF(inter_X[0].getF());
             new_inter_X[0].setN(inter_X[0].getN());
+            new_inter_Y[0].setF(inter_Y[0].getF());
+            new_inter_Y[0].setN(inter_Y[0].getN());
 
             //Объединение интервалов для X
             k_X = 0;
@@ -624,8 +625,8 @@ namespace Zayac
 
 
             //Устанавливаем начальное количество выборочных данных для первого интервала
-            new_inter_Y[0].setF(inter_Y[0].getF());
-            new_inter_Y[0].setN(inter_Y[0].getN());
+            //new_inter_Y[0].setF(inter_Y[0].getF());
+            //new_inter_Y[0].setN(inter_Y[0].getN());
 
             //Подсчёт колличества выборочных данных на объединённых интервалах для X
             k_X = 0;

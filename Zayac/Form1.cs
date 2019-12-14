@@ -76,8 +76,8 @@ namespace Zayac
                     raspredX.Rows[i].Cells[4].Value = calc.inter_X[i].getHP();
                     raspredY.Rows[i].Cells[4].Value = calc.inter_Y[i].getHP();
 
-                    raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.0000}", calc.inter_X[i].getHG());
-                    raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.0000}", calc.inter_Y[i].getHG());
+                    raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", calc.inter_X[i].getHG());
+                    raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.00}", calc.inter_Y[i].getHG());
 
                     raspredX.Rows[i].Cells[6].Value = calc.inter_X[i].getFunc();
                     raspredY.Rows[i].Cells[6].Value = calc.inter_Y[i].getFunc();
@@ -85,17 +85,14 @@ namespace Zayac
                 }
 
                 //Вывод в общей информации в общую форму
-                razmahX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.razryv_X));
-                razmahY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.razryv_Y));
-                countInterX.Text = String.Format("{0:0.0000}", Convert.ToString(Program.r));
-                countInterY.Text = String.Format("{0:0.0000}", Convert.ToString(Program.r));
-                LenghtInterX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.h_X));
-                LenghtInterY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.h_Y));
-                RashPromX.Text = String.Format("{0:0.0000}", Convert.ToString(calc.rashirenie_X));
-                RashPromY.Text = String.Format("{0:0.0000}", Convert.ToString(calc.rashirenie_Y));
-
-
-
+                razmahX.Text = String.Format("{0:0.00}", Convert.ToString(calc.razryv_X));
+                razmahY.Text = String.Format("{0:0.00}", Convert.ToString(calc.razryv_Y));
+                countInterX.Text = String.Format("{0:0.00}", Convert.ToString(Program.r));
+                countInterY.Text = String.Format("{0:0.00}", Convert.ToString(Program.r));
+                LenghtInterX.Text = String.Format("{0:0.00}", Convert.ToString(calc.h_X));
+                LenghtInterY.Text = String.Format("{0:0.00}", Convert.ToString(calc.h_Y));
+                RashPromX.Text = String.Format("{0:0.00}", Convert.ToString(calc.rashirenie_X));
+                RashPromY.Text = String.Format("{0:0.00}", Convert.ToString(calc.rashirenie_Y));
             }
         }
 
@@ -201,6 +198,26 @@ namespace Zayac
         private void RaspredX_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void HipotesyX_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormHipotesyX)
+            {
+                GlobalVars.FormHipotesyX = !GlobalVars.FormHipotesyX;
+                HipotesyX HX = new HipotesyX();
+                HX.Show();
+            }
+        }
+
+        private void HipotesyY_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormHipotesyY)
+            {
+                GlobalVars.FormHipotesyY = !GlobalVars.FormHipotesyY;
+                HipotesyY HY = new HipotesyY();
+                HY.Show();
+            }
         }
     }
 }

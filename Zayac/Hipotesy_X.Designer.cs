@@ -1,6 +1,6 @@
 ﻿namespace Zayac
 {
-    partial class Hipotesy_X
+    partial class HipotesyX
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hipotesy_X));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HipotesyX));
             this.raspredX = new System.Windows.Forms.DataGridView();
             this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,10 +70,26 @@
             this.Ver_X,
             this.FuncX,
             this.Stat_X});
-            this.raspredX.EnableHeadersVisualStyles = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredX.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.raspredX, "raspredX");
+            this.raspredX.EnableHeadersVisualStyles = false;
             this.raspredX.Name = "raspredX";
             this.raspredX.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredX.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.raspredX.RowHeadersVisible = false;
             this.raspredX.RowTemplate.ReadOnly = true;
             this.raspredX.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -139,12 +157,13 @@
             this.Stat_X.Name = "Stat_X";
             this.Stat_X.ReadOnly = true;
             // 
-            // Hipotesy_X
+            // HipotesyX
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.raspredX);
-            this.Name = "Hipotesy_X";
+            this.Name = "HipotesyX";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HipotesyX_FormClosed);
             this.Load += new System.EventHandler(this.Hipotesy_X_Load);
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +181,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ver_X;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stat_X;
+        
     }
 }

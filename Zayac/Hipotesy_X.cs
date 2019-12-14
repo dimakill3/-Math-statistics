@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Zayac
 {
-    public partial class Hipotesy_X : Form
+    public partial class HipotesyX : Form
     {
-        public Hipotesy_X()
+        public HipotesyX()
         {
             InitializeComponent();
         }
@@ -37,35 +37,35 @@ namespace Zayac
                 }
                 k += step;
 
-                //raspredX.Rows[i].Cells[0].Value = i + 1;
-
-                if (i == Program.r - 1)
+                if (i == MainForm.calc.d_X - 1)
                 {
                     raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + "+∞" + ")";
                 }
                 else
-                {
                     if (i == 0)
-                    {
-                        raspredX.Rows[i].Cells[1].Value = "(" + "-∞" + ";" + MainForm.calc.new_inter_X[i].getF() + ")";
-                    }
-                    else
-                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.inter_X[i].getF() + ";" + MainForm.calc.inter_X[i].getS() + ")";
+                {
+                    raspredX.Rows[i].Cells[1].Value = "(" + "-∞" + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
                 }
+                else
+                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
 
                 raspredX.Rows[i].Cells[2].Value = MainForm.calc.new_inter_X[i].getN();
 
-                raspredX.Rows[i].Cells[3].Value = MainForm.calc.norm_vel_X[i];
+                raspredX.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.norm_vel_X[i]);
 
-                raspredX.Rows[i].Cells[4].Value = MainForm.calc.form_lap_X[i];
+                raspredX.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.form_lap_X[i]);
 
-                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.0000}", MainForm.calc.ver_sob_X[i]);
+                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_X[i]);
 
-                raspredX.Rows[i].Cells[6].Value = MainForm.calc.teor_vel_X[i];
+                raspredX.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_vel_X[i]);
 
-                raspredX.Rows[i].Cells[7].Value = MainForm.calc.dlya_stat_X[i];
-
+                raspredX.Rows[i].Cells[7].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
             }
+        }
+
+        private void HipotesyX_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GlobalVars.FormHipotesyX = false;
         }
     }
 }

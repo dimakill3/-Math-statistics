@@ -110,6 +110,9 @@
     <EmbeddedResource Include="Hipotesy_X.resx">
       <DependentUpon>Hipotesy_X.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hipotesy_Y.resx">
+      <DependentUpon>Hipotesy_Y.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MarksX.resx">
       <DependentUpon>MarksX.cs</DependentUpon>
     </EmbeddedResource>
