@@ -105,6 +105,11 @@ namespace Zayac
         public Intervals[] new_inter_X;
         public Intervals[] new_inter_Y;
 
+        public double[] dlya_stat_X;
+        public double[] dlya_stat_Y;
+
+        public double hi_X, hi_Y;
+
         public Calculation()
         {
             all_average_X = 0;
@@ -118,6 +123,8 @@ namespace Zayac
 
             all_average_uslov_X_in_two = 0;
             all_average_uslov_Y_in_two = 0;
+
+            hi_X = hi_Y = 0;
 
             lap = (1 / Math.Sqrt(2 * Math.PI));
 
@@ -480,8 +487,8 @@ namespace Zayac
             }
             #endregion
 
-             //Объединение интервалов
-             #region
+            //Объединение интервалов
+            #region
              int d_X = 0;
              int k_X = 0;
         
@@ -567,13 +574,12 @@ namespace Zayac
             for (int j = 0; j < d_X; j++)
             {
                 new_inter_X[j] = new Intervals();
-                teor_vel_X[j] = new double();
+                //teor_vel_X[j] = new double();
             }
 
             for (int j = 0; j < d_Y; j++)
             {
                 new_inter_Y[j] = new Intervals();
-                teor_vel_Y[j] = new double();
             }
 
             new_inter_X[0].setF(inter_X[0].getF());
@@ -661,10 +667,19 @@ namespace Zayac
             #endregion
 
             //Вычисление хи-квадрат
+            #region
+            dlya_stat_X = new double[d_X];
+            dlya_stat_Y = new double[d_Y];
+
             for (int j = 0; j < d_X; j++)
             {
-                
+                dlya_stat_X[j] = Math.Pow((new_inter_X[j].getN() - teor_vel_X[j]), 2) / teor_vel_X[j];
+                hi_X += dlya_stat_X[j];
+
+                dlya_stat_Y[j] = Math.Pow((new_inter_Y[j].getN() - teor_vel_Y[j]), 2) / teor_vel_Y[j];
+                hi_Y += dlya_stat_Y[j];
             }
+            #endregion
         }
     }
 }
