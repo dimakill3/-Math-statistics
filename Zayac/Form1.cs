@@ -158,33 +158,17 @@ namespace Zayac
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CustomToolTip tip = new CustomToolTip();
-            tip.AutomaticDelay = 1000;
-            
-            tip.SetCustomToolTip(this.ToGraphicsX, "b.png");
-
-            tip.SetCustomToolTip(this.ToMarksX, "b.png");
-
-            tip.SetCustomToolTip(this.labelRazmah, "b.png");
-
-            tip.SetCustomToolTip(this.labelKolVoInter, "b.png");
-
-            tip.SetCustomToolTip(this.labelLenghtInter, "b.png");
-
-            tip.SetCustomToolTip(this.labelRash, "b.png");
-
-            tip.SetCustomToolTip(this.labelRazmahY, "b.png");
-
-            tip.SetCustomToolTip(this.labelKolVoInterY, "b.png");
-
-            tip.SetCustomToolTip(this.labelLenghtInterY, "b.png");
-
-            tip.SetCustomToolTip(this.labelRashY, "b.png");
-
-            tip.SetCustomToolTip(this.ToGraphicsY, "b.png");
-
-            tip.SetCustomToolTip(this.ToMarksY, "b.png");
-       }
+            CustomToolTip[] tip = new CustomToolTip[10];
+            for (int i = 0; i < 10; i++)
+            {
+                tip[i] = new CustomToolTip();
+                tip[i].AutomaticDelay = 1000;
+            }
+            tip[0].SetCustomToolTip(this.labelRash, "расширение_X.png");
+            tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_X.png");
+            tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
+            tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_Y.png");
+        }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
         {
@@ -212,6 +196,11 @@ namespace Zayac
 
         private void ToMarksX_MouseHover(object sender, EventArgs e)
         {
+        }
+
+        private void RaspredX_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
