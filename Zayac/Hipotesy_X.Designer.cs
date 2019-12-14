@@ -79,7 +79,7 @@
             // 
             // NumberX
             // 
-            this.NumberX.FillWeight = 88.77708F;
+            this.NumberX.FillWeight = 95.98091F;
             resources.ApplyResources(this.NumberX, "NumberX");
             this.NumberX.MaxInputLength = 2;
             this.NumberX.Name = "NumberX";
@@ -88,7 +88,7 @@
             // 
             // RangeX
             // 
-            this.RangeX.FillWeight = 126.3325F;
+            this.RangeX.FillWeight = 136.5838F;
             resources.ApplyResources(this.RangeX, "RangeX");
             this.RangeX.Name = "RangeX";
             this.RangeX.ReadOnly = true;
@@ -96,7 +96,7 @@
             // 
             // CountX
             // 
-            this.CountX.FillWeight = 60.98803F;
+            this.CountX.FillWeight = 65.93692F;
             resources.ApplyResources(this.CountX, "CountX");
             this.CountX.Name = "CountX";
             this.CountX.ReadOnly = true;
@@ -104,7 +104,7 @@
             // 
             // Norm_X
             // 
-            this.Norm_X.FillWeight = 61.65838F;
+            this.Norm_X.FillWeight = 66.66167F;
             resources.ApplyResources(this.Norm_X, "Norm_X");
             this.Norm_X.Name = "Norm_X";
             this.Norm_X.ReadOnly = true;
@@ -112,14 +112,14 @@
             // 
             // Func_lap_X
             // 
-            this.Func_lap_X.FillWeight = 73.55862F;
+            this.Func_lap_X.FillWeight = 79.52756F;
             resources.ApplyResources(this.Func_lap_X, "Func_lap_X");
             this.Func_lap_X.Name = "Func_lap_X";
             this.Func_lap_X.ReadOnly = true;
             // 
             // Ver_X
             // 
-            this.Ver_X.FillWeight = 77.22572F;
+            this.Ver_X.FillWeight = 83.49222F;
             resources.ApplyResources(this.Ver_X, "Ver_X");
             this.Ver_X.Name = "Ver_X";
             this.Ver_X.ReadOnly = true;
@@ -127,14 +127,14 @@
             // 
             // FuncX
             // 
-            this.FuncX.FillWeight = 126.3325F;
+            this.FuncX.FillWeight = 75.91023F;
             resources.ApplyResources(this.FuncX, "FuncX");
             this.FuncX.Name = "FuncX";
             this.FuncX.ReadOnly = true;
             // 
             // Stat_X
             // 
-            this.Stat_X.FillWeight = 132.8429F;
+            this.Stat_X.FillWeight = 143.6225F;
             resources.ApplyResources(this.Stat_X, "Stat_X");
             this.Stat_X.Name = "Stat_X";
             this.Stat_X.ReadOnly = true;
@@ -145,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.raspredX);
             this.Name = "Hipotesy_X";
+            this.Load += new System.EventHandler(this.Hipotesy_X_Load);
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).EndInit();
             this.ResumeLayout(false);
 

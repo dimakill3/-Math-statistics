@@ -163,7 +163,7 @@
     <value>True</value>
   </metadata>
   <data name="Stat_X.HeaderText" xml:space="preserve">
-    <value>(nᵢ - npᵢ)/ (npᵢ)</value>
+    <value>(nᵢ - npᵢ) / (npᵢ)</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="raspredX.Location" type="System.Drawing.Point, System.Drawing">
