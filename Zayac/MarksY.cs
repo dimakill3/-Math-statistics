@@ -72,5 +72,10 @@ namespace Zayac
             disp_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.dispers_uslov_Y_vivod);
             sred_kv_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.sred_kvadr_uslov_Y_vivod);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
