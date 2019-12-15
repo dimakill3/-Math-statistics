@@ -219,5 +219,52 @@ namespace Zayac
                 HY.Show();
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormDoverX)
+            {
+                GlobalVars.FormDoverX = !GlobalVars.FormDoverX;
+                HipotesyY DX = new HipotesyY();
+                DX.Show();
+            }
+        }
+
+        private void Button_Dover_Y_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_doverX_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonDoverX_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormDoverX)
+            {
+                GlobalVars.FormDoverX = !GlobalVars.FormDoverX;
+                Confidence DX = new Confidence();
+                DX.Show();
+            }
+
+        }
+
+        private void ButtonDoverY_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormDoverY)
+            {
+                GlobalVars.FormDoverY = !GlobalVars.FormDoverY;
+                ConfidenceY DY = new ConfidenceY();
+                DY.Show();
+            }
+
+        }
     }
 }

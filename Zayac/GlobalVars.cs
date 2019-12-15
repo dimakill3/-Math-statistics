@@ -14,5 +14,8 @@ namespace Zayac
         public static bool FormGraphicsY = false;
         public static bool FormHipotesyX = false;
         public static bool FormHipotesyY = false;
+        public static bool FormDoverX = false;
+        public static bool FormDoverY = false;
+
     }
 }

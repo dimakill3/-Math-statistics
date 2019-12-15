@@ -77,5 +77,10 @@ namespace Zayac
         {
 
         }
+
+        private void PictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
