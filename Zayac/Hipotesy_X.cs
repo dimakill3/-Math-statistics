@@ -24,49 +24,90 @@ namespace Zayac
 
         private void Hipotesy_X_Load(object sender, EventArgs e)
         {
-            int k = 0;
-
-            for (int i = 0; i < MainForm.calc.d_X; i++)
+            for (int i = 0; i < Program.r; i++)
             {
                 raspredX.Rows.Add();
+
+                raspredX.Rows[i].Cells[0].Value = i + 1;
+
+
+                if (i == Program.r - 1)
+                {
+                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.inter_X[i].getF() + ";" + "+∞" + ")";
+                }
+                else
+                    if (i == 0)
+                {
+                    raspredX.Rows[i].Cells[1].Value = "(" + "-∞" + ";" + MainForm.calc.inter_X[i].getS() + ")";
+                }
+                else
+                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.inter_X[i].getF() + ";" + MainForm.calc.inter_X[i].getS() + ")";
+
+                raspredX.Rows[i].Cells[2].Value = MainForm.calc.inter_X[i].getN();
+
+                raspredX.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.norm_vel_X[i]);
+
+                raspredX.Rows[i].Cells[4].Value = String.Format("{0:0.000}", MainForm.calc.form_lap_X[i]);
+
+                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_X[i]);
+
+                raspredX.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_chast_X[i]);
+            }
+
+            int k = 0;
+            for (int i = 0; i < MainForm.calc.d_X; i++)
+            {
+                raspredInitX.Rows.Add();
 
                 char count = MainForm.calc.flags_X[k];
                 char step = (char)1;
 
-                raspredX.Rows[i].Cells[0].Value = (k + 1).ToString();
+                raspredInitX.Rows[i].Cells[0].Value = (k + 1).ToString();
 
                 while (count != 0)
                 {
-                    raspredX.Rows[i].Cells[0].Value += ", " + (k + 1 + step++).ToString(); 
+                    raspredInitX.Rows[i].Cells[0].Value += ", " + (k + 1 + step++).ToString(); 
                     count--;
                 }
                 k += step;
 
                 if (i == MainForm.calc.d_X - 1)
                 {
-                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + "+∞" + ")";
+                    raspredInitX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + "+∞" + ")";
                 }
                 else
                     if (i == 0)
                 {
-                    raspredX.Rows[i].Cells[1].Value = "(" + "-∞" + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
+                    raspredInitX.Rows[i].Cells[1].Value = "(" + "-∞" + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
                 }
                 else
-                    raspredX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
+                    raspredInitX.Rows[i].Cells[1].Value = "[" + MainForm.calc.new_inter_X[i].getF() + ";" + MainForm.calc.new_inter_X[i].getS() + ")";
 
-                raspredX.Rows[i].Cells[2].Value = MainForm.calc.new_inter_X[i].getN();
+                raspredInitX.Rows[i].Cells[2].Value = MainForm.calc.new_inter_X[i].getN();
 
-                raspredX.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.norm_vel_X[i]);
+                raspredInitX.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.teor_vel_X[i]);
 
-                raspredX.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.form_lap_X[i]);
-
-                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_X[i]);
-
-                raspredX.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_vel_X[i]);
-
-                raspredX.Rows[i].Cells[7].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
+                raspredInitX.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
             }
-            raspredX.Height = raspredX.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredX.ColumnHeadersHeight;
+            raspredInitX.Height = raspredInitX.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredInitX.ColumnHeadersHeight;
+
+            interval.Text = Convert.ToString(MainForm.calc.d_X);
+            step_svobod.Text = Convert.ToString(MainForm.calc.step_svobodi_X);
+            hi.Text = String.Format("{0:0.00}", MainForm.calc.hi_vib_X);
+            hi_vivod.Text = String.Format("{0:0.00}", MainForm.calc.hi_vib_X);
+            quant.Text = String.Format("{0:0.00}", MainForm.calc.quant_hi_X);
+            svoboda.Text = "(" + Convert.ToString(MainForm.calc.step_svobodi_X) + ") =";
+
+            if (MainForm.calc.hi_vib_X < MainForm.calc.quant_hi_X)
+            {
+                znak.Text = "<";
+                uslovie.Text = "не противоречит";
+            }
+            else
+            {
+                znak.Text = ">";
+                uslovie.Text = "противоречит";
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace Zayac
 
                 raspredY.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.norm_vel_Y[i]);
 
-                raspredY.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.form_lap_Y[i]);
+                raspredY.Rows[i].Cells[4].Value = String.Format("{0:0.000}", MainForm.calc.form_lap_Y[i]);
 
                 raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_Y[i]);
 
@@ -87,6 +87,24 @@ namespace Zayac
             }
 
             raspredInitY.Height = raspredInitY.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredInitY.ColumnHeadersHeight;
+
+            interval.Text = Convert.ToString(MainForm.calc.d_Y);
+            step_svobod.Text = Convert.ToString(MainForm.calc.step_svobodi_Y);
+            hi.Text = String.Format("{0:0.00}", MainForm.calc.hi_vib_Y);
+            hi_vivod.Text = String.Format("{0:0.00}", MainForm.calc.hi_vib_Y);
+            quant.Text = String.Format("{0:0.00}", MainForm.calc.quant_hi_Y);
+            svoboda.Text = "(" + Convert.ToString(MainForm.calc.step_svobodi_Y) + ") =";
+
+            if (MainForm.calc.hi_vib_Y < MainForm.calc.quant_hi_Y)
+            {
+                znak.Text = "<";
+                uslovie.Text = "не противоречит";
+            }
+            else
+            {
+                znak.Text = ">";
+                uslovie.Text = "противоречит";
+            }
         }
 
         private void Hipotesy_Y_FormClosed(object sender, FormClosedEventArgs e)

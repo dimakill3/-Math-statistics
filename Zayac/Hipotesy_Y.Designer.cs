@@ -35,8 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.raspredInitY = new System.Windows.Forms.DataGridView();
+            this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stat_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.raspredY = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,14 +48,34 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stat_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.svoboda = new System.Windows.Forms.Label();
+            this.hi = new System.Windows.Forms.TextBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.uslovie = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.quant = new System.Windows.Forms.TextBox();
+            this.hi_vivod = new System.Windows.Forms.TextBox();
+            this.znak = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.step_svobod = new System.Windows.Forms.TextBox();
+            this.interval = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.raspredInitY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // raspredInitY
@@ -104,6 +128,45 @@
             this.raspredInitY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.raspredInitY.Size = new System.Drawing.Size(952, 192);
             this.raspredInitY.TabIndex = 3;
+            // 
+            // NumberX
+            // 
+            this.NumberX.FillWeight = 95.97235F;
+            this.NumberX.HeaderText = "i";
+            this.NumberX.MaxInputLength = 2;
+            this.NumberX.Name = "NumberX";
+            this.NumberX.ReadOnly = true;
+            this.NumberX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // RangeX
+            // 
+            this.RangeX.FillWeight = 136.6384F;
+            this.RangeX.HeaderText = "[bₑ ; bₔ)";
+            this.RangeX.Name = "RangeX";
+            this.RangeX.ReadOnly = true;
+            this.RangeX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // CountX
+            // 
+            this.CountX.FillWeight = 65.93104F;
+            this.CountX.HeaderText = "mᵢ";
+            this.CountX.Name = "CountX";
+            this.CountX.ReadOnly = true;
+            this.CountX.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // FuncX
+            // 
+            this.FuncX.FillWeight = 75.90346F;
+            this.FuncX.HeaderText = "npᵢ";
+            this.FuncX.Name = "FuncX";
+            this.FuncX.ReadOnly = true;
+            // 
+            // Stat_X
+            // 
+            this.Stat_X.FillWeight = 143.6097F;
+            this.Stat_X.HeaderText = "(nᵢ - npᵢ) / (npᵢ)";
+            this.Stat_X.Name = "Stat_X";
+            this.Stat_X.ReadOnly = true;
             // 
             // raspredY
             // 
@@ -158,16 +221,6 @@
             this.raspredY.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.raspredY.Size = new System.Drawing.Size(952, 181);
             this.raspredY.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Zayac.Properties.Resources.линии;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 181);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(952, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -224,51 +277,248 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // NumberX
+            // pictureBox1
             // 
-            this.NumberX.FillWeight = 95.97235F;
-            this.NumberX.HeaderText = "i";
-            this.NumberX.MaxInputLength = 2;
-            this.NumberX.Name = "NumberX";
-            this.NumberX.ReadOnly = true;
-            this.NumberX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.pictureBox1.Image = global::Zayac.Properties.Resources.линии;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 181);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(952, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
-            // RangeX
+            // label7
             // 
-            this.RangeX.FillWeight = 136.6384F;
-            this.RangeX.HeaderText = "[bₑ ; bₔ)";
-            this.RangeX.Name = "RangeX";
-            this.RangeX.ReadOnly = true;
-            this.RangeX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(118, 533);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 16);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "a = 0,05";
             // 
-            // CountX
+            // label5
             // 
-            this.CountX.FillWeight = 65.93104F;
-            this.CountX.HeaderText = "mᵢ";
-            this.CountX.Name = "CountX";
-            this.CountX.ReadOnly = true;
-            this.CountX.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(329, 492);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 16);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "=";
             // 
-            // FuncX
+            // pictureBox2
             // 
-            this.FuncX.FillWeight = 75.90346F;
-            this.FuncX.HeaderText = "npᵢ";
-            this.FuncX.Name = "FuncX";
-            this.FuncX.ReadOnly = true;
+            this.pictureBox2.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183724;
+            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox2.Location = new System.Drawing.Point(415, 482);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(36, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
-            // Stat_X
+            // svoboda
             // 
-            this.Stat_X.FillWeight = 143.6097F;
-            this.Stat_X.HeaderText = "(nᵢ - npᵢ) / (npᵢ)";
-            this.Stat_X.Name = "Stat_X";
-            this.Stat_X.ReadOnly = true;
+            this.svoboda.AutoSize = true;
+            this.svoboda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.svoboda.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.svoboda.Location = new System.Drawing.Point(448, 490);
+            this.svoboda.Name = "svoboda";
+            this.svoboda.Size = new System.Drawing.Size(38, 16);
+            this.svoboda.TabIndex = 46;
+            this.svoboda.Text = "(1) =";
+            // 
+            // hi
+            // 
+            this.hi.Enabled = false;
+            this.hi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.hi.Location = new System.Drawing.Point(47, 532);
+            this.hi.Name = "hi";
+            this.hi.Size = new System.Drawing.Size(43, 22);
+            this.hi.TabIndex = 45;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183914;
+            this.pictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox5.Location = new System.Drawing.Point(0, 528);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(41, 27);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 44;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(237, 539);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(161, 16);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "выборочным данным";
+            // 
+            // uslovie
+            // 
+            this.uslovie.AutoSize = true;
+            this.uslovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.uslovie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.uslovie.Location = new System.Drawing.Point(671, 516);
+            this.uslovie.Name = "uslovie";
+            this.uslovie.Size = new System.Drawing.Size(0, 16);
+            this.uslovie.TabIndex = 42;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(234, 516);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(437, 16);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "то гипотеза H₀ о нормальном распределении величины Y";
+            // 
+            // quant
+            // 
+            this.quant.Enabled = false;
+            this.quant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.quant.Location = new System.Drawing.Point(492, 488);
+            this.quant.Name = "quant";
+            this.quant.Size = new System.Drawing.Size(44, 22);
+            this.quant.TabIndex = 40;
+            // 
+            // hi_vivod
+            // 
+            this.hi_vivod.Enabled = false;
+            this.hi_vivod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.hi_vivod.Location = new System.Drawing.Point(351, 489);
+            this.hi_vivod.Name = "hi_vivod";
+            this.hi_vivod.Size = new System.Drawing.Size(44, 22);
+            this.hi_vivod.TabIndex = 38;
+            // 
+            // znak
+            // 
+            this.znak.AutoSize = true;
+            this.znak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.znak.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.znak.Location = new System.Drawing.Point(401, 490);
+            this.znak.Name = "znak";
+            this.znak.Size = new System.Drawing.Size(0, 16);
+            this.znak.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(234, 489);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Так как";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(412, 448);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Вывод:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_182458;
+            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox3.Location = new System.Drawing.Point(97, 492);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 30;
+            this.pictureBox3.TabStop = false;
+            // 
+            // step_svobod
+            // 
+            this.step_svobod.Enabled = false;
+            this.step_svobod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.step_svobod.Location = new System.Drawing.Point(136, 492);
+            this.step_svobod.Name = "step_svobod";
+            this.step_svobod.Size = new System.Drawing.Size(43, 22);
+            this.step_svobod.TabIndex = 34;
+            // 
+            // interval
+            // 
+            this.interval.Enabled = false;
+            this.interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.interval.Location = new System.Drawing.Point(136, 448);
+            this.interval.Name = "interval";
+            this.interval.Size = new System.Drawing.Size(43, 22);
+            this.interval.TabIndex = 33;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(-3, 478);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 50);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Число степеней свободы для      = ";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183837;
+            this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox4.Location = new System.Drawing.Point(304, 482);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 31);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 31;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(-3, 435);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 33);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Число интервалов m = ";
             // 
             // HipotesyY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FloralWhite;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(952, 564);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.svoboda);
+            this.Controls.Add(this.hi);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.uslovie);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.quant);
+            this.Controls.Add(this.hi_vivod);
+            this.Controls.Add(this.znak);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.step_svobod);
+            this.Controls.Add(this.interval);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.raspredY);
             this.Controls.Add(this.raspredInitY);
@@ -279,7 +529,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.raspredInitY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -300,5 +555,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label svoboda;
+        private System.Windows.Forms.TextBox hi;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label uslovie;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox quant;
+        private System.Windows.Forms.TextBox hi_vivod;
+        private System.Windows.Forms.Label znak;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox step_svobod;
+        private System.Windows.Forms.TextBox interval;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
     }
 }

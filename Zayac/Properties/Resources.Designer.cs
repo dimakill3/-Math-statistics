@@ -329,5 +329,75 @@ namespace Zayac.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_182020 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 182020", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_182458 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 182458", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_183227 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 183227", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_183724 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 183724", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_183837 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 183837", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_183914 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 183914", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_184013 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 184013", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
