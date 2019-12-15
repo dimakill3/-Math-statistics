@@ -439,5 +439,25 @@ namespace Zayac.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_201716 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 201716", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_15_12_2019_201747 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 15-12-2019 201747", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
