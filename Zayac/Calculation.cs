@@ -763,7 +763,10 @@ namespace Zayac
             {
                 dlya_stat_X[j] = Math.Pow((new_inter_X[j].getN() - teor_vel_X[j]), 2) / teor_vel_X[j];
                 hi_vib_X += dlya_stat_X[j];
+            }
 
+            for (int j = 0; j < d_Y; j++)
+            {
                 dlya_stat_Y[j] = Math.Pow((new_inter_Y[j].getN() - teor_vel_Y[j]), 2) / teor_vel_Y[j];
                 hi_vib_Y += dlya_stat_Y[j];
             }
@@ -772,8 +775,7 @@ namespace Zayac
             step_svobodi_Y = d_Y - Program.k - 1;
 
             quant_hi_X = getQuant(step_svobodi_X, 1 - hi_a);
-
-
+            quant_hi_Y = getQuant(step_svobodi_Y, 1 - hi_a);
             #endregion
 
             #region Доверительный интервал

@@ -9,12 +9,13 @@ namespace Zayac
     class Integral
     {
         public delegate double Function(double x);
-        public static int iterasion = 1000;
+        public static int iterasion = 10000;
 
         public static double Trapezoidal(Function f, double a, double b, int n)
         {
             double sum = 0.0;
             double h = (b - a) / n;
+            
             for (int i = 0; i < n; i++)
             {
                 sum += 0.5 * h * (f(a + i * h) + f(a + (i + 1) * h));

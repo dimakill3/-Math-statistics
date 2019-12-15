@@ -242,6 +242,27 @@
     <None Include="Resources\линии.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 182020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 182458.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 183227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 183724.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 183837.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 183914.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 15-12-2019 184013.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Скриншот 15-12-2019 184246.png" />
   </ItemGroup>
   <ItemGroup>
