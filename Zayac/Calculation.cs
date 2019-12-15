@@ -101,6 +101,9 @@ namespace Zayac
         public double[] teor_znach_X = new double[Program.r];
         public double[] teor_znach_Y = new double[Program.r];
 
+        public double[] teor_chast_X = new double[Program.r];
+        public double[] teor_chast_Y = new double[Program.r];
+
         public double[] teor_vel_X;
         public double[] teor_vel_Y;
 
@@ -112,7 +115,9 @@ namespace Zayac
 
         public double hi_vib_X, hi_vib_Y;
         public int d_X, d_Y;
+
         public int step_svobodi_X, step_svobodi_Y;
+        public double quant_hi_X, quant_hi_Y;
 
         // Доверительный интервал
         public double dover_P = 0.95;
@@ -145,7 +150,7 @@ namespace Zayac
 
             hi_vib_X = hi_vib_Y = 0;
 
-            lap = (1 / Math.Sqrt(2 * Math.PI));
+            lap = (1 / (Math.Sqrt(2 * Math.PI)));
             hi_a = 0.05;
             flags_X = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
             flags_Y = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
@@ -153,7 +158,7 @@ namespace Zayac
 
         public double getQuant(int k, double p)
         {
-            int index_p;
+            int index_p = 0;
             if (p <= 0.005)
                 index_p = 0;
             else if (p <= 0.01)
@@ -174,8 +179,6 @@ namespace Zayac
                 index_p = 8;
             else if (p <= 0.995)
                 index_p = 9;
-            else
-                index_p = 10;
 
             if (k > 30 && k < 35)
                 k = 30;
@@ -568,6 +571,8 @@ namespace Zayac
                 teor_znach_X[j] = ver_sob_X[j] * Program.N;
                 teor_znach_Y[j] = ver_sob_Y[j] * Program.N;
 
+                teor_chast_X[j] = teor_znach_X[j];
+                teor_chast_Y[j] = teor_znach_Y[j];
             }
             #endregion
 
@@ -578,6 +583,8 @@ namespace Zayac
         
              d_Y = 0;
              int k_Y = 0;
+
+
 
             for (int j = 0; j < Program.r; j++)
             {
@@ -673,7 +680,6 @@ namespace Zayac
 
             //Объединение интервалов для X
             k_X = 0;
-
             for (int j = 0; j < d_X; j++)
             {
                 if (j == 0)
@@ -691,7 +697,6 @@ namespace Zayac
 
             //Объединение интервалов для Y
             k_Y = 0;
-
             for (int j = 0; j < d_Y; j++)
             {
                 if (j == 0)
@@ -706,15 +711,15 @@ namespace Zayac
                     k_Y += 1 + flags_Y[k_Y];
                 }
             }
-
+            
             //Подсчёт колличества выборочных данных на объединённых интервалах для X
             k_X = 0;
             for (int j = 0; j < d_X; j++)
             {
                 char count = flags_X[k_X];
                 char step = (char)1;
-                
-                if(j != 0)
+
+                if (j != 0)
                     new_inter_X[j].setN(inter_X[k_X].getN());
 
                 teor_vel_X[j] = teor_znach_X[k_X];
@@ -766,17 +771,8 @@ namespace Zayac
             step_svobodi_X = d_X - Program.k - 1;
             step_svobodi_Y = d_Y - Program.k - 1;
 
-            int poz;
-            for (int i = 0; i < 10; i++)
-            {
-                if ((1 - hi_a) == quant_hi[i])
-                {
-                    poz = i;
-                    break;
-                }
-            }
+            quant_hi_X = getQuant(step_svobodi_X, 1 - hi_a);
 
-            string secondLine = File.ReadLines("input.txt").Skip(1).First();
 
             #endregion
 

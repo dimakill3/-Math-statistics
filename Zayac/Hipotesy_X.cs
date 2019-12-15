@@ -66,6 +66,7 @@ namespace Zayac
 
                 raspredX.Rows[i].Cells[7].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
             }
+            raspredX.Height = raspredX.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredX.ColumnHeadersHeight;
         }
     }
 }

@@ -63,6 +63,16 @@ namespace Zayac.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap линии {
+            get {
+                object obj = ResourceManager.GetObject("линии", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Скриншот_13_12_2019_150726 {
             get {
                 object obj = ResourceManager.GetObject("Скриншот 13-12-2019 150726", resourceCulture);
