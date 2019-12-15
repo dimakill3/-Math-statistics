@@ -17,9 +17,9 @@ namespace Zayac
             InitializeComponent();
         }
 
-        private void Hipotesy_X_FormClosed(object sender, FormClosedEventArgs e)
+        private void HipotesyX_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GlobalVars.FormHipotezyX = false;
+            GlobalVars.FormHipotesyX = false;
         }
 
         private void Hipotesy_X_Load(object sender, EventArgs e)
@@ -66,11 +66,6 @@ namespace Zayac
 
                 raspredX.Rows[i].Cells[7].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
             }
-        }
-
-        private void HipotesyX_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            GlobalVars.FormHipotesyX = false;
         }
     }
 }

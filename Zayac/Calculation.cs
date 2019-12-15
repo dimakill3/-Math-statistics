@@ -11,6 +11,8 @@ namespace Zayac
     public class Calculation
     {
         public double lap;
+        public  double hi_a;
+        public double[] quant_hi = new double[10] {0.005, 0.01, 0.025, 0.050, 0.1, 0.9, 0.95, 0.975, 0.99, 0.995};
 
         public double[] masX = new double[Program.N];
         public double[] masY = new double[Program.N];
@@ -108,8 +110,9 @@ namespace Zayac
         public double[] dlya_stat_X;
         public double[] dlya_stat_Y;
 
-        public double hi_X, hi_Y;
+        public double hi_vib_X, hi_vib_Y;
         public int d_X, d_Y;
+        public int step_svobodi_X, step_svobodi_Y;
 
         // Доверительный интервал
         public double dover_P = 0.95;
@@ -140,10 +143,10 @@ namespace Zayac
             all_average_uslov_X_in_two = 0;
             all_average_uslov_Y_in_two = 0;
 
-            hi_X = hi_Y = 0;
+            hi_vib_X = hi_vib_Y = 0;
 
             lap = (1 / Math.Sqrt(2 * Math.PI));
-
+            hi_a = 0.05;
             flags_X = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
             flags_Y = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
         }
@@ -662,6 +665,7 @@ namespace Zayac
                 new_inter_Y[j] = new Intervals();
             }
 
+            //Устанавливаем начальное количество выборочных данных для первого интервала
             new_inter_X[0].setF(inter_X[0].getF());
             new_inter_X[0].setN(inter_X[0].getN());
             new_inter_Y[0].setF(inter_Y[0].getF());
@@ -703,11 +707,6 @@ namespace Zayac
                 }
             }
 
-
-            //Устанавливаем начальное количество выборочных данных для первого интервала
-            //new_inter_Y[0].setF(inter_Y[0].getF());
-            //new_inter_Y[0].setN(inter_Y[0].getN());
-
             //Подсчёт колличества выборочных данных на объединённых интервалах для X
             k_X = 0;
             for (int j = 0; j < d_X; j++)
@@ -718,7 +717,8 @@ namespace Zayac
                 if(j != 0)
                     new_inter_X[j].setN(inter_X[k_X].getN());
 
-               
+                teor_vel_X[j] = teor_znach_X[k_X];
+
                     while (count != 0)
                     {
                         new_inter_X[j].setN(new_inter_X[j].getN() + inter_X[k_X + step++].getN());
@@ -737,6 +737,7 @@ namespace Zayac
                 if (j != 0)
                     new_inter_Y[j].setN(inter_Y[k_Y].getN());
 
+                teor_vel_Y[j] = teor_znach_Y[k_Y];
 
                 while (count != 0)
                 {
@@ -756,11 +757,27 @@ namespace Zayac
             for (int j = 0; j < d_X; j++)
             {
                 dlya_stat_X[j] = Math.Pow((new_inter_X[j].getN() - teor_vel_X[j]), 2) / teor_vel_X[j];
-                hi_X += dlya_stat_X[j];
+                hi_vib_X += dlya_stat_X[j];
 
                 dlya_stat_Y[j] = Math.Pow((new_inter_Y[j].getN() - teor_vel_Y[j]), 2) / teor_vel_Y[j];
-                hi_Y += dlya_stat_Y[j];
+                hi_vib_Y += dlya_stat_Y[j];
             }
+
+            step_svobodi_X = d_X - Program.k - 1;
+            step_svobodi_Y = d_Y - Program.k - 1;
+
+            int poz;
+            for (int i = 0; i < 10; i++)
+            {
+                if ((1 - hi_a) == quant_hi[i])
+                {
+                    poz = i;
+                    break;
+                }
+            }
+
+            string secondLine = File.ReadLines("input.txt").Skip(1).First();
+
             #endregion
 
             #region Доверительный интервал

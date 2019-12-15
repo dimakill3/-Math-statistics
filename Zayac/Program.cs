@@ -18,7 +18,7 @@ namespace Zayac
         //количество интервалов
         public const int r = 7;
         //число неизвестных в нормальном распределении
-        public const int л = 2;
+        public const int k = 2;
 
         [STAThread]
         static void Main()

@@ -65,7 +65,7 @@ namespace Zayac
 
         private void Hipotesy_Y_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GlobalVars.FormHipotesyX = false;
+            GlobalVars.FormHipotesyY = false;
         }
     }
 }
