@@ -16,6 +16,9 @@ namespace Zayac
 
         public double[] masX = new double[Program.N];
         public double[] masY = new double[Program.N];
+        public double[] masX_No_Sort = new double[Program.N];
+        public double[] masY_No_Sort = new double[Program.N];
+
         public double max_X, min_X, max_Y, min_Y;
         public double razryv_X, razryv_Y;
         public double h_X, h_Y;
@@ -259,6 +262,35 @@ namespace Zayac
             }
         }
 
+        public int getInterX(double x)
+        {
+            for (int i = 0; i < Program.r; i++)
+            {
+                if (x < inter_X[i].getS())
+                {
+                    return i;
+                }
+                if (x == inter_X[Program.r - 1].getS())
+                    return Program.r - 1;
+            }
+            return 0;
+        }
+
+        public int getInterY(double y)
+        {
+            for (int i = 0; i < Program.r; i++)
+            {
+                if (y < inter_Y[i].getS())
+                {
+                    return i;
+                }
+                if (y == inter_Y[Program.r - 1].getS())
+                    return Program.r - 1;
+            }
+            return 0;
+        }
+
+
 
         public void Calculate(String[] fielRead)
         {
@@ -271,11 +303,13 @@ namespace Zayac
 
                 //Массив для веса
                 masX[i] = Convert.ToDouble(s[0]);
-
+                masX_No_Sort[i] = Convert.ToDouble(s[0]);
                 //Массив для роста
                 masY[i] = Convert.ToDouble(s[1]);
+                masY_No_Sort[i] = Convert.ToDouble(s[1]);
 
             }
+
 
             //Сортировка массивов
             Array.Sort(masX);

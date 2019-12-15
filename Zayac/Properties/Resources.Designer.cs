@@ -459,5 +459,15 @@ namespace Zayac.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Скриншот_16_12_2019_032048 {
+            get {
+                object obj = ResourceManager.GetObject("Скриншот 16-12-2019 032048", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

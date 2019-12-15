@@ -16,6 +16,6 @@ namespace Zayac
         public static bool FormHipotesyY = false;
         public static bool FormDoverX = false;
         public static bool FormDoverY = false;
-
+        public static bool FormCorrel = false;
     }
 }

@@ -60,6 +60,12 @@
     <Compile Include="ConfidenceY.Designer.cs">
       <DependentUpon>ConfidenceY.cs</DependentUpon>
     </Compile>
+    <Compile Include="Correlative.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correlative.Designer.cs">
+      <DependentUpon>Correlative.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomToolTip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConfidenceY.resx">
       <DependentUpon>ConfidenceY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correlative.resx">
+      <DependentUpon>Correlative.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -279,6 +288,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Скриншот 15-12-2019 201716.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Скриншот 16-12-2019 032048.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

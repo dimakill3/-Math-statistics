@@ -175,6 +175,7 @@
             this.sum_all_usl_u.Name = "sum_all_usl_u";
             this.sum_all_usl_u.Size = new System.Drawing.Size(100, 20);
             this.sum_all_usl_u.TabIndex = 7;
+            this.sum_all_usl_u.TextChanged += new System.EventHandler(this.Sum_all_usl_u_TextChanged);
             // 
             // all_sum_usl_in_2_u
             // 

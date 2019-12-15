@@ -165,6 +165,7 @@ namespace Zayac
             tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_Y.png");
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
             tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
+
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
@@ -263,6 +264,17 @@ namespace Zayac
                 GlobalVars.FormDoverY = !GlobalVars.FormDoverY;
                 ConfidenceY DY = new ConfidenceY();
                 DY.Show();
+            }
+
+        }
+
+        private void Button1_Click_2(object sender, EventArgs e)
+        {
+            if (!GlobalVars.FormCorrel)
+            {
+                GlobalVars.FormCorrel = !GlobalVars.FormCorrel;
+                Correlative C = new Correlative();
+                C.Show();
             }
 
         }
