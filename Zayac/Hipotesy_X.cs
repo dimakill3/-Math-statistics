@@ -24,7 +24,7 @@ namespace Zayac
 
         private void Hipotesy_X_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < Program.r; i++)
+            for (int i = 0; i < Program.r ; i++)
             {
                 raspredX.Rows.Add();
 
@@ -49,7 +49,7 @@ namespace Zayac
 
                 raspredX.Rows[i].Cells[4].Value = String.Format("{0:0.000}", MainForm.calc.form_lap_X[i]);
 
-                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_X[i]);
+                raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.000}", MainForm.calc.ver_sob_X[i]);
 
                 raspredX.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_chast_X[i]);
             }
@@ -61,7 +61,6 @@ namespace Zayac
 
                 char count = MainForm.calc.flags_X[k];
                 char step = (char)1;
-
                 raspredInitX.Rows[i].Cells[0].Value = (k + 1).ToString();
 
                 while (count != 0)
@@ -89,6 +88,11 @@ namespace Zayac
 
                 raspredInitX.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
             }
+
+            //
+            raspredInitX.Rows.Add();
+            raspredInitX.Rows[MainForm.calc.d_X].Cells[0].Value = "∑";
+            //
             raspredInitX.Height = raspredInitX.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredInitX.ColumnHeadersHeight;
 
             interval.Text = Convert.ToString(MainForm.calc.d_X);

@@ -250,7 +250,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 435</value>
+    <value>11, 467</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 33</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 478</value>
+    <value>11, 510</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 50</value>
@@ -310,7 +310,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="interval.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 448</value>
+    <value>150, 480</value>
   </data>
   <data name="interval.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 22</value>
@@ -337,7 +337,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="step_svobod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 492</value>
+    <value>150, 524</value>
   </data>
   <data name="step_svobod.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 22</value>
@@ -367,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>427, 448</value>
+    <value>426, 480</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 16</value>
@@ -400,7 +400,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 489</value>
+    <value>248, 521</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 16</value>
@@ -433,7 +433,7 @@
     <value>NoControl</value>
   </data>
   <data name="znak.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 490</value>
+    <value>415, 522</value>
   </data>
   <data name="znak.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 16</value>
@@ -460,7 +460,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="hi_vivod.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 489</value>
+    <value>365, 521</value>
   </data>
   <data name="hi_vivod.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 22</value>
@@ -484,7 +484,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>430, 482</value>
+    <value>429, 514</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 30</value>
@@ -511,7 +511,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 492</value>
+    <value>111, 524</value>
   </data>
   <data name="pictureBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 21</value>
@@ -538,7 +538,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 482</value>
+    <value>318, 514</value>
   </data>
   <data name="pictureBox4.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 31</value>
@@ -595,7 +595,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="quant.Location" type="System.Drawing.Point, System.Drawing">
-    <value>507, 488</value>
+    <value>506, 520</value>
   </data>
   <data name="quant.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 22</value>
@@ -622,7 +622,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 516</value>
+    <value>248, 548</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>436, 16</value>
@@ -652,7 +652,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="uslovie.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 516</value>
+    <value>685, 548</value>
   </data>
   <data name="uslovie.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 16</value>
@@ -679,7 +679,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 539</value>
+    <value>251, 571</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 16</value>
@@ -706,7 +706,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 528</value>
+    <value>14, 560</value>
   </data>
   <data name="pictureBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 27</value>
@@ -736,7 +736,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="hi.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 532</value>
+    <value>61, 564</value>
   </data>
   <data name="hi.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 22</value>
@@ -763,7 +763,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="svoboda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 490</value>
+    <value>462, 522</value>
   </data>
   <data name="svoboda.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 16</value>
@@ -793,7 +793,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 492</value>
+    <value>343, 524</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -823,7 +823,7 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 533</value>
+    <value>132, 565</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 16</value>
@@ -853,10 +853,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>952, 564</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>952, 612</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Hipotesy_X</value>
