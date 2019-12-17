@@ -81,5 +81,10 @@ namespace Zayac
         {
 
         }
+
+        private void Sum_all_usl_u_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

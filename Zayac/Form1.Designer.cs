@@ -30,6 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,15 +81,32 @@
             this.HeightPoligonY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.XY = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CorrTable = new System.Windows.Forms.DataGridView();
+            this.inter_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.vibor_urav = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.button_Dover.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).BeginInit();
             this.Y.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).BeginInit();
+            this.XY.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrTable)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,6 +145,8 @@
             // 
             this.XandY.Controls.Add(this.button_Dover);
             this.XandY.Controls.Add(this.Y);
+            this.XandY.Controls.Add(this.XY);
+            this.XandY.Controls.Add(this.vibor_urav);
             this.XandY.Dock = System.Windows.Forms.DockStyle.Fill;
             this.XandY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.XandY.Location = new System.Drawing.Point(0, 24);
@@ -163,7 +186,7 @@
             // 
             this.buttonDoverX.Location = new System.Drawing.Point(812, 423);
             this.buttonDoverX.Name = "buttonDoverX";
-            this.buttonDoverX.Size = new System.Drawing.Size(98, 56);
+            this.buttonDoverX.Size = new System.Drawing.Size(98, 47);
             this.buttonDoverX.TabIndex = 22;
             this.buttonDoverX.Text = "Доверительные интервалы";
             this.buttonDoverX.UseVisualStyleBackColor = true;
@@ -291,7 +314,7 @@
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -400,10 +423,10 @@
             // 
             // buttonDoverY
             // 
-            this.buttonDoverY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDoverY.Location = new System.Drawing.Point(812, 423);
+            this.buttonDoverY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDoverY.Location = new System.Drawing.Point(812, 424);
             this.buttonDoverY.Name = "buttonDoverY";
-            this.buttonDoverY.Size = new System.Drawing.Size(98, 56);
+            this.buttonDoverY.Size = new System.Drawing.Size(98, 47);
             this.buttonDoverY.TabIndex = 23;
             this.buttonDoverY.Text = "Доверительные интервалы";
             this.buttonDoverY.UseVisualStyleBackColor = true;
@@ -543,10 +566,26 @@
             this.HeightPoligonY,
             this.HeightGistY,
             this.FuncY});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.raspredY.DefaultCellStyle = dataGridViewCellStyle3;
             this.raspredY.EnableHeadersVisualStyles = false;
             this.raspredY.Location = new System.Drawing.Point(-2, -2);
             this.raspredY.Name = "raspredY";
             this.raspredY.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.raspredY.RowHeadersVisible = false;
             this.raspredY.RowTemplate.ReadOnly = true;
             this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -608,9 +647,134 @@
             this.FuncY.Name = "FuncY";
             this.FuncY.ReadOnly = true;
             // 
+            // XY
+            // 
+            this.XY.Controls.Add(this.pictureBox1);
+            this.XY.Controls.Add(this.label1);
+            this.XY.Controls.Add(this.CorrTable);
+            this.XY.Location = new System.Drawing.Point(4, 25);
+            this.XY.Name = "XY";
+            this.XY.Size = new System.Drawing.Size(944, 511);
+            this.XY.TabIndex = 2;
+            this.XY.Text = "Корреляционная  таблица";
+            this.XY.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Zayac.Properties.Resources.Скриншот_16_12_2019_032048;
+            this.pictureBox1.Location = new System.Drawing.Point(79, 286);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 33);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(148, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "label1";
+            // 
+            // CorrTable
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CorrTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.CorrTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CorrTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inter_X,
+            this.inter_Y_1,
+            this.inter_Y_3,
+            this.inter_Y_4,
+            this.inter_Y_5,
+            this.inter_Y_2,
+            this.inter_Y_6,
+            this.inter_Y_7,
+            this.Count_X});
+            this.CorrTable.EnableHeadersVisualStyles = false;
+            this.CorrTable.Location = new System.Drawing.Point(28, 28);
+            this.CorrTable.Name = "CorrTable";
+            this.CorrTable.RowHeadersVisible = false;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CorrTable.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.CorrTable.Size = new System.Drawing.Size(669, 203);
+            this.CorrTable.TabIndex = 3;
+            this.CorrTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CorrTable_CellContentClick);
+            // 
+            // inter_X
+            // 
+            this.inter_X.HeaderText = "X \\ Y";
+            this.inter_X.Name = "inter_X";
+            this.inter_X.Width = 70;
+            // 
+            // inter_Y_1
+            // 
+            this.inter_Y_1.HeaderText = "Column1";
+            this.inter_Y_1.Name = "inter_Y_1";
+            this.inter_Y_1.Width = 80;
+            // 
+            // inter_Y_3
+            // 
+            this.inter_Y_3.HeaderText = "Column1";
+            this.inter_Y_3.Name = "inter_Y_3";
+            this.inter_Y_3.Width = 80;
+            // 
+            // inter_Y_4
+            // 
+            this.inter_Y_4.HeaderText = "Column1";
+            this.inter_Y_4.Name = "inter_Y_4";
+            this.inter_Y_4.Width = 80;
+            // 
+            // inter_Y_5
+            // 
+            this.inter_Y_5.HeaderText = "Column1";
+            this.inter_Y_5.Name = "inter_Y_5";
+            this.inter_Y_5.Width = 80;
+            // 
+            // inter_Y_2
+            // 
+            this.inter_Y_2.HeaderText = "Column1";
+            this.inter_Y_2.Name = "inter_Y_2";
+            this.inter_Y_2.Width = 80;
+            // 
+            // inter_Y_6
+            // 
+            this.inter_Y_6.HeaderText = "Column1";
+            this.inter_Y_6.Name = "inter_Y_6";
+            this.inter_Y_6.Width = 80;
+            // 
+            // inter_Y_7
+            // 
+            this.inter_Y_7.HeaderText = "Column1";
+            this.inter_Y_7.Name = "inter_Y_7";
+            this.inter_Y_7.Width = 80;
+            // 
+            // Count_X
+            // 
+            this.Count_X.HeaderText = "ni";
+            this.Count_X.Name = "Count_X";
+            this.Count_X.Width = 35;
+            // 
             // openFile
             // 
             this.openFile.FileName = "openFileDialog1";
+            // 
+            // vibor_urav
+            // 
+            this.vibor_urav.Location = new System.Drawing.Point(4, 25);
+            this.vibor_urav.Name = "vibor_urav";
+            this.vibor_urav.Size = new System.Drawing.Size(944, 511);
+            this.vibor_urav.TabIndex = 3;
+            this.vibor_urav.Text = "Выборочные уравнения";
+            this.vibor_urav.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -633,6 +797,10 @@
             this.Y.ResumeLayout(false);
             this.Y.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).EndInit();
+            this.XY.ResumeLayout(false);
+            this.XY.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CorrTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,6 +858,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
         private System.Windows.Forms.Button buttonDoverX;
         private System.Windows.Forms.Button buttonDoverY;
+        private System.Windows.Forms.TabPage XY;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView CorrTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count_X;
+        private System.Windows.Forms.TabPage vibor_urav;
     }
 }
 

@@ -44,7 +44,7 @@ namespace Zayac
 
                 raspredY.Rows[i].Cells[4].Value = String.Format("{0:0.000}", MainForm.calc.form_lap_Y[i]);
 
-                raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.00}", MainForm.calc.ver_sob_Y[i]);
+                raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.000}", MainForm.calc.ver_sob_Y[i]);
 
                 raspredY.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_chast_Y[i]);
             }

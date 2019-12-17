@@ -93,6 +93,46 @@ namespace Zayac
                 LenghtInterY.Text = String.Format("{0:0.00}", Convert.ToString(calc.h_Y));
                 RashPromX.Text = String.Format("{0:0.00}", Convert.ToString(calc.rashirenie_X));
                 RashPromY.Text = String.Format("{0:0.00}", Convert.ToString(calc.rashirenie_Y));
+
+                // Корелляционная таблица
+                CorrTable.Columns[1].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[0].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[0].getS()) + ")";
+                CorrTable.Columns[2].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[1].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[1].getS()) + ")";
+                CorrTable.Columns[3].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[2].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[2].getS()) + ")";
+                CorrTable.Columns[4].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[3].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[3].getS()) + ")";
+                CorrTable.Columns[5].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[4].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[4].getS()) + ")";
+                CorrTable.Columns[6].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[5].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[5].getS()) + ")";
+                CorrTable.Columns[7].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[6].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[6].getS()) + "]";
+
+                CorrTable.Rows.Add();
+                CorrTable.Rows[0].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[0].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[0].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[1].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[1].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[1].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[2].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[2].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[2].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[3].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[3].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[3].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[4].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[4].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[4].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[5].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[5].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[5].getS()) + ")";
+                CorrTable.Rows.Add();
+                CorrTable.Rows[6].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[6].getF()) + ";"
+                                                       + Convert.ToString(MainForm.calc.inter_X[6].getS()) + "]";
+                CorrTable.Rows[7].Cells[0].Value = "nj";
+
+                for (int i = 0; i < Program.N; i++)
+                {
+                    CorrTable.Rows[MainForm.calc.getInterX(MainForm.calc.masX_No_Sort[i])].Cells[MainForm.calc.getInterY(MainForm.calc.masY_No_Sort[i]) + 1].Value = Convert.ToString(Convert.ToInt32(CorrTable.Rows[MainForm.calc.getInterX(MainForm.calc.masX_No_Sort[i])].Cells[MainForm.calc.getInterY(MainForm.calc.masY_No_Sort[i]) + 1].Value) + 1);
+                }
+
+                label1.Text = String.Format("{0:0.00}", calc.getViborKoef(CorrTable));
+
             }
         }
 
@@ -165,6 +205,7 @@ namespace Zayac
             tip[1].SetCustomToolTip(this.labelLenghtInter, "длина_интервала_Y.png");
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
             tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
+            tip[4].SetCustomToolTip(this.pictureBox1, "vibor_koef.png");
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
@@ -264,6 +305,13 @@ namespace Zayac
                 ConfidenceY DY = new ConfidenceY();
                 DY.Show();
             }
+
+        }
+
+
+
+        private void CorrTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

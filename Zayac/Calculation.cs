@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data;
+using System.Windows.Forms;
+
 
 namespace Zayac
 {
@@ -16,6 +18,9 @@ namespace Zayac
 
         public double[] masX = new double[Program.N];
         public double[] masY = new double[Program.N];
+        public double[] masX_No_Sort = new double[Program.N];
+        public double[] masY_No_Sort = new double[Program.N];
+
         public double max_X, min_X, max_Y, min_Y;
         public double razryv_X, razryv_Y;
         public double h_X, h_Y;
@@ -133,6 +138,14 @@ namespace Zayac
         public double dover_inter_DY_min;
         public double dover_inter_DY_max;
 
+        public static int count;
+        public static int Sum_count;
+        public static double vibor_koef;
+        public static double uv;
+
+        //Коэфициенты перед Х и Y в выборочных уравнениях
+        public static double vibor_urav_koef_X;
+        public static double vibor_urav_koef_Y;
 
         public Calculation()
         {
@@ -154,6 +167,9 @@ namespace Zayac
             hi_a = 0.05;
             flags_X = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
             flags_Y = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
+            count = 0;
+            Sum_count = 0;
+            uv = 0;
         }
 
         public double getQuant(int k, double p)
@@ -259,10 +275,95 @@ namespace Zayac
             }
         }
 
+        public double F_laplac(double a, double precision = 0.0001)
+        {
+            int neg = 1;
+            if (a < 0)
+            {
+                neg = -1;
+                a = -a;
+            }
+            double result = 0;
+            for (double i = 0; i < a; i += precision)
+            {
+                result += precision * Math.Abs(Math.Pow(Math.E, -.5 * Math.Pow(i, 2)) + Math.Pow(Math.E, -.5 * Math.Pow((i + precision), 2))) / 2.0;
+            }
+            result *= 1.0 / Math.Pow(2 * Math.PI, .5);
+
+            return result * neg;
+        }
+
+        public int getInterX(double x)
+        {
+            for (int i = 0; i < Program.r; i++)
+            {
+                if (x < inter_X[i].getS())
+                {
+                    return i;
+                }
+                if (x == inter_X[Program.r - 1].getS())
+                    return Program.r - 1;
+            }
+            return 0;
+        }
+
+        public int getInterY(double y)
+        {
+            for (int i = 0; i < Program.r; i++)
+            {
+                if (y < inter_Y[i].getS())
+                {
+                    return i;
+                }
+                if (y == inter_Y[Program.r - 1].getS())
+                    return Program.r - 1;
+            }
+            return 0;
+        }
+
+        public double getViborKoef(DataGridView CorrTable)
+        {
+            for (int i = 0; i < Program.r; i++)
+            {
+                count = 0;
+                for (int j = 1; j < Program.r + 1; j++)
+                {
+                    count += Convert.ToInt32(CorrTable.Rows[i].Cells[j].Value);
+                }
+                CorrTable.Rows[i].Cells[8].Value = Convert.ToString(count);
+                Sum_count += count;
+            }
+
+            for (int i = 1; i < Program.r + 1; i++)
+            {
+                count = 0;
+                for (int j = 0; j < Program.r; j++)
+                {
+                    count += Convert.ToInt32(CorrTable.Rows[j].Cells[i].Value);
+                }
+                CorrTable.Rows[7].Cells[i].Value = Convert.ToString(count);
+            }
+
+            CorrTable.Rows[7].Cells[8].Value = Convert.ToString(Sum_count);
+
+            for (int i = 0; i < Program.r; i++)
+            {
+                for (int j = 0; j < Program.r; j++)
+                {
+                    uv += MainForm.calc.uslov_vel_X[i] * MainForm.calc.uslov_vel_Y[j] * Convert.ToInt32(CorrTable.Rows[i].Cells[j + 1].Value);
+                }
+            }
+
+            uv /= Program.N;
+
+            vibor_koef = (Program.N / (Program.N - 1)) * (uv - (MainForm.calc.all_average_uslov_X * MainForm.calc.all_average_uslov_Y)) / (Math.Sqrt(MainForm.calc.dispers_uslov_X) * Math.Sqrt(MainForm.calc.dispers_uslov_Y));
+
+            return vibor_koef;
+        }
+
 
         public void Calculate(String[] fielRead)
         {
-            getQuant(20, 0.05);
             string[] s = new string[2];
 
             for (int i = 0; i < fielRead.Length; i++)
@@ -271,11 +372,13 @@ namespace Zayac
 
                 //Массив для веса
                 masX[i] = Convert.ToDouble(s[0]);
-
+                masX_No_Sort[i] = Convert.ToDouble(s[0]);
                 //Массив для роста
                 masY[i] = Convert.ToDouble(s[1]);
+                masY_No_Sort[i] = Convert.ToDouble(s[1]);
 
             }
+
 
             //Сортировка массивов
             Array.Sort(masX);
@@ -295,7 +398,7 @@ namespace Zayac
             h_X = Math.Ceiling(razryv_X / Program.r);
             h_Y = Math.Ceiling(razryv_Y / Program.r);
 
-            //На всякий случай расширение промежутка разбиения
+            //Расширение промежутка разбиения
             rashirenie_X = (h_X - (razryv_X / Program.r)) * Program.r;
             rashirenie_Y = (h_Y - (razryv_Y / Program.r)) * Program.r;
 
@@ -549,12 +652,9 @@ namespace Zayac
                 }
                 else 
                 {
-                    Integral.Function int_lap = Integral.laplas;
-                    form_lap_X[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_X[j], Integral.iterasion);
-                    form_lap_Y[j] = Integral.Trapezoidal(int_lap, 0, norm_vel_Y[j], Integral.iterasion);
+                    form_lap_X[j] = F_laplac(norm_vel_X[j]);
+                    form_lap_Y[j] = F_laplac(norm_vel_Y[j]);
 
-                    form_lap_X[j] *= lap;
-                    form_lap_Y[j] *= lap;
                 }
 
                 if (j == 0)
@@ -791,6 +891,10 @@ namespace Zayac
             dover_inter_DY_min = ((Program.N - 1) * dispers_Y) / getQuant(Program.N - 1, 1 - ((1 - dover_P) / 2));
             dover_inter_DY_max = ((Program.N - 1) * dispers_Y) / getQuant(Program.N - 1, ((1 - dover_P) / 2));
 
+
+            #endregion
+
+            #region Корелляционная таблица
 
             #endregion
         }
