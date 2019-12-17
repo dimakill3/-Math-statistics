@@ -76,8 +76,8 @@ namespace Zayac
                     raspredX.Rows[i].Cells[4].Value = calc.inter_X[i].getHP();
                     raspredY.Rows[i].Cells[4].Value = calc.inter_Y[i].getHP();
 
-                    raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.00}", calc.inter_X[i].getHG());
-                    raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.00}", calc.inter_Y[i].getHG());
+                    raspredX.Rows[i].Cells[5].Value = String.Format("{0:0.000}", calc.inter_X[i].getHG());
+                    raspredY.Rows[i].Cells[5].Value = String.Format("{0:0.000}", calc.inter_Y[i].getHG());
 
                     raspredX.Rows[i].Cells[6].Value = calc.inter_X[i].getFunc();
                     raspredY.Rows[i].Cells[6].Value = calc.inter_Y[i].getFunc();

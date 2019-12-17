@@ -30,15 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XandY = new System.Windows.Forms.TabControl();
             this.button_Dover = new System.Windows.Forms.TabPage();
+            this.buttonDoverX = new System.Windows.Forms.Button();
             this.HipotesyX = new System.Windows.Forms.Button();
             this.ToGraphicsX = new System.Windows.Forms.Button();
             this.ToMarksX = new System.Windows.Forms.Button();
@@ -51,7 +49,15 @@
             this.labelKolVoInter = new System.Windows.Forms.Label();
             this.labelRazmah = new System.Windows.Forms.Label();
             this.raspredX = new System.Windows.Forms.DataGridView();
+            this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AverageX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightPoligonX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Y = new System.Windows.Forms.TabPage();
+            this.buttonDoverY = new System.Windows.Forms.Button();
             this.HipotesyY = new System.Windows.Forms.Button();
             this.ToGraphicsY = new System.Windows.Forms.Button();
             this.ToMarksY = new System.Windows.Forms.Button();
@@ -74,15 +80,6 @@
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.NumberX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RangeX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AverageX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightPoligonX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeightGistX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonDoverX = new System.Windows.Forms.Button();
-            this.buttonDoverY = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.button_Dover.SuspendLayout();
@@ -113,14 +110,14 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
@@ -153,7 +150,7 @@
             this.button_Dover.Controls.Add(this.labelKolVoInter);
             this.button_Dover.Controls.Add(this.labelRazmah);
             this.button_Dover.Controls.Add(this.raspredX);
-            this.button_Dover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_Dover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_Dover.Location = new System.Drawing.Point(4, 25);
             this.button_Dover.Name = "button_Dover";
             this.button_Dover.Padding = new System.Windows.Forms.Padding(3);
@@ -161,6 +158,16 @@
             this.button_Dover.TabIndex = 0;
             this.button_Dover.Text = "Группированный ряд для X";
             this.button_Dover.Click += new System.EventHandler(this.X_Click);
+            // 
+            // buttonDoverX
+            // 
+            this.buttonDoverX.Location = new System.Drawing.Point(812, 423);
+            this.buttonDoverX.Name = "buttonDoverX";
+            this.buttonDoverX.Size = new System.Drawing.Size(98, 56);
+            this.buttonDoverX.TabIndex = 22;
+            this.buttonDoverX.Text = "Доверительные интервалы";
+            this.buttonDoverX.UseVisualStyleBackColor = true;
+            this.buttonDoverX.Click += new System.EventHandler(this.ButtonDoverX_Click);
             // 
             // HipotesyX
             // 
@@ -299,14 +306,6 @@
             this.HeightPoligonX,
             this.HeightGistX,
             this.FuncX});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredX.DefaultCellStyle = dataGridViewCellStyle2;
             this.raspredX.EnableHeadersVisualStyles = false;
             this.raspredX.Location = new System.Drawing.Point(-2, -2);
             this.raspredX.Name = "raspredX";
@@ -318,6 +317,60 @@
             this.raspredX.Size = new System.Drawing.Size(633, 181);
             this.raspredX.TabIndex = 1;
             this.raspredX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RaspredX_CellContentClick);
+            // 
+            // NumberX
+            // 
+            this.NumberX.FillWeight = 31.37694F;
+            this.NumberX.HeaderText = "i";
+            this.NumberX.MaxInputLength = 2;
+            this.NumberX.Name = "NumberX";
+            this.NumberX.ReadOnly = true;
+            this.NumberX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // RangeX
+            // 
+            this.RangeX.FillWeight = 115.1833F;
+            this.RangeX.HeaderText = "[aᵢ₋₁ ; aᵢ)";
+            this.RangeX.Name = "RangeX";
+            this.RangeX.ReadOnly = true;
+            this.RangeX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // CountX
+            // 
+            this.CountX.FillWeight = 55.60566F;
+            this.CountX.HeaderText = "nᵢ";
+            this.CountX.Name = "CountX";
+            this.CountX.ReadOnly = true;
+            this.CountX.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // AverageX
+            // 
+            this.AverageX.FillWeight = 115.1833F;
+            this.AverageX.HeaderText = "X˟ᵢ";
+            this.AverageX.Name = "AverageX";
+            this.AverageX.ReadOnly = true;
+            this.AverageX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // HeightPoligonX
+            // 
+            this.HeightPoligonX.HeaderText = "nᵢ / n";
+            this.HeightPoligonX.Name = "HeightPoligonX";
+            this.HeightPoligonX.ReadOnly = true;
+            // 
+            // HeightGistX
+            // 
+            this.HeightGistX.FillWeight = 115.1833F;
+            this.HeightGistX.HeaderText = "nᵢ /(n∙h)";
+            this.HeightGistX.Name = "HeightGistX";
+            this.HeightGistX.ReadOnly = true;
+            this.HeightGistX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // FuncX
+            // 
+            this.FuncX.FillWeight = 115.1833F;
+            this.FuncX.HeaderText = "Fn(X)";
+            this.FuncX.Name = "FuncX";
+            this.FuncX.ReadOnly = true;
             // 
             // Y
             // 
@@ -337,13 +390,24 @@
             this.Y.Controls.Add(this.labelRazmahY);
             this.Y.Controls.Add(this.raspredY);
             this.Y.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Y.Location = new System.Drawing.Point(4, 25);
             this.Y.Name = "Y";
             this.Y.Padding = new System.Windows.Forms.Padding(3);
             this.Y.Size = new System.Drawing.Size(944, 511);
             this.Y.TabIndex = 1;
             this.Y.Text = "Группированный ряд для Y";
+            // 
+            // buttonDoverY
+            // 
+            this.buttonDoverY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDoverY.Location = new System.Drawing.Point(812, 423);
+            this.buttonDoverY.Name = "buttonDoverY";
+            this.buttonDoverY.Size = new System.Drawing.Size(98, 56);
+            this.buttonDoverY.TabIndex = 23;
+            this.buttonDoverY.Text = "Доверительные интервалы";
+            this.buttonDoverY.UseVisualStyleBackColor = true;
+            this.buttonDoverY.Click += new System.EventHandler(this.ButtonDoverY_Click);
             // 
             // HipotesyY
             // 
@@ -462,14 +526,14 @@
             this.raspredY.AllowUserToResizeColumns = false;
             this.raspredY.AllowUserToResizeRows = false;
             this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberY,
@@ -479,26 +543,10 @@
             this.HeightPoligonY,
             this.HeightGistY,
             this.FuncY});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.raspredY.DefaultCellStyle = dataGridViewCellStyle4;
             this.raspredY.EnableHeadersVisualStyles = false;
             this.raspredY.Location = new System.Drawing.Point(-2, -2);
             this.raspredY.Name = "raspredY";
             this.raspredY.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.raspredY.RowHeadersVisible = false;
             this.raspredY.RowTemplate.ReadOnly = true;
             this.raspredY.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -563,81 +611,6 @@
             // openFile
             // 
             this.openFile.FileName = "openFileDialog1";
-            // 
-            // NumberX
-            // 
-            this.NumberX.FillWeight = 31.37694F;
-            this.NumberX.HeaderText = "i";
-            this.NumberX.MaxInputLength = 2;
-            this.NumberX.Name = "NumberX";
-            this.NumberX.ReadOnly = true;
-            this.NumberX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // RangeX
-            // 
-            this.RangeX.FillWeight = 115.1833F;
-            this.RangeX.HeaderText = "[aᵢ₋₁ ; aᵢ)";
-            this.RangeX.Name = "RangeX";
-            this.RangeX.ReadOnly = true;
-            this.RangeX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // CountX
-            // 
-            this.CountX.FillWeight = 55.60566F;
-            this.CountX.HeaderText = "nᵢ";
-            this.CountX.Name = "CountX";
-            this.CountX.ReadOnly = true;
-            this.CountX.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // AverageX
-            // 
-            this.AverageX.FillWeight = 115.1833F;
-            this.AverageX.HeaderText = "X˟ᵢ";
-            this.AverageX.Name = "AverageX";
-            this.AverageX.ReadOnly = true;
-            this.AverageX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // HeightPoligonX
-            // 
-            this.HeightPoligonX.HeaderText = "nᵢ / n";
-            this.HeightPoligonX.Name = "HeightPoligonX";
-            this.HeightPoligonX.ReadOnly = true;
-            // 
-            // HeightGistX
-            // 
-            this.HeightGistX.FillWeight = 115.1833F;
-            this.HeightGistX.HeaderText = "nᵢ /(n∙h)";
-            this.HeightGistX.Name = "HeightGistX";
-            this.HeightGistX.ReadOnly = true;
-            this.HeightGistX.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // FuncX
-            // 
-            this.FuncX.FillWeight = 115.1833F;
-            this.FuncX.HeaderText = "Fn(X)";
-            this.FuncX.Name = "FuncX";
-            this.FuncX.ReadOnly = true;
-            // 
-            // buttonDoverX
-            // 
-            this.buttonDoverX.Location = new System.Drawing.Point(812, 423);
-            this.buttonDoverX.Name = "buttonDoverX";
-            this.buttonDoverX.Size = new System.Drawing.Size(98, 47);
-            this.buttonDoverX.TabIndex = 22;
-            this.buttonDoverX.Text = "Доверительные интервалы";
-            this.buttonDoverX.UseVisualStyleBackColor = true;
-            this.buttonDoverX.Click += new System.EventHandler(this.ButtonDoverX_Click);
-            // 
-            // buttonDoverY
-            // 
-            this.buttonDoverY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDoverY.Location = new System.Drawing.Point(812, 424);
-            this.buttonDoverY.Name = "buttonDoverY";
-            this.buttonDoverY.Size = new System.Drawing.Size(98, 47);
-            this.buttonDoverY.TabIndex = 23;
-            this.buttonDoverY.Text = "Доверительные интервалы";
-            this.buttonDoverY.UseVisualStyleBackColor = true;
-            this.buttonDoverY.Click += new System.EventHandler(this.ButtonDoverY_Click);
             // 
             // MainForm
             // 
