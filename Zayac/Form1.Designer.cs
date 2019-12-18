@@ -140,14 +140,14 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // XandY
@@ -182,7 +182,7 @@
             this.button_Dover.Controls.Add(this.labelKolVoInter);
             this.button_Dover.Controls.Add(this.labelRazmah);
             this.button_Dover.Controls.Add(this.raspredX);
-            this.button_Dover.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button_Dover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button_Dover.Location = new System.Drawing.Point(4, 25);
             this.button_Dover.Name = "button_Dover";
             this.button_Dover.Padding = new System.Windows.Forms.Padding(3);
@@ -422,7 +422,7 @@
             this.Y.Controls.Add(this.labelRazmahY);
             this.Y.Controls.Add(this.raspredY);
             this.Y.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Y.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Y.Location = new System.Drawing.Point(4, 25);
             this.Y.Name = "Y";
             this.Y.Padding = new System.Windows.Forms.Padding(3);
