@@ -198,7 +198,7 @@ namespace Zayac
                     chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_Y));
                 else
                     chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y";
-
+                
 
 
             }
