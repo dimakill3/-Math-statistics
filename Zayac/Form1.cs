@@ -124,6 +124,7 @@ namespace Zayac
                 CorrTable.Rows.Add();
                 CorrTable.Rows[6].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[6].getF()) + ";"
                                                        + Convert.ToString(MainForm.calc.inter_X[6].getS()) + "]";
+                CorrTable.Rows.Add();
                 CorrTable.Rows[7].Cells[0].Value = "nj";
 
                 for (int i = 0; i < Program.N; i++)
@@ -168,14 +169,23 @@ namespace Zayac
                 double yY1 = (xY1 - calc.vibor_urav_const_Y) / calc.vibor_urav_koef_Y;
 
 
-                chart1.Series[0].BorderWidth = 1;
+                chart1.ChartAreas["ChartArea1"].AxisX.Interval = 10;
+                chart1.ChartAreas["ChartArea1"].AxisY.Interval = 10;
+
+                chart1.ChartAreas["ChartArea1"].AxisX.Minimum = Math.Floor(xX0);
+                chart1.ChartAreas["ChartArea1"].AxisY.Minimum = Math.Floor(yX0);
+
+
                 chart1.Series[0].Points.AddXY(xX0, yX0);
                 chart1.Series[0].Points.AddXY(xX1, yX1);
 
-                chart1.Series[1].BorderWidth = 1;
                 chart1.Series[1].Color = Color.Gray;
                 chart1.Series[1].Points.AddXY(xY0, yY0);
                 chart1.Series[1].Points.AddXY(xY1, yY1);
+
+                chart1.Series[3].Points.AddXY(Math.Floor(xX0), peres_Y);
+                chart1.Series[3].Points.AddXY(peres_X, Math.Floor(yX0));
+               // chart1.Series[3].Points.AddXY(peres_X, peres_Y);
 
 
                 chart1.Series[2].BorderWidth = 1;

@@ -91,6 +91,7 @@
             this.poligonX.ChartAreas.Add(chartArea2);
             this.poligonX.Location = new System.Drawing.Point(48, 320);
             this.poligonX.Name = "poligonX";
+            series2.BorderWidth = 2;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.MarkerColor = System.Drawing.Color.Red;
