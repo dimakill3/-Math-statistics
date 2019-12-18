@@ -124,8 +124,8 @@
   <data name="Скриншот 13-12-2019 152107" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 152107.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 13-12-2019 220427" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 13-12-2019 220427.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 15-12-2019 183914" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 15-12-2019 183914.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 15-12-2019 182020" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 182020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +136,14 @@
   <data name="Скриншот 15-12-2019 184946" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 184946.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Скриншот 18-12-2019 215809" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 18-12-2019 215809.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Скриншот 13-12-2019 1524371" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 1524371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Скриншот 13-12-2019 152249" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 13-12-2019 152249.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 15-12-2019 183227" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 183227.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +154,8 @@
   <data name="Скриншот 15-12-2019 184901" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 184901.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 14-12-2019 013526" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 14-12-2019 013526.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 18-12-2019 215444" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 18-12-2019 215444.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 13-12-2019 215726" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 215726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,17 +163,20 @@
   <data name="Скриншот 13-12-2019 221531" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 221531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Скриншот 13-12-2019 221132" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 13-12-2019 221132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Скриншот 14-12-2019 0110211" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 14-12-2019 0110211.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 13-12-2019 150730" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 150730.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Скриншот 14-12-2019 013526" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 14-12-2019 013526.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Скриншот 13-12-2019 150735" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 150735.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Скриншот 13-12-2019 1520571" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 13-12-2019 1520571.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 13-12-2019 150726" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 150726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,23 +184,20 @@
   <data name="Скриншот 13-12-2019 152101" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 152101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 13-12-2019 220913" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 13-12-2019 220913.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 13-12-2019 1520571" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 13-12-2019 1520571.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 13-12-2019 152422" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 152422.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 15-12-2019 201716" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 15-12-2019 201716.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Скриншот 13-12-2019 152249" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 13-12-2019 152249.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 13-12-2019 220913" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 13-12-2019 220913.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 13-12-2019 1521071" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 1521071.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 13-12-2019 221132" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 13-12-2019 221132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 16-12-2019 032048" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 16-12-2019 032048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 14-12-2019 011021" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 14-12-2019 011021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +214,9 @@
   <data name="Скриншот 13-12-2019 221408" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 221408.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Скриншот 18-12-2019 215415" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 18-12-2019 215415.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Скриншот 14-12-2019 010455" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 14-12-2019 010455.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -216,6 +225,9 @@
   </data>
   <data name="Скриншот 13-12-2019 1521011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 1521011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Скриншот 13-12-2019 220427" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 13-12-2019 220427.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Скриншот 15-12-2019 184258" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 184258.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +238,8 @@
   <data name="Скриншот 15-12-2019 201747" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 15-12-2019 201747.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 15-12-2019 183914" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 15-12-2019 183914.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 15-12-2019 201716" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 15-12-2019 201716.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="линии" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\линии.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +250,7 @@
   <data name="Скриншот 13-12-2019 152057" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Скриншот 13-12-2019 152057.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Скриншот 16-12-2019 032048" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Скриншот 16-12-2019 032048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Скриншот 18-12-2019 2154151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Скриншот 18-12-2019 2154151.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -40,51 +40,7 @@ namespace Zayac
             label_dover_DX_min.Text = String.Format("{0:0.00}", MainForm.calc.dover_inter_DX_min);
             label_dover_DX_max.Text = String.Format("{0:0.00}", MainForm.calc.dover_inter_DX_max);
             label1.Text = Convert.ToString(MainForm.calc.dover_P);
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_dover_DX_max_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_dover_DX_min_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_dover_MX_max_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label_dover_MX_min_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
+            label2.Text = Convert.ToString(1 - MainForm.calc.dover_P);
         }
     }
 }

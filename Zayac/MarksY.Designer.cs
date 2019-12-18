@@ -380,7 +380,9 @@
             this.Controls.Add(this.sum_all_usl_v);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.raspredY);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Marks_Y";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Расчёт точечных оценок для группированного ряда Y";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Marks_Y_FormClosed);
             this.Load += new System.EventHandler(this.Marks_Y_Load);

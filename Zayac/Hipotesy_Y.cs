@@ -49,6 +49,7 @@ namespace Zayac
                 raspredY.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_chast_Y[i]);
             }
 
+            double all_n = 0, all_teor_vel = 0;
 
             int k = 0;
             for (int i = 0; i < MainForm.calc.d_Y; i++)
@@ -84,7 +85,17 @@ namespace Zayac
                 raspredInitY.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.teor_vel_Y[i]);
 
                 raspredInitY.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_Y[i]);
+
+                all_n += MainForm.calc.new_inter_Y[i].getN();
+                all_teor_vel += MainForm.calc.teor_vel_Y[i];
             }
+
+            raspredInitY.Rows.Add();
+            raspredInitY.Rows[MainForm.calc.d_Y].Cells[0].Value = "∑";
+            raspredInitY.Rows[MainForm.calc.d_Y].Cells[1].Value = "-";
+            raspredInitY.Rows[MainForm.calc.d_Y].Cells[2].Value = all_n;
+            raspredInitY.Rows[MainForm.calc.d_Y].Cells[3].Value = all_teor_vel;
+            raspredInitY.Rows[MainForm.calc.d_Y].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.hi_vib_Y);
 
             raspredInitY.Height = raspredInitY.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredInitY.ColumnHeadersHeight;
 

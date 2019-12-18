@@ -211,7 +211,9 @@
             this.Controls.Add(this.funcY);
             this.Controls.Add(this.poligonY);
             this.Controls.Add(this.gistY);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "GraphicsY";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Графики для группированного ряда Y";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GraphicsY_FormClosed);
             this.Load += new System.EventHandler(this.GraphicsY_Load);
