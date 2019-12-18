@@ -34,6 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,10 +97,14 @@
             this.inter_Y_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inter_Y_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vibor_urav = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.vibor_urav = new System.Windows.Forms.TabPage();
+            this.customToolTip1 = new Zayac.CustomToolTip();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.button_Dover.SuspendLayout();
@@ -107,6 +114,8 @@
             this.XY.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorrTable)).BeginInit();
+            this.vibor_urav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -763,18 +772,62 @@
             this.Count_X.Name = "Count_X";
             this.Count_X.Width = 35;
             // 
-            // openFile
-            // 
-            this.openFile.FileName = "openFileDialog1";
-            // 
             // vibor_urav
             // 
+            this.vibor_urav.Controls.Add(this.chart1);
+            this.vibor_urav.Controls.Add(this.label3);
+            this.vibor_urav.Controls.Add(this.label2);
             this.vibor_urav.Location = new System.Drawing.Point(4, 25);
             this.vibor_urav.Name = "vibor_urav";
             this.vibor_urav.Size = new System.Drawing.Size(944, 511);
             this.vibor_urav.TabIndex = 3;
             this.vibor_urav.Text = "Выборочные уравнения";
             this.vibor_urav.UseVisualStyleBackColor = true;
+            this.vibor_urav.Paint += new System.Windows.Forms.PaintEventHandler(this.Vibor_urav_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(661, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 22);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(661, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 22);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
+            // 
+            // openFile
+            // 
+            this.openFile.FileName = "openFileDialog1";
+            // 
+            // customToolTip1
+            // 
+            this.customToolTip1.OwnerDraw = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(610, 180);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
             // 
             // MainForm
             // 
@@ -801,6 +854,9 @@
             this.XY.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorrTable)).EndInit();
+            this.vibor_urav.ResumeLayout(false);
+            this.vibor_urav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -872,6 +928,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count_X;
         private System.Windows.Forms.TabPage vibor_urav;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private CustomToolTip customToolTip1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

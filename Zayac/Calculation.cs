@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
 
 
 namespace Zayac
@@ -27,6 +28,12 @@ namespace Zayac
         public double rashirenie_X, rashirenie_Y;
         public Intervals[] inter_X = new Intervals[Program.r];
         public Intervals[] inter_Y = new Intervals[Program.r];
+
+        public int min_Dec_X;
+        public int min_Dec_Y;
+        public int max_Dec_X;
+        public int max_Dec_Y;
+
 
         public double begin_X, begin_Y;
 
@@ -144,9 +151,22 @@ namespace Zayac
         public static double uv;
 
         //Коэфициенты перед Х и Y в выборочных уравнениях
-        public static double vibor_urav_koef_X;
-        public static double vibor_urav_koef_Y;
+        public double vibor_urav_koef_X;
+        public double vibor_urav_koef_Y;
+        public double vibor_urav_const_X;
+        public double vibor_urav_const_Y;
 
+        public double vibor_urav_peres_X;
+        public double vibor_urav_peres_Y;
+
+        public float Height;
+        public float Width;
+        public float pre_Width;
+        public float step;
+        public float grids;
+        public float size_grids;
+
+        public float all_average_X_1;
         public Calculation()
         {
             all_average_X = 0;
@@ -170,7 +190,24 @@ namespace Zayac
             count = 0;
             Sum_count = 0;
             uv = 0;
+
+            vibor_urav_koef_X = 0;
+            vibor_urav_koef_Y = 0;
+            vibor_urav_const_X = 0;
+            vibor_urav_const_Y = 0;
+    }
+
+        public float getCoordX(float x)
+        {
+            return (x * step) + pre_Width + size_grids;
         }
+
+        public float getCoordY(float y)
+        {
+            return Height - y * step - size_grids;
+        }
+
+
 
         public double getQuant(int k, double p)
         {
@@ -321,6 +358,28 @@ namespace Zayac
             return 0;
         }
 
+        public void setViborUrav()
+        {
+            vibor_urav_koef_X = (vibor_koef * sred_kvadr_Y) / sred_kvadr_X;
+            vibor_urav_koef_Y = (vibor_koef * sred_kvadr_X) / sred_kvadr_Y;
+
+            vibor_urav_const_X = vibor_urav_koef_X * (-1) * all_average_X + all_average_Y;
+            vibor_urav_const_Y = vibor_urav_koef_Y * (-1) * all_average_Y + all_average_X;
+        }
+
+        public PointF getVivorUravPeres(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4)
+        {
+            float k1, b1, k2, b2;
+            k1 = (y2 - y1) / (x2 - x1);
+            b1 = y1 - k1 * x1;
+            k2 = (y4 - y3) / (x4 - x3);
+            b2 = y3 - k2 * x3;
+            if (k1 == k2) return new PointF(0, 0);
+            vibor_urav_peres_X = (b2 - b1) / (k1 - k2);
+            vibor_urav_peres_Y = k1 * vibor_urav_peres_X + b1;
+            return new PointF(Convert.ToSingle(vibor_urav_peres_X), Convert.ToSingle(vibor_urav_peres_Y));
+        }
+
         public double getViborKoef(DataGridView CorrTable)
         {
             for (int i = 0; i < Program.r; i++)
@@ -408,6 +467,11 @@ namespace Zayac
 
             //Всегда целое значение, менять не нужно
             begin_Y = masY[0] - Math.Floor(rashirenie_Y / 2);
+
+            min_Dec_X = Convert.ToInt32(Convert.ToString((Convert.ToInt32(masX[0]) / 10)) + "5");
+            min_Dec_Y = Convert.ToInt32(Convert.ToString((Convert.ToInt32(masY[0]) / 10)) + "5");
+            max_Dec_X = Convert.ToInt32(Convert.ToString((Convert.ToInt32(masX[Program.N - 1]) / 10)) + "5");
+            max_Dec_Y = Convert.ToInt32(Convert.ToString((Convert.ToInt32(masY[Program.N - 1]) / 10)) + "5");
 
             //Установление интервалов
             #region
@@ -549,14 +613,20 @@ namespace Zayac
 
             //Нахождение математического ожидания(точечная оценка)
             #region 
+            
             for (int j = 0; j < Program.r; j++)
             {
                 all_average_X += inter_X[j].getA() * inter_X[j].getN();
                 all_average_Y += inter_Y[j].getA() * inter_Y[j].getN();
             }
-
+            
+            for (int i = 0; i < Program.N; i++)
+            {
+                all_average_X_1 += Convert.ToSingle(masX[i]);
+            }
             all_average_X /= Program.N;
             all_average_Y /= Program.N;
+            all_average_X_1 /= Program.N;
             #endregion
 
             //Находим математическое ожидание от X^2
@@ -894,7 +964,14 @@ namespace Zayac
 
             #endregion
 
-            #region Корелляционная таблица
+            #region для графика
+
+            this.Height = 500;
+            this.Width = 500;
+            pre_Width = 100;
+            grids = this.Height / 5;
+            size_grids = this.Width / grids;
+            step = size_grids / 5;
 
             #endregion
         }
