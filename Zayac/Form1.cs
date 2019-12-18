@@ -151,6 +151,55 @@ namespace Zayac
                     label3.Text = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y";
 
 
+                //Координаты точки пересечения
+                double peres_X = calc.all_average_X;
+                double peres_Y = calc.all_average_Y;
+
+                // Получаем нужные интервалы для функции
+                double xX0 = peres_X - 30;
+                double xX1 = peres_X + 30;
+                double yX0 = calc.vibor_urav_koef_X * xX0 + calc.vibor_urav_const_X;
+                double yX1 = calc.vibor_urav_koef_X * xX1 + calc.vibor_urav_const_X;
+
+
+                double xY0 = peres_X - 30;
+                double xY1 = peres_X + 30;
+                double yY0 = (xY0 - calc.vibor_urav_const_Y) / calc.vibor_urav_koef_Y;
+                double yY1 = (xY1 - calc.vibor_urav_const_Y) / calc.vibor_urav_koef_Y;
+
+
+                chart1.Series[0].BorderWidth = 1;
+                chart1.Series[0].Points.AddXY(xX0, yX0);
+                chart1.Series[0].Points.AddXY(xX1, yX1);
+
+                chart1.Series[1].BorderWidth = 1;
+                chart1.Series[1].Color = Color.Gray;
+                chart1.Series[1].Points.AddXY(xY0, yY0);
+                chart1.Series[1].Points.AddXY(xY1, yY1);
+
+
+                chart1.Series[2].BorderWidth = 1;
+
+                for (int i = 0; i < Program.N - 1; i++)
+                    chart1.Series[2].Points.AddXY(calc.masX_No_Sort[i], calc.masY_No_Sort[i]);
+
+
+
+                if (calc.vibor_urav_const_X > 0)
+                    chart1.Series[0].LegendText = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x + " + String.Format("{0:0.00}", calc.vibor_urav_const_X);
+                else if (calc.vibor_urav_const_X < 0)
+                    chart1.Series[0].LegendText = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_X));
+                else
+                    chart1.Series[0].LegendText = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x";
+                ///////\\\\\\\
+                if (calc.vibor_urav_const_Y > 0)
+                    chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y + " + String.Format("{0:0.00}", calc.vibor_urav_const_Y);
+                else if (calc.vibor_urav_const_Y < 0)
+                    chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_Y));
+                else
+                    chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y";
+
+
 
             }
         }
@@ -225,6 +274,8 @@ namespace Zayac
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
             tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
             tip[4].SetCustomToolTip(this.pictureBox1, "vibor_koef.png");
+
+
         }
         /*
         static void SetRoundedShape(CustomToolTip control, int radius)
@@ -241,6 +292,7 @@ namespace Zayac
             //control.Region = new Region(path);
         }
         */
+
         private void RashPromX_TextChanged(object sender, EventArgs e)
         {
 
