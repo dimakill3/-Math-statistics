@@ -458,5 +458,18 @@ namespace Zayac
             vibor_urav.Controls.Add(labelqqq);
             */
         }
+
+        private void openFile_FileOk(object sender, CancelEventArgs e)
+        {
+            ToMarksX.Enabled = true;
+            ToGraphicsX.Enabled = true;
+            HipotesyX.Enabled = true;
+            buttonDoverX.Enabled = true;
+
+            ToMarksY.Enabled = true;
+            ToGraphicsY.Enabled = true;
+            HipotesyY.Enabled = true;
+            buttonDoverY.Enabled = true;
+        }
     }
 }

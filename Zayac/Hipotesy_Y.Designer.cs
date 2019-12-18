@@ -522,7 +522,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.raspredY);
             this.Controls.Add(this.raspredInitY);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HipotesyY";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hipotesy_Y";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Hipotesy_Y_FormClosed);
             this.Load += new System.EventHandler(this.Hipotesy_Y_Load);

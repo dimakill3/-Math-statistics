@@ -38,6 +38,7 @@ namespace Zayac
             label_dover_DX_min.Text = String.Format("{0:0.00}", MainForm.calc.dover_inter_DY_min);
             label_dover_DX_max.Text = String.Format("{0:0.00}", MainForm.calc.dover_inter_DY_max);
             label1.Text = Convert.ToString(MainForm.calc.dover_P);
+            label2.Text = Convert.ToString(1 - MainForm.calc.dover_P);
 
         }
     }

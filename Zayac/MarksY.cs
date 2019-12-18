@@ -64,12 +64,12 @@ namespace Zayac
             all_sum_usl_in_2_v.Text = String.Format("{0:0.00}", MainForm.calc.all_average_uslov_Y_in_two);
             disp_usl_v.Text = String.Format("{0:0.00}", MainForm.calc.dispers_uslov_Y);
 
-            mat_ojid_Y.Text = String.Format("{0:0.00}", MainForm.calc.all_average_Y);
-            disp_Y.Text = String.Format("{0:0.00}", MainForm.calc.dispers_Y);
+            mat_ojid_Y.Text = String.Format("{0:0.000000}", MainForm.calc.all_average_Y);
+            disp_Y.Text = String.Format("{0:0.000000}", MainForm.calc.dispers_Y);
             sred_kv_Y.Text = String.Format("{0:0.00}", MainForm.calc.sred_kvadr_Y);
 
-            sum_all_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.all_average_uslov_Y_vivod);
-            disp_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.dispers_uslov_Y_vivod);
+            sum_all_usl_v_vivod.Text = String.Format("{0:0.000000}", MainForm.calc.all_average_uslov_Y_vivod);
+            disp_usl_v_vivod.Text = String.Format("{0:0.000000}", MainForm.calc.dispers_uslov_Y_vivod);
             sred_kv_usl_v_vivod.Text = String.Format("{0:0.00}", MainForm.calc.sred_kvadr_uslov_Y_vivod);
         }
 

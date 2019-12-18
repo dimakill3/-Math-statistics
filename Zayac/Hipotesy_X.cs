@@ -54,6 +54,9 @@ namespace Zayac
                 raspredX.Rows[i].Cells[6].Value = String.Format("{0:0.00}", MainForm.calc.teor_chast_X[i]);
             }
 
+
+            double all_n = 0, all_teor_vel = 0;
+
             int k = 0;
             for (int i = 0; i < MainForm.calc.d_X; i++)
             {
@@ -87,11 +90,19 @@ namespace Zayac
                 raspredInitX.Rows[i].Cells[3].Value = String.Format("{0:0.00}", MainForm.calc.teor_vel_X[i]);
 
                 raspredInitX.Rows[i].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.dlya_stat_X[i]);
+
+                all_n += MainForm.calc.new_inter_X[i].getN();
+                all_teor_vel += MainForm.calc.teor_vel_X[i];
             }
 
             //
             raspredInitX.Rows.Add();
             raspredInitX.Rows[MainForm.calc.d_X].Cells[0].Value = "∑";
+            raspredInitX.Rows[MainForm.calc.d_X].Cells[1].Value = "-";
+            raspredInitX.Rows[MainForm.calc.d_X].Cells[2].Value = all_n;
+            raspredInitX.Rows[MainForm.calc.d_X].Cells[3].Value = all_teor_vel;
+            raspredInitX.Rows[MainForm.calc.d_X].Cells[4].Value = String.Format("{0:0.00}", MainForm.calc.hi_vib_X);
+
             //
             raspredInitX.Height = raspredInitX.Rows.GetRowsHeight(DataGridViewElementStates.Visible) + raspredInitX.ColumnHeadersHeight;
 

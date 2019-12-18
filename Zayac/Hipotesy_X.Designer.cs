@@ -414,6 +414,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.raspredInitX);
             this.Controls.Add(this.raspredX);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HipotesyX";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HipotesyX_FormClosed);
             this.Load += new System.EventHandler(this.Hipotesy_X_Load);
