@@ -388,75 +388,7 @@ namespace Zayac
 
         private void Vibor_urav_Paint(object sender, PaintEventArgs e)
         {
-            //
-            //ГРАФИК>
-            //
 
-            Graphics graph = e.Graphics;
-            //Карандашы
-            Pen bold_pen = new Pen(Brushes.Black, 3);
-            Pen middle_pen = new Pen(Brushes.Black, 2);
-            Pen middle_pen_red = new Pen(Brushes.Red, 2);
-            Pen think_pen = new Pen(Brushes.Black, 1);
-
-            //Масштаб
-            float scale = calc.Height / calc.grids;
-
-            //начало координат
-            Point X0Y0 = new Point(0, 0);
-
-            //Ось Х и Y
-            graph.DrawLine(bold_pen, new PointF(calc.pre_Width, calc.Height - calc.Height / calc.grids), new PointF(calc.Width + calc.pre_Width, calc.Height - calc.Height / calc.grids));
-            graph.DrawLine(bold_pen, new PointF(calc.Width / calc.grids + calc.pre_Width, 0), new PointF(calc.Width / calc.grids + calc.pre_Width, calc.Height));
-
-            for (int i = 0; i <= calc.grids; i++)
-            {
-                graph.DrawLine(think_pen, new PointF(calc.pre_Width, i * scale), new PointF(calc.Width + calc.pre_Width, i * scale));
-            }
-
-            for (int i = 0; i <= calc.grids; i++)
-            {
-                graph.DrawLine(think_pen, new PointF(i * scale + calc.pre_Width, 0), new PointF(i * scale + calc.pre_Width, calc.Height));
-            }
-            //
-            //
-            //Координаты точки пересечения
-            float peres_X = calc.getCoordX(Convert.ToSingle(calc.all_average_X));
-            float peres_Y = calc.getCoordY(Convert.ToSingle(calc.all_average_Y));
-
-            // Получаем нужные интервалы для функции
-            float xX0 = peres_X - 150;
-            float xX1 = peres_X + 150;
-            float yX0 = calc.Height - Convert.ToSingle(calc.vibor_urav_koef_X * xX0 + calc.vibor_urav_const_X - calc.pre_Width - calc.size_grids);
-            float yX1 = calc.Height - Convert.ToSingle(calc.vibor_urav_koef_X * xX1 + calc.vibor_urav_const_X - calc.pre_Width - calc.size_grids);
-
-
-            float xY0 = peres_X - 150;
-            float xY1 = peres_X + 150;
-            float yY0 = calc.Height - Convert.ToSingle((xY0 - calc.vibor_urav_const_Y - calc.pre_Width - calc.size_grids) / calc.vibor_urav_koef_Y);
-            float yY1 = calc.Height - Convert.ToSingle((xY1 - calc.vibor_urav_const_Y - calc.pre_Width - calc.size_grids) / calc.vibor_urav_koef_Y);
-
-
-            PointF pointX1 = new PointF(xX0, yX0);
-            PointF pointX2 = new PointF(xX1, yX1);
-
-            PointF pointY1 = new PointF(xY0, yY0);
-            PointF pointY2 = new PointF(xY1, yY1);
-
-            graph.DrawLine(middle_pen, pointX1, pointX2);
-            graph.DrawLine(middle_pen_red, pointY1, pointY2);
-
-            for (int i = 0; i < Program.N - 1; i++)
-            {
-                graph.DrawRectangle(bold_pen, calc.getCoordX(Convert.ToSingle(calc.masX_No_Sort[i])), calc.getCoordY(Convert.ToSingle(calc.masY_No_Sort[i])) , 1, 1);
-            }
-
-            /*
-            Label labelqqq = new Label();
-            labelqqq.Location = new Point(200, 200);
-            labelqqq.Text = "labelqqq";
-            vibor_urav.Controls.Add(labelqqq);
-            */
         }
 
         private void openFile_FileOk(object sender, CancelEventArgs e)
