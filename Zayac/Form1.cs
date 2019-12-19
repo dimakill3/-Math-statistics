@@ -85,6 +85,10 @@ namespace Zayac
                 }
 
                 //Вывод в общей информации в общую форму
+                X_min.Text = String.Format("{0:0.00}", Convert.ToString(calc.min_X));
+                X_max.Text = String.Format("{0:0.00}", Convert.ToString(calc.max_X));
+                Ymin.Text = String.Format("{0:0.00}", Convert.ToString(calc.min_Y));
+                Ymax.Text = String.Format("{0:0.00}", Convert.ToString(calc.max_Y));
                 razmahX.Text = String.Format("{0:0.00}", Convert.ToString(calc.razryv_X));
                 razmahY.Text = String.Format("{0:0.00}", Convert.ToString(calc.razryv_Y));
                 countInterX.Text = String.Format("{0:0.00}", Convert.ToString(Program.r));

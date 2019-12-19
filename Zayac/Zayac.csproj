@@ -295,5 +295,8 @@
   <ItemGroup>
     <None Include="Resources\Скриншот 18-12-2019 2154151.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_Simple_bw.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

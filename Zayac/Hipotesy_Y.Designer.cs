@@ -69,6 +69,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.raspredInitY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -76,6 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // raspredInitY
@@ -164,7 +167,7 @@
             // Stat_X
             // 
             this.Stat_X.FillWeight = 143.6097F;
-            this.Stat_X.HeaderText = "(nᵢ - npᵢ) / (npᵢ)";
+            this.Stat_X.HeaderText = "(nᵢ - npᵢ)² / (npᵢ)";
             this.Stat_X.Name = "Stat_X";
             this.Stat_X.ReadOnly = true;
             // 
@@ -292,7 +295,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(118, 533);
+            this.label7.Location = new System.Drawing.Point(133, 573);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 48;
@@ -303,7 +306,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(329, 492);
+            this.label5.Location = new System.Drawing.Point(344, 532);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 16);
             this.label5.TabIndex = 47;
@@ -313,7 +316,7 @@
             // 
             this.pictureBox2.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183724;
             this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(415, 482);
+            this.pictureBox2.Location = new System.Drawing.Point(430, 522);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -325,7 +328,7 @@
             this.svoboda.AutoSize = true;
             this.svoboda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.svoboda.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.svoboda.Location = new System.Drawing.Point(448, 490);
+            this.svoboda.Location = new System.Drawing.Point(463, 530);
             this.svoboda.Name = "svoboda";
             this.svoboda.Size = new System.Drawing.Size(38, 16);
             this.svoboda.TabIndex = 46;
@@ -335,7 +338,7 @@
             // 
             this.hi.Enabled = false;
             this.hi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.hi.Location = new System.Drawing.Point(47, 532);
+            this.hi.Location = new System.Drawing.Point(62, 572);
             this.hi.Name = "hi";
             this.hi.Size = new System.Drawing.Size(43, 22);
             this.hi.TabIndex = 45;
@@ -344,7 +347,7 @@
             // 
             this.pictureBox5.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183914;
             this.pictureBox5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox5.Location = new System.Drawing.Point(0, 528);
+            this.pictureBox5.Location = new System.Drawing.Point(15, 568);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(41, 27);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +359,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(237, 539);
+            this.label8.Location = new System.Drawing.Point(252, 579);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 16);
             this.label8.TabIndex = 43;
@@ -367,7 +370,7 @@
             this.uslovie.AutoSize = true;
             this.uslovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.uslovie.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.uslovie.Location = new System.Drawing.Point(671, 516);
+            this.uslovie.Location = new System.Drawing.Point(686, 556);
             this.uslovie.Name = "uslovie";
             this.uslovie.Size = new System.Drawing.Size(0, 16);
             this.uslovie.TabIndex = 42;
@@ -377,7 +380,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(234, 516);
+            this.label6.Location = new System.Drawing.Point(249, 556);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(437, 16);
             this.label6.TabIndex = 41;
@@ -387,7 +390,7 @@
             // 
             this.quant.Enabled = false;
             this.quant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.quant.Location = new System.Drawing.Point(492, 488);
+            this.quant.Location = new System.Drawing.Point(507, 528);
             this.quant.Name = "quant";
             this.quant.Size = new System.Drawing.Size(44, 22);
             this.quant.TabIndex = 40;
@@ -396,7 +399,7 @@
             // 
             this.hi_vivod.Enabled = false;
             this.hi_vivod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.hi_vivod.Location = new System.Drawing.Point(351, 489);
+            this.hi_vivod.Location = new System.Drawing.Point(366, 529);
             this.hi_vivod.Name = "hi_vivod";
             this.hi_vivod.Size = new System.Drawing.Size(44, 22);
             this.hi_vivod.TabIndex = 38;
@@ -406,7 +409,7 @@
             this.znak.AutoSize = true;
             this.znak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.znak.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.znak.Location = new System.Drawing.Point(401, 490);
+            this.znak.Location = new System.Drawing.Point(416, 530);
             this.znak.Name = "znak";
             this.znak.Size = new System.Drawing.Size(0, 16);
             this.znak.TabIndex = 37;
@@ -416,7 +419,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(234, 489);
+            this.label4.Location = new System.Drawing.Point(249, 529);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 36;
@@ -427,7 +430,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(412, 448);
+            this.label3.Location = new System.Drawing.Point(427, 488);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 35;
@@ -437,7 +440,7 @@
             // 
             this.pictureBox3.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_182458;
             this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox3.Location = new System.Drawing.Point(97, 492);
+            this.pictureBox3.Location = new System.Drawing.Point(112, 532);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(21, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -448,7 +451,7 @@
             // 
             this.step_svobod.Enabled = false;
             this.step_svobod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.step_svobod.Location = new System.Drawing.Point(136, 492);
+            this.step_svobod.Location = new System.Drawing.Point(151, 532);
             this.step_svobod.Name = "step_svobod";
             this.step_svobod.Size = new System.Drawing.Size(43, 22);
             this.step_svobod.TabIndex = 34;
@@ -457,7 +460,7 @@
             // 
             this.interval.Enabled = false;
             this.interval.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.interval.Location = new System.Drawing.Point(136, 448);
+            this.interval.Location = new System.Drawing.Point(151, 488);
             this.interval.Name = "interval";
             this.interval.Size = new System.Drawing.Size(43, 22);
             this.interval.TabIndex = 33;
@@ -466,7 +469,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(-3, 478);
+            this.label2.Location = new System.Drawing.Point(12, 518);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 50);
             this.label2.TabIndex = 32;
@@ -476,7 +479,7 @@
             // 
             this.pictureBox4.Image = global::Zayac.Properties.Resources.Скриншот_15_12_2019_183837;
             this.pictureBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox4.Location = new System.Drawing.Point(304, 482);
+            this.pictureBox4.Location = new System.Drawing.Point(319, 522);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(26, 31);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -487,18 +490,40 @@
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(-3, 435);
+            this.label1.Location = new System.Drawing.Point(12, 475);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 33);
             this.label1.TabIndex = 29;
             this.label1.Text = "Число интервалов m = ";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Zayac.Properties.Resources.Info_Simple_bw_svg;
+            this.pictureBox6.Location = new System.Drawing.Point(922, 438);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 49;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(734, 438);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(182, 16);
+            this.label9.TabIndex = 50;
+            this.label9.Text = "Информация о таблице";
             // 
             // HipotesyY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(952, 564);
+            this.ClientSize = new System.Drawing.Size(952, 612);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox2);
@@ -535,6 +560,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,11 +571,6 @@
         private System.Windows.Forms.DataGridView raspredInitY;
         private System.Windows.Forms.DataGridView raspredY;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RangeX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stat_X;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -577,5 +598,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RangeX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuncX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stat_X;
+        private System.Windows.Forms.Label label9;
     }
 }
