@@ -141,20 +141,6 @@ namespace Zayac
 
                 //Выбборочные уравнения
                 calc.setViborUrav(); 
-                if (calc.vibor_urav_const_X > 0)
-                    label2.Text = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x + " + String.Format("{0:0.00}", calc.vibor_urav_const_X);
-                else if (calc.vibor_urav_const_X < 0)
-                    label2.Text = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_X));
-                else
-                    label2.Text = "y = " + String.Format("{0:0.00}", calc.vibor_urav_koef_X) + "x";
-                ///////\\\\\\\
-                if (calc.vibor_urav_const_Y > 0)
-                    label3.Text = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y + " + String.Format("{0:0.00}", calc.vibor_urav_const_Y);
-                else if (calc.vibor_urav_const_Y < 0)
-                    label3.Text = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_Y));
-                else
-                    label3.Text = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y";
-
 
                 //Координаты точки пересечения
                 double peres_X = calc.all_average_X;
@@ -288,7 +274,9 @@ namespace Zayac
             tip[2].SetCustomToolTip(this.labelRashY, "расширение_Y.png");
             tip[3].SetCustomToolTip(this.labelLenghtInterY, "длина_интервала_X.png");
             tip[4].SetCustomToolTip(this.pictureBox1, "vibor_koef.png");
-
+            tip[5].SetCustomToolTip(pictureBox2, "info_X.png");
+            tip[6].SetCustomToolTip(pictureBox3, "info_Y.png");
+            tip[7].SetCustomToolTip(pictureBox4, "vibor_urav.png");
 
         }
         /*
@@ -416,6 +404,11 @@ namespace Zayac
             ToGraphicsY.Enabled = true;
             HipotesyY.Enabled = true;
             buttonDoverY.Enabled = true;
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -24,6 +24,19 @@ namespace Zayac
 
         private void Hipotesy_X_Load(object sender, EventArgs e)
         {
+
+            CustomToolTip[] tip = new CustomToolTip[10];
+            for (int i = 0; i < 10; i++)
+                tip[i] = new CustomToolTip();
+
+            tip[0].SetCustomToolTip(pictureBox5, "hi_kvadr.png");
+            tip[1].SetCustomToolTip(pictureBox4, "hi_kvadr.png");
+            tip[2].SetCustomToolTip(pictureBox2, "kvantil.png");
+            tip[3].SetCustomToolTip(pictureBox6, "laplas_X.png");
+            tip[4].SetCustomToolTip(label1, "m_label.png");
+            tip[5].SetCustomToolTip(label7, "a_label.png");
+            tip[6].SetCustomToolTip(label2, "mk1_label.png");
+
             for (int i = 0; i < Program.r ; i++)
             {
                 raspredX.Rows.Add();
