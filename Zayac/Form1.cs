@@ -14,7 +14,7 @@ namespace Zayac
     public partial class MainForm : Form
     {
 
-        public static Calculation calc = new Calculation();
+        public static Calculation calc;
 
         public MainForm()
         {
@@ -23,8 +23,23 @@ namespace Zayac
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            calc = new Calculation();
+            raspredX.DataSource = null;
             raspredX.Rows.Clear();
+
+            raspredY.DataSource = null;
             raspredY.Rows.Clear();
+
+            CorrTable.DataSource = null;
+            CorrTable.Rows.Clear();
+
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+            chart1.Series[2].Points.Clear();
+            chart1.Series[3].Points.Clear();
+
+
+
             var filePath = string.Empty;
             var fileContent = string.Empty;
 
@@ -99,41 +114,41 @@ namespace Zayac
                 RashPromY.Text = String.Format("{0:0.00}", Convert.ToString(calc.rashirenie_Y));
 
                 // Корелляционная таблица
-                CorrTable.Columns[1].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[0].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[0].getS()) + ")";
-                CorrTable.Columns[2].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[1].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[1].getS()) + ")";
-                CorrTable.Columns[3].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[2].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[2].getS()) + ")";
-                CorrTable.Columns[4].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[3].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[3].getS()) + ")";
-                CorrTable.Columns[5].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[4].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[4].getS()) + ")";
-                CorrTable.Columns[6].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[5].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[5].getS()) + ")";
-                CorrTable.Columns[7].HeaderText = "[" + Convert.ToString(MainForm.calc.inter_Y[6].getF()) + ";" + Convert.ToString(MainForm.calc.inter_Y[6].getS()) + "]";
+                CorrTable.Columns[1].HeaderText = "[" + Convert.ToString(calc.inter_Y[0].getF()) + ";" + Convert.ToString(calc.inter_Y[0].getS()) + ")";
+                CorrTable.Columns[2].HeaderText = "[" + Convert.ToString(calc.inter_Y[1].getF()) + ";" + Convert.ToString(calc.inter_Y[1].getS()) + ")";
+                CorrTable.Columns[3].HeaderText = "[" + Convert.ToString(calc.inter_Y[2].getF()) + ";" + Convert.ToString(calc.inter_Y[2].getS()) + ")";
+                CorrTable.Columns[4].HeaderText = "[" + Convert.ToString(calc.inter_Y[3].getF()) + ";" + Convert.ToString(calc.inter_Y[3].getS()) + ")";
+                CorrTable.Columns[5].HeaderText = "[" + Convert.ToString(calc.inter_Y[4].getF()) + ";" + Convert.ToString(calc.inter_Y[4].getS()) + ")";
+                CorrTable.Columns[6].HeaderText = "[" + Convert.ToString(calc.inter_Y[5].getF()) + ";" + Convert.ToString(calc.inter_Y[5].getS()) + ")";
+                CorrTable.Columns[7].HeaderText = "[" + Convert.ToString(calc.inter_Y[6].getF()) + ";" + Convert.ToString(calc.inter_Y[6].getS()) + "]";
 
                 CorrTable.Rows.Add();
-                CorrTable.Rows[0].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[0].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[0].getS()) + ")";
+                CorrTable.Rows[0].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[0].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[0].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[1].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[1].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[1].getS()) + ")";
+                CorrTable.Rows[1].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[1].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[1].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[2].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[2].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[2].getS()) + ")";
+                CorrTable.Rows[2].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[2].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[2].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[3].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[3].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[3].getS()) + ")";
+                CorrTable.Rows[3].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[3].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[3].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[4].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[4].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[4].getS()) + ")";
+                CorrTable.Rows[4].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[4].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[4].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[5].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[5].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[5].getS()) + ")";
+                CorrTable.Rows[5].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[5].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[5].getS()) + ")";
                 CorrTable.Rows.Add();
-                CorrTable.Rows[6].Cells[0].Value = "[" + Convert.ToString(MainForm.calc.inter_X[6].getF()) + ";"
-                                                       + Convert.ToString(MainForm.calc.inter_X[6].getS()) + "]";
+                CorrTable.Rows[6].Cells[0].Value = "[" + Convert.ToString(calc.inter_X[6].getF()) + ";"
+                                                       + Convert.ToString(calc.inter_X[6].getS()) + "]";
                 CorrTable.Rows.Add();
                 CorrTable.Rows[7].Cells[0].Value = "nj";
 
                 for (int i = 0; i < Program.N; i++)
                 {
-                    CorrTable.Rows[MainForm.calc.getInterX(MainForm.calc.masX_No_Sort[i])].Cells[MainForm.calc.getInterY(MainForm.calc.masY_No_Sort[i]) + 1].Value = Convert.ToString(Convert.ToInt32(CorrTable.Rows[MainForm.calc.getInterX(MainForm.calc.masX_No_Sort[i])].Cells[MainForm.calc.getInterY(MainForm.calc.masY_No_Sort[i]) + 1].Value) + 1);
+                    CorrTable.Rows[calc.getInterX(calc.masX_No_Sort[i])].Cells[calc.getInterY(calc.masY_No_Sort[i]) + 1].Value = Convert.ToString(Convert.ToInt32(CorrTable.Rows[calc.getInterX(calc.masX_No_Sort[i])].Cells[calc.getInterY(calc.masY_No_Sort[i]) + 1].Value) + 1);
                 }
 
                 label1.Text = String.Format("{0:0.00}", calc.getViborKoef(CorrTable));
@@ -198,9 +213,10 @@ namespace Zayac
                     chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y - " + String.Format("{0:0.00}", Math.Abs(calc.vibor_urav_const_Y));
                 else
                     chart1.Series[1].LegendText = "x = " + String.Format("{0:0.00}", calc.vibor_urav_koef_Y) + "y";
-                
 
-
+                double qqq = (calc.sred_kvadr_X * calc.sred_kvadr_Y) / (calc.dispers_X + calc.dispers_Y) * (1 - Math.Pow(calc.getViborKoef(CorrTable), 2)) / (calc.getViborKoef(CorrTable));
+                label6.Text = Convert.ToString(String.Format("{0:0.00}", qqq));
+                label8.Text = Convert.ToString(String.Format("{0:0.00}", (Math.Atan(qqq) * 180) / Math.PI));
             }
         }
 

@@ -167,6 +167,7 @@ namespace Zayac
         public float size_grids;
 
         public float all_average_X_1;
+
         public Calculation()
         {
             all_average_X = 0;
@@ -197,6 +198,8 @@ namespace Zayac
             vibor_urav_const_Y = 0;
     }
 
+        ~Calculation() { }
+
         public float getCoordX(float x)
         {
             return (x * step) + pre_Width + size_grids;
@@ -206,8 +209,6 @@ namespace Zayac
         {
             return Height - y * step - size_grids;
         }
-
-
 
         public double getQuant(int k, double p)
         {
@@ -419,7 +420,6 @@ namespace Zayac
 
             return vibor_koef;
         }
-
 
         public void Calculate(String[] fielRead)
         {

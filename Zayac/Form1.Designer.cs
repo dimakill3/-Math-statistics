@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -97,6 +96,7 @@
             this.HeightGistY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FuncY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.XY = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CorrTable = new System.Windows.Forms.DataGridView();
@@ -114,8 +114,11 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.customToolTip1 = new Zayac.CustomToolTip();
-            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.button_Dover.SuspendLayout();
@@ -392,7 +395,7 @@
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -691,7 +694,7 @@
             this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -784,6 +787,16 @@
             this.XY.TabIndex = 2;
             this.XY.Text = "Корреляционная  таблица";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(277, 297);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(351, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Выборочный коэффициент корреляции:";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Zayac.Properties.Resources.Скриншот_16_12_2019_032048;
@@ -810,14 +823,6 @@
             this.CorrTable.AllowUserToResizeColumns = false;
             this.CorrTable.AllowUserToResizeRows = false;
             this.CorrTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CorrTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.CorrTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CorrTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.inter_X,
@@ -835,8 +840,8 @@
             this.CorrTable.Name = "CorrTable";
             this.CorrTable.ReadOnly = true;
             this.CorrTable.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CorrTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CorrTable.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.CorrTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.CorrTable.Size = new System.Drawing.Size(944, 203);
             this.CorrTable.TabIndex = 3;
@@ -899,6 +904,10 @@
             // vibor_urav
             // 
             this.vibor_urav.BackColor = System.Drawing.Color.FloralWhite;
+            this.vibor_urav.Controls.Add(this.label8);
+            this.vibor_urav.Controls.Add(this.label7);
+            this.vibor_urav.Controls.Add(this.label6);
+            this.vibor_urav.Controls.Add(this.label3);
             this.vibor_urav.Controls.Add(this.pictureBox4);
             this.vibor_urav.Controls.Add(this.chart1);
             this.vibor_urav.Location = new System.Drawing.Point(4, 25);
@@ -983,19 +992,45 @@
             this.openFile.FileName = "openFileDialog1";
             this.openFile.FileOk += new System.ComponentModel.CancelEventHandler(this.openFile_FileOk);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(786, 230);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "tgφ = ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(827, 230);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "label6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(789, 261);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 16);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "φ = ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(814, 261);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "label8";
+            // 
             // customToolTip1
             // 
             this.customToolTip1.OwnerDraw = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(277, 297);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(351, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Выборочный коэффициент корреляции:";
             // 
             // MainForm
             // 
@@ -1027,6 +1062,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CorrTable)).EndInit();
             this.vibor_urav.ResumeLayout(false);
+            this.vibor_urav.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
@@ -1114,6 +1150,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 
