@@ -33,6 +33,9 @@ namespace Zayac
             CorrTable.DataSource = null;
             CorrTable.Rows.Clear();
 
+            mainTable.DataSource = null;
+            mainTable.Rows.Clear();
+
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
             chart1.Series[2].Points.Clear();
@@ -42,6 +45,12 @@ namespace Zayac
 
             var filePath = string.Empty;
             var fileContent = string.Empty;
+
+
+
+
+
+            
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
@@ -61,6 +70,20 @@ namespace Zayac
 
                 //Чтение из файла
                 calc.Calculate(Content);
+
+                int k = 0;
+                for (int i = 0; i < Program.N / 5; i += 2)
+                {
+                    for (int j = 0; j < Program.N / 5; j++, k++)
+                    {
+                        if (i == 0) mainTable.Rows.Add();
+                        mainTable.Rows[j].Cells[i].Value = Convert.ToString(calc.masX_No_Sort[k]);
+                        mainTable.Rows[j].Cells[i + 1].Value = Convert.ToString(calc.masY_No_Sort[k]);
+
+                    }
+                }
+
+
 
                 for (int i = 0; i < Program.r; i++)
                 {
@@ -425,6 +448,45 @@ namespace Zayac
         private void PictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ButtonClear_Click(object sender, EventArgs e)
+        {
+            raspredX.DataSource = null;
+            raspredX.Rows.Clear();
+
+            raspredY.DataSource = null;
+            raspredY.Rows.Clear();
+
+            CorrTable.DataSource = null;
+            CorrTable.Rows.Clear();
+
+            mainTable.DataSource = null;
+            mainTable.Rows.Clear();
+
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+            chart1.Series[2].Points.Clear();
+            chart1.Series[3].Points.Clear();
+        }
+
+        private void GoToCalc_Click(object sender, EventArgs e)
+        {
+            if (mainTable.RowCount == 10)
+            {
+                for (int i = 0; i < Program.N / 5; i++)
+                    for (int j = 0; j < mainTable.ColumnCount; j++)
+                    {
+                        if (Convert.ToString(mainTable.Rows[i].Cells[j].Value) == "")
+                        {
+                            MessageBox.Show("Имеются пустые значения\nХотите продолдить?", "Предупреждение", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+
+                        }
+                    }
+            } else
+                MessageBox.Show("Таблица не заполнена\nЗаполните таблицу", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            else
+                XandY.SelectedIndex = 1;
         }
     }
 }
