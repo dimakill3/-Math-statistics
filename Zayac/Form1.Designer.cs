@@ -28,20 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XandY = new System.Windows.Forms.TabControl();
+            this.FirstTable = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.addXY = new System.Windows.Forms.Button();
+            this.goToCalc = new System.Windows.Forms.Button();
+            this.inputXY = new System.Windows.Forms.TextBox();
+            this.mainTable = new System.Windows.Forms.DataGridView();
+            this.colX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colX3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colX4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colX5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Dover = new System.Windows.Forms.TabPage();
             this.X_max = new System.Windows.Forms.TextBox();
             this.X_min = new System.Windows.Forms.TextBox();
@@ -101,15 +119,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CorrTable = new System.Windows.Forms.DataGridView();
-            this.inter_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inter_Y_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Count_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vibor_urav = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -120,26 +129,19 @@
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.customToolTip1 = new Zayac.CustomToolTip();
-            this.FirstTable = new System.Windows.Forms.TabPage();
-            this.mainTable = new System.Windows.Forms.DataGridView();
-            this.colX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colX2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colX3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colX4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colX5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inputXY = new System.Windows.Forms.TextBox();
-            this.goToCalc = new System.Windows.Forms.Button();
-            this.addXY = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.inter_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inter_Y_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
+            this.FirstTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
             this.button_Dover.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).BeginInit();
@@ -152,8 +154,6 @@
             this.vibor_urav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.FirstTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -177,7 +177,7 @@
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
@@ -197,6 +197,173 @@
             this.XandY.SelectedIndex = 0;
             this.XandY.Size = new System.Drawing.Size(952, 540);
             this.XandY.TabIndex = 1;
+            // 
+            // FirstTable
+            // 
+            this.FirstTable.Controls.Add(this.label9);
+            this.FirstTable.Controls.Add(this.textBox1);
+            this.FirstTable.Controls.Add(this.buttonClear);
+            this.FirstTable.Controls.Add(this.addXY);
+            this.FirstTable.Controls.Add(this.goToCalc);
+            this.FirstTable.Controls.Add(this.inputXY);
+            this.FirstTable.Controls.Add(this.mainTable);
+            this.FirstTable.Location = new System.Drawing.Point(4, 25);
+            this.FirstTable.Name = "FirstTable";
+            this.FirstTable.Size = new System.Drawing.Size(944, 511);
+            this.FirstTable.TabIndex = 4;
+            this.FirstTable.Text = "Таблица";
+            this.FirstTable.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(105, 349);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Введите лист:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(237, 347);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 7;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(788, 346);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(104, 23);
+            this.buttonClear.TabIndex = 6;
+            this.buttonClear.Text = "Очистить";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
+            // 
+            // addXY
+            // 
+            this.addXY.Location = new System.Drawing.Point(237, 299);
+            this.addXY.Name = "addXY";
+            this.addXY.Size = new System.Drawing.Size(90, 23);
+            this.addXY.TabIndex = 5;
+            this.addXY.Text = "Добавить";
+            this.addXY.UseVisualStyleBackColor = true;
+            // 
+            // goToCalc
+            // 
+            this.goToCalc.Location = new System.Drawing.Point(788, 431);
+            this.goToCalc.Name = "goToCalc";
+            this.goToCalc.Size = new System.Drawing.Size(104, 23);
+            this.goToCalc.TabIndex = 4;
+            this.goToCalc.Text = "Посчитать";
+            this.goToCalc.UseVisualStyleBackColor = true;
+            this.goToCalc.Click += new System.EventHandler(this.GoToCalc_Click);
+            // 
+            // inputXY
+            // 
+            this.inputXY.Location = new System.Drawing.Point(92, 301);
+            this.inputXY.Name = "inputXY";
+            this.inputXY.Size = new System.Drawing.Size(100, 22);
+            this.inputXY.TabIndex = 3;
+            // 
+            // mainTable
+            // 
+            this.mainTable.AllowUserToAddRows = false;
+            this.mainTable.AllowUserToDeleteRows = false;
+            this.mainTable.AllowUserToResizeColumns = false;
+            this.mainTable.AllowUserToResizeRows = false;
+            this.mainTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mainTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.mainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colX1,
+            this.colY1,
+            this.colX2,
+            this.colY2,
+            this.colX3,
+            this.colY3,
+            this.colX4,
+            this.colY4,
+            this.colX5,
+            this.colY5});
+            this.mainTable.EnableHeadersVisualStyles = false;
+            this.mainTable.Location = new System.Drawing.Point(0, 0);
+            this.mainTable.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.mainTable.Name = "mainTable";
+            this.mainTable.ReadOnly = true;
+            this.mainTable.RowHeadersVisible = false;
+            this.mainTable.RowTemplate.ReadOnly = true;
+            this.mainTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.mainTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.mainTable.Size = new System.Drawing.Size(633, 247);
+            this.mainTable.TabIndex = 2;
+            // 
+            // colX1
+            // 
+            this.colX1.HeaderText = "𝑥ᵢ";
+            this.colX1.Name = "colX1";
+            this.colX1.ReadOnly = true;
+            // 
+            // colY1
+            // 
+            this.colY1.HeaderText = "𝑦ᵢ";
+            this.colY1.Name = "colY1";
+            this.colY1.ReadOnly = true;
+            // 
+            // colX2
+            // 
+            this.colX2.HeaderText = "𝑥ᵢ";
+            this.colX2.Name = "colX2";
+            this.colX2.ReadOnly = true;
+            // 
+            // colY2
+            // 
+            this.colY2.HeaderText = "𝑦ᵢ";
+            this.colY2.Name = "colY2";
+            this.colY2.ReadOnly = true;
+            // 
+            // colX3
+            // 
+            this.colX3.HeaderText = "𝑥ᵢ";
+            this.colX3.Name = "colX3";
+            this.colX3.ReadOnly = true;
+            // 
+            // colY3
+            // 
+            this.colY3.HeaderText = "𝑦ᵢ";
+            this.colY3.Name = "colY3";
+            this.colY3.ReadOnly = true;
+            // 
+            // colX4
+            // 
+            this.colX4.HeaderText = "𝑥ᵢ";
+            this.colX4.Name = "colX4";
+            this.colX4.ReadOnly = true;
+            // 
+            // colY4
+            // 
+            this.colY4.HeaderText = "𝑦ᵢ";
+            this.colY4.Name = "colY4";
+            this.colY4.ReadOnly = true;
+            // 
+            // colX5
+            // 
+            this.colX5.HeaderText = "𝑥ᵢ";
+            this.colX5.Name = "colX5";
+            this.colX5.ReadOnly = true;
+            // 
+            // colY5
+            // 
+            this.colY5.HeaderText = "𝑦ᵢ";
+            this.colY5.Name = "colY5";
+            this.colY5.ReadOnly = true;
             // 
             // button_Dover
             // 
@@ -416,14 +583,14 @@
             this.raspredX.AllowUserToResizeColumns = false;
             this.raspredX.AllowUserToResizeRows = false;
             this.raspredX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredX.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.raspredX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberX,
@@ -715,14 +882,14 @@
             this.raspredY.AllowUserToResizeColumns = false;
             this.raspredY.AllowUserToResizeRows = false;
             this.raspredY.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.raspredY.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.raspredY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.raspredY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberY,
@@ -835,9 +1002,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(446, 339);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 24);
+            this.label1.Size = new System.Drawing.Size(16, 24);
             this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.label1.Text = " ";
             // 
             // CorrTable
             // 
@@ -863,66 +1030,12 @@
             this.CorrTable.Name = "CorrTable";
             this.CorrTable.ReadOnly = true;
             this.CorrTable.RowHeadersVisible = false;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CorrTable.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CorrTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.CorrTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.CorrTable.Size = new System.Drawing.Size(944, 203);
             this.CorrTable.TabIndex = 3;
             this.CorrTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CorrTable_CellContentClick);
-            // 
-            // inter_X
-            // 
-            this.inter_X.HeaderText = "X \\ Y";
-            this.inter_X.Name = "inter_X";
-            this.inter_X.ReadOnly = true;
-            // 
-            // inter_Y_1
-            // 
-            this.inter_Y_1.HeaderText = "Column1";
-            this.inter_Y_1.Name = "inter_Y_1";
-            this.inter_Y_1.ReadOnly = true;
-            // 
-            // inter_Y_3
-            // 
-            this.inter_Y_3.HeaderText = "Column1";
-            this.inter_Y_3.Name = "inter_Y_3";
-            this.inter_Y_3.ReadOnly = true;
-            // 
-            // inter_Y_4
-            // 
-            this.inter_Y_4.HeaderText = "Column1";
-            this.inter_Y_4.Name = "inter_Y_4";
-            this.inter_Y_4.ReadOnly = true;
-            // 
-            // inter_Y_5
-            // 
-            this.inter_Y_5.HeaderText = "Column1";
-            this.inter_Y_5.Name = "inter_Y_5";
-            this.inter_Y_5.ReadOnly = true;
-            // 
-            // inter_Y_2
-            // 
-            this.inter_Y_2.HeaderText = "Column1";
-            this.inter_Y_2.Name = "inter_Y_2";
-            this.inter_Y_2.ReadOnly = true;
-            // 
-            // inter_Y_6
-            // 
-            this.inter_Y_6.HeaderText = "Column1";
-            this.inter_Y_6.Name = "inter_Y_6";
-            this.inter_Y_6.ReadOnly = true;
-            // 
-            // inter_Y_7
-            // 
-            this.inter_Y_7.HeaderText = "Column1";
-            this.inter_Y_7.Name = "inter_Y_7";
-            this.inter_Y_7.ReadOnly = true;
-            // 
-            // Count_X
-            // 
-            this.Count_X.HeaderText = "nᵢ";
-            this.Count_X.Name = "Count_X";
-            this.Count_X.ReadOnly = true;
             // 
             // vibor_urav
             // 
@@ -945,9 +1058,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(814, 261);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.Size = new System.Drawing.Size(12, 16);
             this.label8.TabIndex = 29;
-            this.label8.Text = "label8";
+            this.label8.Text = " ";
             // 
             // label7
             // 
@@ -963,9 +1076,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(827, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.Size = new System.Drawing.Size(12, 16);
             this.label6.TabIndex = 27;
-            this.label6.Text = "label6";
+            this.label6.Text = " ";
             // 
             // label3
             // 
@@ -989,59 +1102,59 @@
             // 
             // chart1
             // 
-            chartArea3.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea3.AxisX.LineWidth = 2;
-            chartArea3.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea3.AxisX.Title = "X";
-            chartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea3.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            chartArea3.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
-            chartArea3.AxisY.LineWidth = 2;
-            chartArea3.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            chartArea3.AxisY.Title = "Y";
-            chartArea3.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
-            chartArea3.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
+            chartArea1.AxisX.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisX.LineWidth = 2;
+            chartArea1.AxisX.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea1.AxisX.Title = "X";
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            chartArea1.AxisY.ArrowStyle = System.Windows.Forms.DataVisualization.Charting.AxisArrowStyle.Triangle;
+            chartArea1.AxisY.LineWidth = 2;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            chartArea1.AxisY.Title = "Y";
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
-            series9.BorderWidth = 3;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            series10.BorderWidth = 3;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series10.Legend = "Legend1";
-            series10.Name = "Series2";
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series11.Legend = "Legend1";
-            series11.MarkerColor = System.Drawing.Color.Red;
-            series11.MarkerSize = 4;
-            series11.Name = "(xᵢ ; yᵢ)";
-            series12.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
-            series12.Color = System.Drawing.Color.Black;
-            series12.IsVisibleInLegend = false;
-            series12.Legend = "Legend1";
-            series12.MarkerBorderColor = System.Drawing.Color.White;
-            series12.MarkerColor = System.Drawing.Color.Black;
-            series12.MarkerSize = 6;
-            series12.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series12.Name = "Series4";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Series.Add(series11);
-            this.chart1.Series.Add(series12);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series2";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Legend = "Legend1";
+            series3.MarkerColor = System.Drawing.Color.Red;
+            series3.MarkerSize = 4;
+            series3.Name = "(xᵢ ; yᵢ)";
+            series4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StepLine;
+            series4.Color = System.Drawing.Color.Black;
+            series4.IsVisibleInLegend = false;
+            series4.Legend = "Legend1";
+            series4.MarkerBorderColor = System.Drawing.Color.White;
+            series4.MarkerColor = System.Drawing.Color.Black;
+            series4.MarkerSize = 6;
+            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series4.Name = "Series4";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(944, 511);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
@@ -1055,172 +1168,59 @@
             // 
             this.customToolTip1.OwnerDraw = true;
             // 
-            // FirstTable
+            // inter_X
             // 
-            this.FirstTable.Controls.Add(this.label9);
-            this.FirstTable.Controls.Add(this.textBox1);
-            this.FirstTable.Controls.Add(this.buttonClear);
-            this.FirstTable.Controls.Add(this.addXY);
-            this.FirstTable.Controls.Add(this.goToCalc);
-            this.FirstTable.Controls.Add(this.inputXY);
-            this.FirstTable.Controls.Add(this.mainTable);
-            this.FirstTable.Location = new System.Drawing.Point(4, 25);
-            this.FirstTable.Name = "FirstTable";
-            this.FirstTable.Size = new System.Drawing.Size(944, 511);
-            this.FirstTable.TabIndex = 4;
-            this.FirstTable.Text = "Таблица";
-            this.FirstTable.UseVisualStyleBackColor = true;
+            this.inter_X.HeaderText = "X \\ Y";
+            this.inter_X.Name = "inter_X";
+            this.inter_X.ReadOnly = true;
             // 
-            // mainTable
+            // inter_Y_1
             // 
-            this.mainTable.AllowUserToAddRows = false;
-            this.mainTable.AllowUserToDeleteRows = false;
-            this.mainTable.AllowUserToResizeColumns = false;
-            this.mainTable.AllowUserToResizeRows = false;
-            this.mainTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mainTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.mainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mainTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colX1,
-            this.colY1,
-            this.colX2,
-            this.colY2,
-            this.colX3,
-            this.colY3,
-            this.colX4,
-            this.colY4,
-            this.colX5,
-            this.colY5});
-            this.mainTable.EnableHeadersVisualStyles = false;
-            this.mainTable.Location = new System.Drawing.Point(0, 0);
-            this.mainTable.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.mainTable.Name = "mainTable";
-            this.mainTable.ReadOnly = true;
-            this.mainTable.RowHeadersVisible = false;
-            this.mainTable.RowTemplate.ReadOnly = true;
-            this.mainTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.mainTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.mainTable.Size = new System.Drawing.Size(633, 247);
-            this.mainTable.TabIndex = 2;
+            this.inter_Y_1.HeaderText = " ";
+            this.inter_Y_1.Name = "inter_Y_1";
+            this.inter_Y_1.ReadOnly = true;
             // 
-            // colX1
+            // inter_Y_3
             // 
-            this.colX1.HeaderText = "𝑥ᵢ";
-            this.colX1.Name = "colX1";
-            this.colX1.ReadOnly = true;
+            this.inter_Y_3.HeaderText = "";
+            this.inter_Y_3.Name = "inter_Y_3";
+            this.inter_Y_3.ReadOnly = true;
             // 
-            // colY1
+            // inter_Y_4
             // 
-            this.colY1.HeaderText = "𝑦ᵢ";
-            this.colY1.Name = "colY1";
-            this.colY1.ReadOnly = true;
+            this.inter_Y_4.HeaderText = "";
+            this.inter_Y_4.Name = "inter_Y_4";
+            this.inter_Y_4.ReadOnly = true;
             // 
-            // colX2
+            // inter_Y_5
             // 
-            this.colX2.HeaderText = "𝑥ᵢ";
-            this.colX2.Name = "colX2";
-            this.colX2.ReadOnly = true;
+            this.inter_Y_5.HeaderText = "";
+            this.inter_Y_5.Name = "inter_Y_5";
+            this.inter_Y_5.ReadOnly = true;
             // 
-            // colY2
+            // inter_Y_2
             // 
-            this.colY2.HeaderText = "𝑦ᵢ";
-            this.colY2.Name = "colY2";
-            this.colY2.ReadOnly = true;
+            this.inter_Y_2.HeaderText = "";
+            this.inter_Y_2.Name = "inter_Y_2";
+            this.inter_Y_2.ReadOnly = true;
             // 
-            // colX3
+            // inter_Y_6
             // 
-            this.colX3.HeaderText = "𝑥ᵢ";
-            this.colX3.Name = "colX3";
-            this.colX3.ReadOnly = true;
+            this.inter_Y_6.HeaderText = "";
+            this.inter_Y_6.Name = "inter_Y_6";
+            this.inter_Y_6.ReadOnly = true;
             // 
-            // colY3
+            // inter_Y_7
             // 
-            this.colY3.HeaderText = "𝑦ᵢ";
-            this.colY3.Name = "colY3";
-            this.colY3.ReadOnly = true;
+            this.inter_Y_7.HeaderText = "";
+            this.inter_Y_7.Name = "inter_Y_7";
+            this.inter_Y_7.ReadOnly = true;
             // 
-            // colX4
+            // Count_X
             // 
-            this.colX4.HeaderText = "𝑥ᵢ";
-            this.colX4.Name = "colX4";
-            this.colX4.ReadOnly = true;
-            // 
-            // colY4
-            // 
-            this.colY4.HeaderText = "𝑦ᵢ";
-            this.colY4.Name = "colY4";
-            this.colY4.ReadOnly = true;
-            // 
-            // colX5
-            // 
-            this.colX5.HeaderText = "𝑥ᵢ";
-            this.colX5.Name = "colX5";
-            this.colX5.ReadOnly = true;
-            // 
-            // colY5
-            // 
-            this.colY5.HeaderText = "𝑦ᵢ";
-            this.colY5.Name = "colY5";
-            this.colY5.ReadOnly = true;
-            // 
-            // inputXY
-            // 
-            this.inputXY.Location = new System.Drawing.Point(92, 301);
-            this.inputXY.Name = "inputXY";
-            this.inputXY.Size = new System.Drawing.Size(100, 22);
-            this.inputXY.TabIndex = 3;
-            // 
-            // goToCalc
-            // 
-            this.goToCalc.Location = new System.Drawing.Point(788, 431);
-            this.goToCalc.Name = "goToCalc";
-            this.goToCalc.Size = new System.Drawing.Size(104, 23);
-            this.goToCalc.TabIndex = 4;
-            this.goToCalc.Text = "Посчитать";
-            this.goToCalc.UseVisualStyleBackColor = true;
-            this.goToCalc.Click += new System.EventHandler(this.GoToCalc_Click);
-            // 
-            // addXY
-            // 
-            this.addXY.Location = new System.Drawing.Point(237, 299);
-            this.addXY.Name = "addXY";
-            this.addXY.Size = new System.Drawing.Size(90, 23);
-            this.addXY.TabIndex = 5;
-            this.addXY.Text = "Добавить";
-            this.addXY.UseVisualStyleBackColor = true;
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Location = new System.Drawing.Point(788, 346);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(104, 23);
-            this.buttonClear.TabIndex = 6;
-            this.buttonClear.Text = "Очистить";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(237, 347);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 7;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(105, 349);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 16);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Введите лист:";
+            this.Count_X.HeaderText = "nᵢ";
+            this.Count_X.Name = "Count_X";
+            this.Count_X.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -1239,6 +1239,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.XandY.ResumeLayout(false);
+            this.FirstTable.ResumeLayout(false);
+            this.FirstTable.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
             this.button_Dover.ResumeLayout(false);
             this.button_Dover.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -1255,9 +1258,6 @@
             this.vibor_urav.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.FirstTable.ResumeLayout(false);
-            this.FirstTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1320,15 +1320,6 @@
         private System.Windows.Forms.TabPage vibor_urav;
         private CustomToolTip customToolTip1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_X;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Count_X;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox X_max;
@@ -1365,6 +1356,15 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_X;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count_X;
     }
 }
 
