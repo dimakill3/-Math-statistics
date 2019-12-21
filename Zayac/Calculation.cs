@@ -17,10 +17,10 @@ namespace Zayac
         public  double hi_a;
         public double[] quant_hi = new double[10] {0.005, 0.01, 0.025, 0.050, 0.1, 0.9, 0.95, 0.975, 0.99, 0.995};
 
-        public double[] masX = new double[Program.N];
-        public double[] masY = new double[Program.N];
-        public double[] masX_No_Sort = new double[Program.N];
-        public double[] masY_No_Sort = new double[Program.N];
+        public static double[] masX;
+        public static double[] masY;
+        public static double[] masX_No_Sort = new double[Program.N];
+        public static double[] masY_No_Sort = new double[Program.N];
 
         public double max_X, min_X, max_Y, min_Y;
         public double razryv_X, razryv_Y;
@@ -421,27 +421,17 @@ namespace Zayac
             return vibor_koef;
         }
 
-        public void Calculate(String[] fielRead)
+        public void Calculate()
         {
-            string[] s = new string[2];
-
-            for (int i = 0; i < fielRead.Length; i++)
-            {
-                s = fielRead[i].Split(' ');
-
-                //Массив для веса
-                masX[i] = Convert.ToDouble(s[0]);
-                masX_No_Sort[i] = Convert.ToDouble(s[0]);
-                //Массив для роста
-                masY[i] = Convert.ToDouble(s[1]);
-                masY_No_Sort[i] = Convert.ToDouble(s[1]);
-
-            }
-
-
             //Сортировка массивов
-            Array.Sort(masX);
-            Array.Sort(masY);
+            Array.Sort(MainForm.masX_temp);
+            Array.Sort(MainForm.masY_temp);
+
+            masX = MainForm.masX_temp;
+            masY = MainForm.masY_temp;
+
+            masX_No_Sort = MainForm.masX1;
+            masY_No_Sort = MainForm.masY1;
 
             min_X = masX[0];
             min_Y = masY[0];
