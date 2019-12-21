@@ -246,6 +246,8 @@ namespace Zayac
                 k = 34;
             else if (k > 75 && k < 100)
                 k = 35;
+            else
+                k = 1;
 
                 using (FileStream fstream = File.OpenRead("tableQuant.txt"))
             {

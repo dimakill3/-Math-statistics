@@ -548,7 +548,7 @@ namespace Zayac
             double qqq = (calc.sred_kvadr_X * calc.sred_kvadr_Y) / (calc.dispers_X + calc.dispers_Y) * (1 - Math.Pow(calc.getViborKoef(CorrTable), 2)) / (calc.getViborKoef(CorrTable));
             label6.Text = Convert.ToString(String.Format("{0:0.00}", qqq));
             label8.Text = Convert.ToString(String.Format("{0:0.00}", (Math.Atan(qqq) * 180) / Math.PI));
-
+            label11.Text = "(" + Convert.ToString(calc.all_average_X) + " ; " + Convert.ToString(calc.all_average_Y) + ")";
 
 
 
