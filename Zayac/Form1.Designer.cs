@@ -119,18 +119,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CorrTable = new System.Windows.Forms.DataGridView();
-            this.vibor_urav = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.openFile = new System.Windows.Forms.OpenFileDialog();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.customToolTip1 = new Zayac.CustomToolTip();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.inter_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inter_Y_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inter_Y_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,6 +128,20 @@
             this.inter_Y_6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inter_Y_7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count_X = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vibor_urav = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.customToolTip1 = new Zayac.CustomToolTip();
+            this.hipoteza_a = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.FirstTable.SuspendLayout();
@@ -202,6 +204,8 @@
             // 
             // FirstTable
             // 
+            this.FirstTable.Controls.Add(this.hipoteza_a);
+            this.FirstTable.Controls.Add(this.label12);
             this.FirstTable.Controls.Add(this.label9);
             this.FirstTable.Controls.Add(this.textBox1);
             this.FirstTable.Controls.Add(this.buttonClear);
@@ -309,61 +313,61 @@
             // 
             // colX1
             // 
-            this.colX1.HeaderText = "𝑥ᵢ";
+            this.colX1.HeaderText = "xᵢ";
             this.colX1.Name = "colX1";
             this.colX1.ReadOnly = true;
             // 
             // colY1
             // 
-            this.colY1.HeaderText = "𝑦ᵢ";
+            this.colY1.HeaderText = "yᵢ";
             this.colY1.Name = "colY1";
             this.colY1.ReadOnly = true;
             // 
             // colX2
             // 
-            this.colX2.HeaderText = "𝑥ᵢ";
+            this.colX2.HeaderText = "xᵢ";
             this.colX2.Name = "colX2";
             this.colX2.ReadOnly = true;
             // 
             // colY2
             // 
-            this.colY2.HeaderText = "𝑦ᵢ";
+            this.colY2.HeaderText = "yᵢ";
             this.colY2.Name = "colY2";
             this.colY2.ReadOnly = true;
             // 
             // colX3
             // 
-            this.colX3.HeaderText = "𝑥ᵢ";
+            this.colX3.HeaderText = "xᵢ";
             this.colX3.Name = "colX3";
             this.colX3.ReadOnly = true;
             // 
             // colY3
             // 
-            this.colY3.HeaderText = "𝑦ᵢ";
+            this.colY3.HeaderText = "yᵢ";
             this.colY3.Name = "colY3";
             this.colY3.ReadOnly = true;
             // 
             // colX4
             // 
-            this.colX4.HeaderText = "𝑥ᵢ";
+            this.colX4.HeaderText = "xᵢ";
             this.colX4.Name = "colX4";
             this.colX4.ReadOnly = true;
             // 
             // colY4
             // 
-            this.colY4.HeaderText = "𝑦ᵢ";
+            this.colY4.HeaderText = "yᵢ";
             this.colY4.Name = "colY4";
             this.colY4.ReadOnly = true;
             // 
             // colX5
             // 
-            this.colX5.HeaderText = "𝑥ᵢ";
+            this.colX5.HeaderText = "xᵢ";
             this.colX5.Name = "colX5";
             this.colX5.ReadOnly = true;
             // 
             // colY5
             // 
-            this.colY5.HeaderText = "𝑦ᵢ";
+            this.colY5.HeaderText = "yᵢ";
             this.colY5.Name = "colY5";
             this.colY5.ReadOnly = true;
             // 
@@ -1111,6 +1115,23 @@
             this.vibor_urav.Text = "Выборочные уравнения";
             this.vibor_urav.Paint += new System.Windows.Forms.PaintEventHandler(this.Vibor_urav_Paint);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(798, 104);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(59, 16);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "label11";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(733, 71);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(114, 57);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Точка пересечения прямых:";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -1226,22 +1247,21 @@
             // 
             this.customToolTip1.OwnerDraw = true;
             // 
-            // label10
+            // hipoteza_a
             // 
-            this.label10.Location = new System.Drawing.Point(733, 71);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 57);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Точка пересечения прямых:";
+            this.hipoteza_a.Location = new System.Drawing.Point(788, 55);
+            this.hipoteza_a.Name = "hipoteza_a";
+            this.hipoteza_a.Size = new System.Drawing.Size(54, 22);
+            this.hipoteza_a.TabIndex = 9;
             // 
-            // label11
+            // label12
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(798, 104);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(59, 16);
-            this.label11.TabIndex = 31;
-            this.label11.Text = "label11";
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(639, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(282, 68);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Введите уровень значимости для проверки гипотезы о нормальном распределении α:";
             // 
             // MainForm
             // 
@@ -1362,16 +1382,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage FirstTable;
         private System.Windows.Forms.DataGridView mainTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colY1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colX2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colY2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colX3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colY3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colX4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colY4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colX5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colY5;
         private System.Windows.Forms.TextBox inputXY;
         private System.Windows.Forms.Button addXY;
         private System.Windows.Forms.Button goToCalc;
@@ -1389,6 +1399,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Count_X;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colX1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colY1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colX2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colY2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colX3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colY3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colX4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colY4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colX5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colY5;
+        private System.Windows.Forms.TextBox hipoteza_a;
+        private System.Windows.Forms.Label label12;
     }
 }
 

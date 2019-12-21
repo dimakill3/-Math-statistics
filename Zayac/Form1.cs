@@ -30,7 +30,6 @@ namespace Zayac
 
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            calc = new Calculation();
             raspredX.DataSource = null;
             raspredX.Rows.Clear();
 
@@ -380,9 +379,6 @@ namespace Zayac
             } else
                 MessageBox.Show("Таблица не заполнена\nЗаполните таблицу", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
 
-
-            calc.Calculate();
-
             ToMarksX.Enabled = true;
             ToGraphicsX.Enabled = true;
             HipotesyX.Enabled = true;
@@ -392,6 +388,10 @@ namespace Zayac
             ToGraphicsY.Enabled = true;
             HipotesyY.Enabled = true;
             buttonDoverY.Enabled = true;
+
+            calc = new Calculation();
+            calc.setHiA(Convert.ToDouble(hipoteza_a.Text));
+            calc.Calculate();
 
             for (int i = 0; i < Program.r; i++)
             {

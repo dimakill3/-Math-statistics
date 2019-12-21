@@ -185,7 +185,7 @@ namespace Zayac
             hi_vib_X = hi_vib_Y = 0;
 
             lap = (1 / (Math.Sqrt(2 * Math.PI)));
-            hi_a = 0.05;
+            hi_a = 0;
             flags_X = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
             flags_Y = new char[Program.r - 1] { (char)0, (char)0, (char)0, (char)0, (char)0, (char)0 };
             count = 0;
@@ -421,6 +421,11 @@ namespace Zayac
             vibor_koef = (Program.N / (Program.N - 1)) * (uv - (MainForm.calc.all_average_uslov_X * MainForm.calc.all_average_uslov_Y)) / (Math.Sqrt(MainForm.calc.dispers_uslov_X) * Math.Sqrt(MainForm.calc.dispers_uslov_Y));
 
             return vibor_koef;
+        }
+
+        public void setHiA(double a)
+        {
+            hi_a = a;
         }
 
         public void Calculate()

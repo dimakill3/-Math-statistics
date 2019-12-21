@@ -125,6 +125,8 @@ namespace Zayac
             hi_vivod.Text = String.Format("{0:0.00}", MainForm.calc.hi_vib_X);
             quant.Text = String.Format("{0:0.00}", MainForm.calc.quant_hi_X);
             svoboda.Text = "(" + Convert.ToString(MainForm.calc.step_svobodi_X) + ") =";
+            gamma.Text = Convert.ToString(1 - MainForm.calc.hi_a); 
+            textBox1.Text = Convert.ToString(MainForm.calc.hi_a);
 
             if (MainForm.calc.hi_vib_X < MainForm.calc.quant_hi_X)
             {
