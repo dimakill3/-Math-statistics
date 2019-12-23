@@ -353,6 +353,8 @@ namespace Zayac
 
             CorrTable.DataSource = null;
             CorrTable.Rows.Clear();
+            for (int i = 1; i < Program.r + 1; i++)
+                CorrTable.Columns[i].HeaderText = "";
 
             mainTable.DataSource = null;
             mainTable.Rows.Clear();
@@ -361,6 +363,37 @@ namespace Zayac
             chart1.Series[1].Points.Clear();
             chart1.Series[2].Points.Clear();
             chart1.Series[3].Points.Clear();
+
+            chart1.Series[0].LegendText = "Series 1";
+            chart1.Series[1].LegendText = "Series 2";
+
+            label1.Text = "";
+            label6.Text = "";
+            label8.Text = "";
+            label11.Text = "";
+            X_min.Text = "";
+            X_max.Text = "";
+            Ymin.Text = "";
+            Ymax.Text = "";
+            razmahX.Text = "";
+            countInterX.Text = "";
+            razmahY.Text = "";
+            countInterY.Text = "";
+            LenghtInterX.Text = "";
+            RashPromX.Text = "";
+            LenghtInterY.Text = "";
+            RashPromY.Text = "";
+            hipoteza_a.Text = "";
+
+            ToMarksX.Enabled = false;
+            ToGraphicsX.Enabled = false;
+            HipotesyX.Enabled = false;
+            buttonDoverX.Enabled = false;
+
+            ToMarksY.Enabled = false;
+            ToGraphicsY.Enabled = false;
+            HipotesyY.Enabled = false;
+            buttonDoverY.Enabled = false;
         }
 
         private void GoToCalc_Click(object sender, EventArgs e)
@@ -390,7 +423,13 @@ namespace Zayac
             buttonDoverY.Enabled = true;
 
             calc = new Calculation();
-            calc.setHiA(Convert.ToDouble(hipoteza_a.Text));
+            
+            if (double.TryParse(hipoteza_a.Text, out double a) == false)
+                calc.setHiA(0.05);
+            else
+                calc.setHiA(Convert.ToDouble(a));
+
+
             calc.Calculate();
 
             for (int i = 0; i < Program.r; i++)

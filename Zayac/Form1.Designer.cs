@@ -43,12 +43,10 @@
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XandY = new System.Windows.Forms.TabControl();
             this.FirstTable = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.hipoteza_a = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.addXY = new System.Windows.Forms.Button();
             this.goToCalc = new System.Windows.Forms.Button();
-            this.inputXY = new System.Windows.Forms.TextBox();
             this.mainTable = new System.Windows.Forms.DataGridView();
             this.colX1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colY1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +58,7 @@
             this.colY4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colX5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colY5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_Dover = new System.Windows.Forms.TabPage();
+            this.X = new System.Windows.Forms.TabPage();
             this.X_max = new System.Windows.Forms.TextBox();
             this.X_min = new System.Windows.Forms.TextBox();
             this.labelMax = new System.Windows.Forms.Label();
@@ -140,13 +138,12 @@
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.customToolTip1 = new Zayac.CustomToolTip();
-            this.hipoteza_a = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.XandY.SuspendLayout();
             this.FirstTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
-            this.button_Dover.SuspendLayout();
+            this.X.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).BeginInit();
             this.Y.SuspendLayout();
@@ -188,7 +185,7 @@
             // XandY
             // 
             this.XandY.Controls.Add(this.FirstTable);
-            this.XandY.Controls.Add(this.button_Dover);
+            this.XandY.Controls.Add(this.X);
             this.XandY.Controls.Add(this.Y);
             this.XandY.Controls.Add(this.XY);
             this.XandY.Controls.Add(this.vibor_urav);
@@ -204,14 +201,11 @@
             // 
             // FirstTable
             // 
+            this.FirstTable.Controls.Add(this.label9);
             this.FirstTable.Controls.Add(this.hipoteza_a);
             this.FirstTable.Controls.Add(this.label12);
-            this.FirstTable.Controls.Add(this.label9);
-            this.FirstTable.Controls.Add(this.textBox1);
             this.FirstTable.Controls.Add(this.buttonClear);
-            this.FirstTable.Controls.Add(this.addXY);
             this.FirstTable.Controls.Add(this.goToCalc);
-            this.FirstTable.Controls.Add(this.inputXY);
             this.FirstTable.Controls.Add(this.mainTable);
             this.FirstTable.Location = new System.Drawing.Point(4, 25);
             this.FirstTable.Name = "FirstTable";
@@ -220,21 +214,21 @@
             this.FirstTable.Text = "Таблица";
             this.FirstTable.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // hipoteza_a
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(105, 349);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 16);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Введите лист:";
+            this.hipoteza_a.Location = new System.Drawing.Point(788, 55);
+            this.hipoteza_a.Name = "hipoteza_a";
+            this.hipoteza_a.Size = new System.Drawing.Size(54, 22);
+            this.hipoteza_a.TabIndex = 9;
             // 
-            // textBox1
+            // label12
             // 
-            this.textBox1.Location = new System.Drawing.Point(237, 347);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 7;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(639, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(282, 68);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Введите уровень значимости для проверки гипотезы о нормальном распределении α: ";
             // 
             // buttonClear
             // 
@@ -246,15 +240,6 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
-            // addXY
-            // 
-            this.addXY.Location = new System.Drawing.Point(237, 299);
-            this.addXY.Name = "addXY";
-            this.addXY.Size = new System.Drawing.Size(90, 23);
-            this.addXY.TabIndex = 5;
-            this.addXY.Text = "Добавить";
-            this.addXY.UseVisualStyleBackColor = true;
-            // 
             // goToCalc
             // 
             this.goToCalc.Location = new System.Drawing.Point(788, 431);
@@ -264,13 +249,6 @@
             this.goToCalc.Text = "Посчитать";
             this.goToCalc.UseVisualStyleBackColor = true;
             this.goToCalc.Click += new System.EventHandler(this.GoToCalc_Click);
-            // 
-            // inputXY
-            // 
-            this.inputXY.Location = new System.Drawing.Point(92, 301);
-            this.inputXY.Name = "inputXY";
-            this.inputXY.Size = new System.Drawing.Size(100, 22);
-            this.inputXY.TabIndex = 3;
             // 
             // mainTable
             // 
@@ -371,37 +349,37 @@
             this.colY5.Name = "colY5";
             this.colY5.ReadOnly = true;
             // 
-            // button_Dover
+            // X
             // 
-            this.button_Dover.BackColor = System.Drawing.Color.FloralWhite;
-            this.button_Dover.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.button_Dover.Controls.Add(this.X_max);
-            this.button_Dover.Controls.Add(this.X_min);
-            this.button_Dover.Controls.Add(this.labelMax);
-            this.button_Dover.Controls.Add(this.labelMin);
-            this.button_Dover.Controls.Add(this.label4);
-            this.button_Dover.Controls.Add(this.pictureBox2);
-            this.button_Dover.Controls.Add(this.buttonDoverX);
-            this.button_Dover.Controls.Add(this.HipotesyX);
-            this.button_Dover.Controls.Add(this.ToGraphicsX);
-            this.button_Dover.Controls.Add(this.ToMarksX);
-            this.button_Dover.Controls.Add(this.RashPromX);
-            this.button_Dover.Controls.Add(this.LenghtInterX);
-            this.button_Dover.Controls.Add(this.countInterX);
-            this.button_Dover.Controls.Add(this.razmahX);
-            this.button_Dover.Controls.Add(this.labelRash);
-            this.button_Dover.Controls.Add(this.labelLenghtInter);
-            this.button_Dover.Controls.Add(this.labelKolVoInter);
-            this.button_Dover.Controls.Add(this.labelRazmah);
-            this.button_Dover.Controls.Add(this.raspredX);
-            this.button_Dover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_Dover.Location = new System.Drawing.Point(4, 25);
-            this.button_Dover.Name = "button_Dover";
-            this.button_Dover.Padding = new System.Windows.Forms.Padding(3);
-            this.button_Dover.Size = new System.Drawing.Size(944, 511);
-            this.button_Dover.TabIndex = 0;
-            this.button_Dover.Text = "Группированный ряд для X";
-            this.button_Dover.Click += new System.EventHandler(this.X_Click);
+            this.X.BackColor = System.Drawing.Color.FloralWhite;
+            this.X.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.X.Controls.Add(this.X_max);
+            this.X.Controls.Add(this.X_min);
+            this.X.Controls.Add(this.labelMax);
+            this.X.Controls.Add(this.labelMin);
+            this.X.Controls.Add(this.label4);
+            this.X.Controls.Add(this.pictureBox2);
+            this.X.Controls.Add(this.buttonDoverX);
+            this.X.Controls.Add(this.HipotesyX);
+            this.X.Controls.Add(this.ToGraphicsX);
+            this.X.Controls.Add(this.ToMarksX);
+            this.X.Controls.Add(this.RashPromX);
+            this.X.Controls.Add(this.LenghtInterX);
+            this.X.Controls.Add(this.countInterX);
+            this.X.Controls.Add(this.razmahX);
+            this.X.Controls.Add(this.labelRash);
+            this.X.Controls.Add(this.labelLenghtInter);
+            this.X.Controls.Add(this.labelKolVoInter);
+            this.X.Controls.Add(this.labelRazmah);
+            this.X.Controls.Add(this.raspredX);
+            this.X.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.X.Location = new System.Drawing.Point(4, 25);
+            this.X.Name = "X";
+            this.X.Padding = new System.Windows.Forms.Padding(3);
+            this.X.Size = new System.Drawing.Size(944, 511);
+            this.X.TabIndex = 0;
+            this.X.Text = "Группированный ряд для X";
+            this.X.Click += new System.EventHandler(this.X_Click);
             // 
             // X_max
             // 
@@ -1135,7 +1113,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(814, 261);
+            this.label8.Location = new System.Drawing.Point(821, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 16);
             this.label8.TabIndex = 29;
@@ -1247,21 +1225,14 @@
             // 
             this.customToolTip1.OwnerDraw = true;
             // 
-            // hipoteza_a
+            // label9
             // 
-            this.hipoteza_a.Location = new System.Drawing.Point(788, 55);
-            this.hipoteza_a.Name = "hipoteza_a";
-            this.hipoteza_a.Size = new System.Drawing.Size(54, 22);
-            this.hipoteza_a.TabIndex = 9;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(639, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(282, 68);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Введите уровень значимости для проверки гипотезы о нормальном распределении α:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(785, 87);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(156, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "(по умолчанию 0,05)";
             // 
             // MainForm
             // 
@@ -1283,8 +1254,8 @@
             this.FirstTable.ResumeLayout(false);
             this.FirstTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
-            this.button_Dover.ResumeLayout(false);
-            this.button_Dover.PerformLayout();
+            this.X.ResumeLayout(false);
+            this.X.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raspredX)).EndInit();
             this.Y.ResumeLayout(false);
@@ -1310,7 +1281,7 @@
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.TabControl XandY;
-        private System.Windows.Forms.TabPage button_Dover;
+        private System.Windows.Forms.TabPage X;
         private System.Windows.Forms.DataGridView raspredX;
         private System.Windows.Forms.TabPage Y;
         private System.Windows.Forms.DataGridView raspredY;
@@ -1382,12 +1353,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage FirstTable;
         private System.Windows.Forms.DataGridView mainTable;
-        private System.Windows.Forms.TextBox inputXY;
-        private System.Windows.Forms.Button addXY;
         private System.Windows.Forms.Button goToCalc;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn inter_X;
         private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_1;
         private System.Windows.Forms.DataGridViewTextBoxColumn inter_Y_3;
@@ -1411,6 +1378,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colY5;
         private System.Windows.Forms.TextBox hipoteza_a;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
     }
 }
 
